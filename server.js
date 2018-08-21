@@ -333,12 +333,14 @@ app.use(function (err, req, res, next) {
   res.send(err.message)
 })
 
-console.log('\nGOV.UK Prototype Kit v' + releaseVersion)
+console.log("\x1b[37m"+'\nGOV.UK Prototype kit v' + releaseVersion+"\x1b[0m")
+// console.log('\nGOV.UK Prototype Kit v' + releaseVersion)
 console.log('\nNOTICE: the kit is for building prototypes, do not use it for production services.')
 
 // Find a free port and start the server
 utils.findAvailablePort(app, function (port) {
-  console.log('Listening on port ' + port + '   url: http://localhost:' + port)
+  console.log('Listening on port ' + port + '   url: ' + "\x1b[36m" + 'http://localhost:' + port + "\x1b[0m")
+  // console.log('Listening on port ' + port + '   url: http://localhost:' + port)
   if (env === 'production' || useBrowserSync === 'false') {
     app.listen(port)
   } else {

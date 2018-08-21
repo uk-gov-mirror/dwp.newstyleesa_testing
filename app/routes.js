@@ -3,4 +3,12 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
+var path = require('path')
+
+router.get('*', function (req, res, next) {
+  if (req.params[0].substr(-1) == '/') res.locals.path = req.params[0].slice(0,-1).substr(1);
+  else res.locals.path = path.dirname(req.params[0]).substr(1);
+  next();
+})
+
 module.exports = router

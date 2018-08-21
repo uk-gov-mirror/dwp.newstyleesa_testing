@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      How many hours a week are you working at the moment?
+    </h1>
+
+    <p class="govuk-hint">If your hours vary, enter an average.</p>
+
+    <div class="govuk-form-group">
+      <p><input class="govuk-input govuk-input--width-2" id="work-hours" name="work-hours" type="text"> hours a week</p>
+    </div>
+
+    <a href="work-hours-changed" class="govuk-button">Continue</a>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}
