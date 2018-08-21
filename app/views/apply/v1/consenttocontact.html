@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Do you have a fit note?
+    </h1>
+
+    <span  class="govuk-hint">
+      You might know this as a sick note or doctor's note. It is also known as a statement of fitness for work.
+    </span>
+
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-1" name="terminal" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="terminal-1">
+            Yes, I've got a fitnote
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-2" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="terminal-2">
+            No, I don't have one
+          </label>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="no-reveal">
+            Fish!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="" class="govuk-button">Continue</a>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}
