@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      How many hours a week do you work at the moment?
+    </h1>
+
+    <!-- user to complete only if working same hours each week -->
+
+    <div class="govuk-form-group">
+      <p><input class="govuk-input govuk-input--width-2" id="work-hours" name="work-hours" type="text"> hours a week</p>
+    </div>
+
+    <a href="work-supported" class="govuk-button">Continue</a>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}
