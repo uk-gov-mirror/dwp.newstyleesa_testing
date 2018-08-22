@@ -6,16 +6,27 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-      How many hours a week are you working at the moment?
+      Do you work the same number of hours each week?
     </h1>
 
-    <p class="govuk-hint">If your hours vary, enter an average.</p>
-
     <div class="govuk-form-group">
-      <p><input class="govuk-input govuk-input--width-2" id="work-hours" name="work-hours" type="text"> hours a week</p>
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-1" name="terminal" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="terminal-1">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-2" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="terminal-2">
+            No
+          </label>
+        </div>
+      </div>
     </div>
 
-    <a href="work-hours-changed" class="govuk-button">Continue</a>
+    <a href="work-hours-number" class="govuk-button">Continue</a>
 
   <div><!-- govuk-grid-column-two-thirds -->
 <div><!-- govuk-grid-row -->
