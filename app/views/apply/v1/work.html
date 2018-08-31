@@ -5,6 +5,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <form id="form" method="post" action="work-hours">
+
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
       Are you working?
     </h1>
@@ -38,8 +40,19 @@
       </div>
     </div>
 
-    <a href="work-hours" class="govuk-button">Continue</a>
+    <input type="submit" class="govuk-button" value="Continue"><!-- work-hours -->
+
+    </form>
 
   <div><!-- govuk-grid-column-two-thirds -->
 <div><!-- govuk-grid-row -->
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    // alert('fish');
+  });
+</script>
 {% endblock %}
