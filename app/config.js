@@ -16,7 +16,7 @@ module.exports = {
   useAutoStoreData: 'true',
 
   // Enable or disable built-in docs and examples.
-  useDocumentation: 'true',
+  useDocumentation: 'false',
 
   // Force HTTP to redirect to HTTPS on production
   useHttps: 'true',

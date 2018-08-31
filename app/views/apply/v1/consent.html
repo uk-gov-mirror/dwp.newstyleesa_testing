@@ -5,13 +5,28 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <form id="form" method="post" action="hospital">
+
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Do you get money from an employer pension scheme?
+            Is it OK for your doctor to tell the Department for Work and Pensions about your health conditions?
           </h1>
         </legend>
+        <span id="" class="govuk-hint">
+        </span>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Why this might be needed
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            We might need to ask your doctor about your health conditions to decide how much Employment and Support Allowance you should get.
+          </div>
+        </details>
 
         <div class="govuk-radios govuk-radios--inline">
           <div class="govuk-radios__item">
@@ -30,7 +45,9 @@
       </fieldset>
     </div>
 
-    <a href="occ-pension-details" class="govuk-button">Continue</a>
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- hospital -->
+
+    </form>
 
   <div><!-- govuk-grid-column-two-thirds -->
 <div><!-- govuk-grid-row -->

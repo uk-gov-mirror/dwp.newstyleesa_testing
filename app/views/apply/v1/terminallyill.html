@@ -5,13 +5,26 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    <form id="form" method="post" action="gpsurgery">
+
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Have you been diagnosed with a terminal illness?
+            Are you expected to live less than 6 months due to a terminal illness?
           </h1>
         </legend>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Why this information is needed
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            If you answer yes, your claim can be fast-tracked. If you're entitled to Employment and Support Allowance you'll also be paid at the highest rate and will not have to meet work-related responsibilities to keep getting the benefit in full.
+          </div>
+        </details>
 
         <div class="govuk-radios govuk-radios--inline">
           <div class="govuk-radios__item">
@@ -28,9 +41,14 @@
           </div>
         </div>
       </fieldset>
-    </div>  
+    </div>
+<<<<<<< HEAD
+=======
 
-    <a href="gpsurgery" class="govuk-button">Continue</a>
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- gpsurgery -->
+>>>>>>> f408024db72c01380de64de3e58ed684e481541e
+
+    </form>
 
   <div><!-- govuk-grid-column-two-thirds -->
 <div><!-- govuk-grid-row -->

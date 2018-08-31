@@ -5,35 +5,38 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <fieldset class="govuk-fieldset">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-    <h1 class="govuk-fieldset__heading">
-      When will you be well again?
-    </h1>
-  </legend>
+    <form id="form" method="post" action="declaration">
 
-  {# <p class="govuk-hint">You can claim one month before your statutory sick pay is de to end.</p> #}
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">
+          When will you be well again?
+        </h1>
+      </legend>
 
-  <div class="govuk-form-group">
+      {# <p class="govuk-hint">You can claim one month before your statutory sick pay is de to end.</p> #}
 
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="changed-name-1">
-          I'll be well in 6 months
-        </label>
+      <div class="govuk-form-group">
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="changed-name-1">
+              I'll be well in 6 months
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+              I'll be ill for ages
+            </label>
+          </div>
+        </div>
+
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="changed-name-2">
-          I'll be ill for ages
-        </label>
-      </div>
-    </div>
 
-  </div>
+      <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- declaration -->
 
-    <a href="declaration" class="govuk-button">Continue</a>
+    </form>
 
   <div><!-- govuk-grid-column-two-thirds -->
 <div><!-- govuk-grid-row -->
