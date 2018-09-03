@@ -18,3 +18,14 @@ $govuk-global-styles: true;
   border-left-width:5px;
   padding-bottom:10px;
 }
+
+.govuk-list--bullet-dash {
+  padding-left:25px;
+  list-style-type: none;
+  font-size:16px;
+  li:before {
+    content: "— ";
+    margin-left: -25px;
+    padding-right: 5px;
+  }
+}

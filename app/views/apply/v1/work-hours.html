@@ -5,17 +5,42 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-      How many hours a week are you working at the moment?
-    </h1>
-
-    <p class="govuk-hint">If your hours vary, enter an average.</p>
+    <form id="form" method="post" action="work-supported">
 
     <div class="govuk-form-group">
-      <p><input class="govuk-input govuk-input--width-2" id="work-hours" name="work-hours" type="text"> hours a week</p>
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Do you work under 16 hours each week?
+          </h1>
+        </legend>
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="changed-name-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+              No
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+              It varies
+            </label>
+          </div>
+        </div>
+      </fieldset>
     </div>
 
-    <a href="work-hours-changed" class="govuk-button">Continue</a>
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-supported -->
+
+    </form>
 
   <div><!-- govuk-grid-column-two-thirds -->
 <div><!-- govuk-grid-row -->

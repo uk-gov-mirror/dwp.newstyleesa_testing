@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="backdate">
+
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">
+          What are your bank account details?
+        </h1>
+      </legend>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="full-name">
+          Full name
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="full-name" name="full-name" type="text">
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="account-number">
+          Your account number
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="account-number" name="account-number" type="text">
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort-code">
+          Your sort code
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="sort-code" name="sort-code" type="text">
+      </div>
+
+    </fieldset>
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- backdate -->
+
+    </form>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+<div><!-- govuk-grid-row -->
+{% endblock %}
