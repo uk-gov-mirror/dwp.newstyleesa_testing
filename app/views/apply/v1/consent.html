@@ -7,42 +7,41 @@
 
     <form id="form" method="post" action="hospital">
 
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">
-            Is it OK for your doctor to tell the Department for Work and Pensions about your health conditions?
-          </h1>
-        </legend>
-        <span id="" class="govuk-hint">
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      Is it okay for The Department for Work and Pensions to ask other people or organisations for information about you?
+    </h1>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Why this might be needed
         </span>
+      </summary>
+      <div class="govuk-details__text">
+        The Department for Work and Pensions (DWP) might need to ask other people or organisations for information about you to decide how much Employment and Support Allowance you should get.
+      </div>
+    </details>
 
-        <details class="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Why this might be needed
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            We might need to ask your doctor about your health conditions to decide how much Employment and Support Allowance you should get.
-          </div>
-        </details>
+    <span  class="govuk-hint">
 
-        <div class="govuk-radios govuk-radios--inline">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="changed-name-1">
-              Yes
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="changed-name-2">
-              No
-            </label>
-          </div>
+    </span>
+
+    <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-1" name="terminal" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="terminal-1">
+            Yes, that's fine
+          </label>
         </div>
-      </fieldset>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="terminal-2" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="terminal-2">
+            No, I don't want anyone else to be contacted about me
+          </label>
+        </div>
+      </div>
     </div>
 
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- hospital -->
