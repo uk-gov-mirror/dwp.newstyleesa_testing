@@ -29,3 +29,16 @@ $govuk-global-styles: true;
     padding-right: 5px;
   }
 }
+
+.govuk-pagnav {
+  display:block;
+  &:hover {
+    background:#f8f8f8;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 19px;
+    line-height: 1.25;
+    margin-left: 10px;;
+
+  }
+}
