@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-breadcrumbs govuk-!-margin-bottom-9" style="margin-top:-20px">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Benefits</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      <a class="govuk-breadcrumbs__link" href="">Carers and disability benefits</a>
+    </li>
+  </ol>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Apply for money if you’re ill or disabled and can’t work, or you need help with daily living or getting around</h1>
+
+    <p class="govuk-body-s govuk-!-margin-bottom-1">Contents</p>
+    <ul class="govuk-list govuk-list--bullet govuk-list--bullet-dash">
+      <li><a href="govuk-overview">Overview</a></li>
+      <li>What you'll get</li>
+      <li><a href="govuk-eligibility">Eligibility</a></li>
+      <li><a href="govuk-apply">Apply</a></li>
+    </ul>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+  <div class="govuk-grid-column-one-third">
+    &nbsp;
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <hr class="govuk-section-break govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l govuk-!-padding-top-3">What you'll get</h2>
+    
+
+    <h10 class="govuk-heading-l govuk-!-padding-top-3">How you're paid</h10>
+    <p class="govuk-body">All benefits, pensions and allowances are <a href="#" class="govuk-link">paid into your bank, building society or credit union account.</a></p>
+    <h11 class="govuk-heading-m">Bank holidays</h11>
+    <p class="govuk-body">If your payment is due on a bank holiday, you’ll be paid on the last working day before the holiday.</p>
+
+    <h12 class="govuk-heading-l govuk-!-padding-top-3">Get budgeting help</h12>
+    <p class="govuk-body">Contact the <a href="#" class="govuk-link">money advice service</a> to get help and advice with budgeting.</p>
+    <p class="govuk-body">You can also apply for a <a href="#" class="govuk-link">budgeting loan</a> if you’ve been on income-related ESA for at least 6 months.</p>
+
+    <a class="govuk-pagnav" href="govuk-overview">
+      <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+            <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      Previous
+    </a>
+    <a class="govuk-pagnav" href="govuk-eligibility">
+      <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+        <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+      Next
+    </a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+  <div class="govuk-grid-column-one-third">
+
+    {#
+      I've stuck the right col in a
+      separate file just becaue it doesn't
+      change across all these pages.
+    #}
+    {% include path+"/inc_govuk_rightcol.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
