@@ -13,6 +13,10 @@
           <h1 class="govuk-fieldset__heading">
             How else do you want to be contacted?
           </h1>
+
+          <span id="dob-hint" class="govuk-hint">
+  		      Your details are not shared. They're only used to send updates about your application.
+  		    </span>
         </legend>
         <div class="govuk-radios" data-module="radios">
           <div class="govuk-radios__item">
@@ -58,9 +62,16 @@
               </label>
               <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
             </div>
-
+          </div>
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="how-contacted-conditional-4" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-4">
+              <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                None of these
+              </label>
           </div>
         </div>
+        </div>
+      </div>
       </fieldset>
     </div>
 
