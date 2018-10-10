@@ -14,6 +14,9 @@
             Where do you want to be paid?
           </h1>
         </legend>
+        <span id="dob-hint" class="govuk-hint">
+		      This is where your Employment and Support Allowance will be paid if you're entitled to it.
+		    </span>
         <div class="govuk-radios" data-module="radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
@@ -24,11 +27,6 @@
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                  <h2 class="govuk-fieldset__heading">
-                    Bank details
-                  </h2>
-                </legend>
 
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="address-line-1">
@@ -37,7 +35,7 @@
                   </label>
                   <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
                 </div>
-                
+
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="address-town">
                     Account number
@@ -65,11 +63,6 @@
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                    <h2 class="govuk-fieldset__heading">
-                      Building Society details
-                    </h2>
-                  </legend>
 
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="address-line-1">
@@ -78,7 +71,7 @@
                     </label>
                     <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
                   </div>
-                  
+
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="address-town">
                       Account number
@@ -107,18 +100,13 @@
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
             <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
-              Post Office account
+              Credit Union account
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                  <h2 class="govuk-fieldset__heading">
-                    Post Office details
-                  </h2>
-                </legend>
-                                
+
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="address-town">
                     Account number
