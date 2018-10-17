@@ -5,7 +5,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="pension">
+    <form id="form" method="post" action="abroad">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
@@ -50,7 +50,7 @@
       </fieldset>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- occ-pension -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- abroad -->
 
     </form>
 
@@ -88,7 +88,7 @@
           $('#form').attr('action','sickpay-end');
           break;
         case 'none':
-          $('#form').attr('action','pension');
+          $('#form').attr('action','abroad');
           break;
         // if nothing is ticked don't submit the form.
         default: return false; break;
