@@ -11,39 +11,39 @@
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Are you getting any of the following payments from an employer?
+            Are you getting any of the following payments from your employer?
           </h1>
         </legend>
         <div class="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="statutory-pay-1" name="statutory-pay" type="radio" value="ssp">
             <label class="govuk-label govuk-radios__label" for="statutory-pay-1">
-              Sick pay
+              Statutory Sick Pay
             </label>
           </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="statutory-pay-2" name="statutory-pay" type="radio" value="smp">
             <label class="govuk-label govuk-radios__label" for="statutory-pay-2">
-              Maternity pay
+              Statutory Maternity Pay
             </label>
           </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="statutory-pay-3" name="statutory-pay" type="radio" value="spp">
             <label class="govuk-label govuk-radios__label" for="statutory-pay-3">
-              Paternity pay
+              Statutory Paternity Pay
             </label>
           </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="statutory-pay-4" name="statutory-pay" type="radio" value="sap">
             <label class="govuk-label govuk-radios__label" for="statutory-pay-4">
-              Adoption pay
+              Statutory Adoption Pay
             </label>
           </div>
           <div class="govuk-radios__divider">or</div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="statutory-pay-5" name="statutory-pay" type="radio" value="none">
             <label class="govuk-label govuk-radios__label" for="statutory-pay-5">
-              None of these
+              Any other payment
             </label>
           </div>
         </div>
@@ -83,7 +83,7 @@
           break;
         case 'spp':
           $('#form').attr('action','sickpay-end');
-          break;  
+          break;
         case 'sap':
           $('#form').attr('action','sickpay-end');
           break;
