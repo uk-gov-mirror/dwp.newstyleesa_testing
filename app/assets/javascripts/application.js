@@ -8,3 +8,12 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
+
+// Autocomplete
+var autocomplete = document.querySelector('[data-source]')
+if (autocomplete) {
+  accessibleAutocomplete.enhanceSelectElement({
+    defaultValue: '',
+    selectElement: autocomplete
+  })
+}

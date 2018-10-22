@@ -114,6 +114,7 @@ app.use('/assets', express.static(path.join(__dirname, 'node_modules', 'govuk-fr
 
 // Serve govuk-frontend in /public
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
+app.use('/node_modules/accessible-autocomplete', express.static(path.join(__dirname, '/node_modules/accessible-autocomplete')))
 
 // Set up documentation app
 if (useDocumentation) {
