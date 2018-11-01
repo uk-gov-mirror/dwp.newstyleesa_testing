@@ -8,33 +8,25 @@
     <form id="form" method="post" action="work-hours">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Are you doing any work or voluntary work?
+      Do you have a paid job?
     </h1>
+
+    <span id="special-rules-hint" class="govuk-hint">
+    Answer no if you only do unpaid voluntary work - you'll be asked about this later.
+    </span>
 
     <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="in_paid_work">
           <label class="govuk-label govuk-radios__label" for="work-1">
-            Yes, I'm doing paid work
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-4" name="work" type="radio" value="volunteering">
-          <label class="govuk-label govuk-radios__label" for="work-4">
-            Yes, I'm doing unpaid voluntary work
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-2" name="work" type="radio" value="sick_but_employed" aria-controls="no-reveal">
-          <label class="govuk-label govuk-radios__label" for="work-2">
-            No, I'm off sick but still employed
+            Yes, I have a paid job
           </label>
         </div>
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no_work" aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="work-3">
-            No, I'm unemployed
+            No, I do not have a paid job
           </label>
         </div>
       </div>
@@ -66,13 +58,7 @@
     	switch($('input[name="work"]:checked').val())
       {
     		case 'in_paid_work':
-    	    $('#form').attr('action','employment_details');
-    		  break;
-        case 'volunteering':
-    	    $('#form').attr('action','volunteer-details');
-    		  break;
-        case 'sick_but_employed':
-    	    $('#form').attr('action','employerpayments');
+    	    $('#form').attr('action','worksick');
     		  break;
         case 'no_work':
     	    $('#form').attr('action','last-work');
