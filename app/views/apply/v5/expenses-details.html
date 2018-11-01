@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+        <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+        <form id="form" method="post" action="statutory-pay">
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <h1 class="govuk-fieldset__heading">
+        Which expenses and how much
+        </h1>
+        </legend>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+        Can you provide more detail?
+        </label>
+        <span id="more-detail-hint" class="govuk-hint">
+        Do not include personal or financial information, eg your National Insurance number or credit card details.
+        </span>
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- hospitalplanned -->
+        </div>
+        </form>
+
+        <div><!-- govuk-grid-column-two-thirds -->
+        <div><!-- govuk-grid-row -->
+        {% endblock %}

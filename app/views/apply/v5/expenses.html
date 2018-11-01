@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="expenses-details">
+      <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Do you get any expenses paid by an employer?
+          </h1>
+        </legend>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live-1" name="homeless" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live-2" name="homeless" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      </div>
+      <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- hospitalplanned -->
+    </div>
+  </form>
+
+  <div><!-- govuk-grid-column-two-thirds -->
+  <div><!-- govuk-grid-row -->
+  {% endblock %}
