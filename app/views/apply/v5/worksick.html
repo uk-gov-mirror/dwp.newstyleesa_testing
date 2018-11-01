@@ -5,7 +5,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="work-self-emp">
+    <form id="form" method="post" action="work-self-emp-sick">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
       Are you working at the moment?
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-self-emp -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-self-emp-sick -->
 
     </form>
 
@@ -54,10 +54,10 @@
     	switch($('input[name="work"]:checked').val())
       {
     		case 'in_paid_work':
-    	    $('#form').attr('action','');
+    	    $('#form').attr('action','work-start-date');
     		  break;
         case 'no_work':
-    	    $('#form').attr('action','work-self-emp');
+    	    $('#form').attr('action','work-self-emp-sick');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;
