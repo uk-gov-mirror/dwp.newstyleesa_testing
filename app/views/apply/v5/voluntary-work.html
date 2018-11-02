@@ -14,13 +14,13 @@
     <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="in_paid_work">
+          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="volunteering">
           <label class="govuk-label govuk-radios__label" for="work-1">
             Yes, I'm doing some voluntary work
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no_work" aria-controls="no-reveal">
+          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="not_volunteering" aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="work-3">
             No, I do not do any voluntary work
           </label>
@@ -53,10 +53,10 @@
       // of the <form> and then allow it to submit.
     	switch($('input[name="work"]:checked').val())
       {
-    		case 'in_paid_work':
-    	    $('#form').attr('action','worksick');
+    		case 'volunteering':
+    	    $('#form').attr('action','volunteer-details');
     		  break;
-        case 'no_work':
+        case 'not_volunteering':
     	    $('#form').attr('action','pension');
     		  break;
         // if nothing is ticked don't submit the form.
