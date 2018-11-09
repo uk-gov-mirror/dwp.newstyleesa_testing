@@ -123,3 +123,21 @@ $govuk-global-styles: true;
     left: 10px;
     font-weight: bold;
 }
+
+.govuk-currency-input {
+
+  &__inner {
+    position: relative;
+
+    &__unit {
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+      font-weight: bold;
+    }
+
+    &__input {
+      padding-left: 25px;
+    }
+  }
+}
