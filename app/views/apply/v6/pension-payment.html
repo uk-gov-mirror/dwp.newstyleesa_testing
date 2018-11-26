@@ -11,13 +11,13 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            How much is the gross pay from your {{ data['pension-provider'] | split(',') | last }} pension?
+            What is the gross pay from your {{ data['pension-provider'] | split(',') | last }} pension or annuity?
           </h1>
         </legend>
        
          <div class="govuk-form-group">  
             <span id="net-pay-hint" class="govuk-hint">
-            This is the exact amount before any stopages that is paid into your bank account.
+            This is the exact amount before any stopages paid into your bank account.
             </span>
             <div class="govuk-currency-input">
               <div class="govuk-currency-input__inner">
