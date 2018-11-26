@@ -41,5 +41,20 @@ module.exports = function (env) {
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
+
+  filters.sayHi = function(name,tone) {
+    return (tone == 'formal' ? 'Greetings' : 'Hi') + ' ' + name + '!'
+  }
+
+  filters.split = function(str, separator) {
+    if (str)
+    {
+      return str.split(separator).filter(function(el){return el;});
+    } else {
+      return '';
+    }
+    
+  }
+
   return filters
 }

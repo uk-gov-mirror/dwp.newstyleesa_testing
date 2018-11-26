@@ -10,32 +10,36 @@
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h2 class="govuk-fieldset__heading">
+            You have told us about your Pension from: 
+            <ul class="govuk-list govuk-list--bullet govuk-heading-l">
+              
+              {% for item in data['pension-provider'] | split(',') %}
+                <li>{{ item }}</li>
+              {% endfor %}
+
+          </ul>
+          </h2>
+        </legend>
+        
+     <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            Do you get paid from a workplace pension scheme?
+            Are you getting paid from another Pension?
           </h1>
         </legend>
-        <p id="pension-payments-hint">
-          Workplace pensions include:
-          <ul class="govuk-list govuk-list--bullet">
-            <li>occupational pensions</li>
-            <li>personal pensions</li>
-            <li>public service pensions</li>
-            <li>stakeholder pensions</li>
-            <li>pension from a self employed pension scheme</li>
-          </ul>
-        </p>
 
         <div class="govuk-radios govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="changed-name-1" name="pension" type="radio" value="yes" data-aria-controls="yes-cond">
             <label class="govuk-label govuk-radios__label" for="changed-name-1">
-              Yes, I am receiving money from a pension
+              Yes
             </label>
           </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="changed-name-2" name="pension" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="changed-name-2">
-              No, I am not receiving money from a pension
+              No
             </label>
           </div>
         </div>
