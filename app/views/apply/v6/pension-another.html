@@ -10,21 +10,21 @@
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h2 class="govuk-fieldset__heading">You have told us about your pension or annuity from: </h2>
+          <h2 class="govuk-fieldset__heading">You have added details for: </h2>
             <ul class="govuk-list govuk-heading-l">
-              
+
               {% for item in data['pension-provider'] | split(',') %}
                 <li>{{ item }}</li>
               {% endfor %}
 
           </ul>
-    
+
         </legend>
-        
+
      <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            Are you getting paid from another pension or anuity?
+            Are you getting any other pensions or annuities?
           </h1>
         </legend>
 
