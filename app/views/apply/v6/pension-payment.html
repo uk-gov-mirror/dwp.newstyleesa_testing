@@ -11,14 +11,11 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            What is the gross pay from your {{ data['pension-provider'] | split(',') | last }} pension or annuity?
+            What is the amount before deductions from {{ data['pension-provider'] | split(',') | last }}?
           </h1>
         </legend>
-       
-         <div class="govuk-form-group">  
-            <span id="net-pay-hint" class="govuk-hint">
-            This is the exact amount before any stopages paid into your bank account.
-            </span>
+
+         <div class="govuk-form-group">
             <div class="govuk-currency-input">
               <div class="govuk-currency-input__inner">
                 <span class="govuk-currency-input__inner__unit govuk-body">£</span>
@@ -26,10 +23,10 @@
               </div><!-- govuk-currency-input__inner -->
             </div><!-- govuk-currency-input -->
          </div> <!-- govuk-form-group -->
-         
+
           <div class="govuk-form-group">
             <label class="govuk-label" for="sort">
-              How often are you paid?
+              How often do you get this amount?
             </label>
             <select class="govuk-select govuk-input--width-10" id="sort" name="sort">
               <option value="blank" selected></option>
@@ -41,8 +38,8 @@
               <option value="yearly">Yearly</option>
             </select>
           </div> <!-- govuk-form-gorup -->
-        
-       
+
+
       </fieldset>
     </div>
 
