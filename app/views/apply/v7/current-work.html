@@ -5,22 +5,22 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="volunteer-details">
+    <form id="form" method="post" action="work-hours">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Are you doing any voluntary work?
+      Are you currently employed, even if you're not working?
     </h1>
 
     <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="volunteering">
+          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="yes">
           <label class="govuk-label govuk-radios__label" for="work-1">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="not_volunteering" aria-controls="no-reveal">
+          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no" aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="work-3">
             No
           </label>
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- volunteer-details  -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-hours -->
 
     </form>
 
@@ -53,11 +53,11 @@
       // of the <form> and then allow it to submit.
     	switch($('input[name="work"]:checked').val())
       {
-    		case 'volunteering':
-    	    $('#form').attr('action','volunteer-details');
-    		  break;
-        case 'not_volunteering':
+    		case 'yes':
     	    $('#form').attr('action','work');
+    		  break;
+        case 'no':
+    	    $('#form').attr('action','last-work');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;
