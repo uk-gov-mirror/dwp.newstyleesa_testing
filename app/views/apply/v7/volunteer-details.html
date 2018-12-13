@@ -5,26 +5,27 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="pension">
+    <form id="form" method="post" action="voluntary-hours">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
       Voluntary work details
     </h1>
- 
-    <span id="dob-hint" class="govuk-hint">You can add more than one role if you need to.</span>
 
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="surgery">
+    <input type="hidden" value="" name="organisation" id="organisation-hidden"/>
+
+    <fieldset class="govuk-fieldset">
+      <div class="govuk-form-group">
+      <label class="govuk-label" for="role">
       Role
       </label>
       <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
     </div> <!-- form-group -->
 
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="surgery">
+      <div class="govuk-form-group">
+      <label class="govuk-label" for="organisation-name">
       Organisation name
       </label>
-      <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+      <input class="govuk-input govuk-!-width-one-half" id="organisation" name="organisation-1" type="text">
     </div> <!-- form-group-->
 
     <div class="govuk-form-group">
@@ -61,11 +62,9 @@
         Postcode
       </label>
       <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
-    </div> <!-- form-grouo -->
-
-    <p>
-      <a href="#" class="govuk-link">Add another</a>
-    </p>
+    </div>
+  </fieldset>
+ <!-- form-grouo -->
 
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- fitnote -->
 
@@ -73,8 +72,8 @@
 
   <div><!-- govuk-grid-column-two-thirds -->
   <div class="govuk-grid-column-one-third">
-    
-  </div> <!-- govuk-grid-column-one-third -->   
+
+  </div> <!-- govuk-grid-column-one-third -->
 <div><!-- govuk-grid-row -->
 
 {% endblock %}
