@@ -5,33 +5,30 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="work-hours">
+    <form id="form" method="post" action="work-self-emp-sick">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Are you currently employed even if you are not working at the moment?
+      Are you working at the moment?
     </h1>
-    <span id="special-rules-hint" class="govuk-hint">
-    If you have more than one job you will be asked about this later.
-    </span>
 
     <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="employed">
+          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="in_paid_work">
           <label class="govuk-label govuk-radios__label" for="work-1">
-            Yes, I am currently employed
+            Yes, I'm doing some work
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="not_employed" aria-controls="no-reveal">
+          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no_work" aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="work-3">
-            No, I am not employed
+            No, I'm off sick
           </label>
         </div>
       </div>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-hours -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-self-emp-sick -->
 
     </form>
 
@@ -56,11 +53,11 @@
       // of the <form> and then allow it to submit.
     	switch($('input[name="work"]:checked').val())
       {
-    		case 'employed':
-    	    $('#form').attr('action','worksick');
+    		case 'in_paid_work':
+    	    $('#form').attr('action','work-self-emp-1');
     		  break;
-        case 'not_employed':
-    	    $('#form').attr('action','statutory-pay');
+        case 'no_work':
+    	    $('#form').attr('action','work-self-emp-sick-1');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

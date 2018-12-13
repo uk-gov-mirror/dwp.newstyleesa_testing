@@ -5,12 +5,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="work-supported">
+    <form id="form" method="post" action="work-hours">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
     Employment details
     </h1>
 
+    <input type="hidden" value="" name="employer-details" id="employer-details-hidden"/>
     <div class="govuk-form-group">
     <label class="govuk-label" for="job-title">
     Job title
@@ -21,7 +22,7 @@
     <label class="govuk-label" for="employer">
     Employer name
     </label>
-    <input class="govuk-input govuk-!-width-one-half" id="employer" name="employer" type="text">
+    <input class="govuk-input govuk-!-width-one-half" id="employer-details-name" name="employer-details-1" type="text">
     </div>
     <div class="govuk-form-group">
     <label class="govuk-label" for="telephone">
@@ -70,3 +71,40 @@
   <div><!-- govuk-grid-column-two-thirds -->
 <div><!-- govuk-grid-row -->
 {% endblock %}
+
+
+{% block pageScripts %}
+<!--
+  Using jQuery to branch the page flow based on which radio buttons are checked.
+-->
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+
+    // grab the existing data from the session (if it is there)
+    var session_data = "{{ data['employer-details'] }}" ;
+    // put it in log
+    console.log(session_data);
+
+
+    // whemn button is clicked
+    $('#formbutton').on('click',function(e)
+    {
+      // don't submit the form
+      e.preventDefault();
+      // grab what was typed into the name box.
+      var name = $('#employer-details-name').val();
+      // add that to the existing session data
+      var new_session_data = (session_data) ? session_data + ',' + name : name;
+      // put this new data back into the form (hidden)
+      $('#employer-details-hidden').val(new_session_data);
+      // submit the form as usual
+      $("#form").submit();
+    })
+  });
+</script>
+
+
+
+{% endblock %}
+
