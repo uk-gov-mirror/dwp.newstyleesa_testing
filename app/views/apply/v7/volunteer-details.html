@@ -11,21 +11,21 @@
       Voluntary work details
     </h1>
 
-    <input type="hidden" value="" name="organisation" id="organisation-hidden"/>
+    <input type="hidden" value="" name="voluntary-organisation" id="organisation-hidden"/>
 
     <fieldset class="govuk-fieldset">
       <div class="govuk-form-group">
       <label class="govuk-label" for="role">
       Role
       </label>
-      <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+      <input class="govuk-input govuk-!-width-one-half" id="role" name="role" type="text">
     </div> <!-- form-group -->
 
       <div class="govuk-form-group">
       <label class="govuk-label" for="organisation-name">
       Organisation name
       </label>
-      <input class="govuk-input govuk-!-width-one-half" id="organisation" name="organisation-1" type="text">
+      <input class="govuk-input govuk-!-width-one-half" id="organisation-name" name="organisation-1" type="text">
     </div> <!-- form-group-->
 
     <div class="govuk-form-group">
@@ -66,7 +66,7 @@
   </fieldset>
  <!-- form-grouo -->
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- fitnote -->
+    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- fitnote -->
 
     </form>
 
@@ -75,5 +75,40 @@
 
   </div> <!-- govuk-grid-column-one-third -->
 <div><!-- govuk-grid-row -->
+
+{% endblock %}
+
+{% block pageScripts %}
+<!--
+  Using jQuery to branch the page flow based on which radio buttons are checked.
+-->
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+
+    // grab the existing data from the session (if it is there)
+    var session_data = "{{ data['voluntary-organisation'] }}" ;
+    // put it in log
+    console.log(session_data);
+
+
+    // when button is clicked
+    $('#formbutton').on('click',function(e)
+    {
+      // don't submit the form
+      e.preventDefault();
+      // grab what was typed into the name box.
+      var name = $('#organisation-name').val();
+      // add that to the existing session data
+      var new_session_data = (session_data) ? session_data + ',' + name : name;
+      // put this new data back into the form (hidden)
+      $('#organisation-hidden').val(new_session_data);
+      // submit the form as usual
+      $("#form").submit();
+    })
+  });
+</script>
+
+
 
 {% endblock %}
