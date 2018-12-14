@@ -2,16 +2,18 @@
 
 {% block content %}
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="work-hours">
+    <form id="form" method="post" action="work-self-emp">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
     Employment details
     </h1>
 
     <input type="hidden" value="" name="employer-details" id="employer-details-hidden"/>
+
     <div class="govuk-form-group">
     <label class="govuk-label" for="job-title">
     Job title
@@ -19,7 +21,7 @@
     <input class="govuk-input govuk-!-width-one-half" id="job-title" name="job-title" type="text">
     </div>
     <div class="govuk-form-group">
-    <label class="govuk-label" for="employer">
+    <label class="govuk-label" for="employer-details-name">
     Employer name
     </label>
     <input class="govuk-input govuk-!-width-one-half" id="employer-details-name" name="employer-details-1" type="text">
@@ -64,7 +66,7 @@
     <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
   </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-supported -->
+    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- work-self-emp -->
 
     </form>
 
