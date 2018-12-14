@@ -8,21 +8,24 @@
     <form id="form" method="post" action="work-hours">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Do you have more than one job?
+      Are you currently employed even if you are not working at the moment?
     </h1>
+    <span id="special-rules-hint" class="govuk-hint">
+    If you have more than one job you will be asked about this later.
+    </span>
 
     <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="more_than_one">
+          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="employed">
           <label class="govuk-label govuk-radios__label" for="work-1">
-            Yes, I have more than one job
+            Yes, I am currently employed
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="only_one" aria-controls="no-reveal">
+          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="not_employed" aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="work-3">
-            No, I have only one job
+            No, I am not employed
           </label>
         </div>
       </div>
@@ -53,11 +56,11 @@
       // of the <form> and then allow it to submit.
     	switch($('input[name="work"]:checked').val())
       {
-    		case 'more_than_one':
-    	    $('#form').attr('action','work-more-than-one');
-    		  break;
-        case 'only_one':
+    		case 'employed':
     	    $('#form').attr('action','worksick');
+    		  break;
+        case 'not_employed':
+    	    $('#form').attr('action','statutory-pay');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

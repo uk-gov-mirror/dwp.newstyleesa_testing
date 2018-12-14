@@ -5,12 +5,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="statutory-apy">
+    <form id="form" method="post" action="statutory-pay">
       <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Do you get paid for any expenses?
+            Do you get paid for any expenses from {{ data['employer-details'] | split(',') | last }}?
           </h1>
         </legend>
         <div class="govuk-radios">
@@ -59,7 +59,7 @@
       	    $('#form').attr('action','expenses-details');
       		  break;
           case 'no':
-      	    $('#form').attr('action','statutory-pay');
+      	    $('#form').attr('action','work-another');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;

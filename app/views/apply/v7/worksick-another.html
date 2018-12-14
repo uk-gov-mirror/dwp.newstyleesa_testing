@@ -8,7 +8,7 @@
     <form id="form" method="post" action="work-self-emp-sick">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Are you working at the moment?
+      Are you working at the moment for this additional job?
     </h1>
 
     <div class="govuk-form-group">
@@ -54,7 +54,7 @@
     	switch($('input[name="work"]:checked').val())
       {
     		case 'in_paid_work':
-    	    $('#form').attr('action','work-self-emp');
+    	    $('#form').attr('action','work-emp-details');
     		  break;
         case 'no_work':
     	    $('#form').attr('action','work-emp-details-sick');

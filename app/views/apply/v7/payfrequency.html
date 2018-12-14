@@ -5,12 +5,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="expenses">
+    <form id="form" method="post" action="work-supported">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              How often are you paid?
+              How often are you paid at {{ data['employer-details'] | split(',') | last }}?
             </h1>
           </legend>
 
