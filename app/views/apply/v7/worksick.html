@@ -8,21 +8,21 @@
     <form id="form" method="post" action="work-self-emp-sick">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Are you working at the moment?
+      Are you off sick from your job at {{ data['employer-details'] | split(',') | last }}?
     </h1>
 
     <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="in_paid_work">
+          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="off-sick">
           <label class="govuk-label govuk-radios__label" for="work-1">
-            Yes, I'm doing some work
+            Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no_work" aria-controls="no-reveal">
+          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="not-sick" aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="work-3">
-            No, I'm off sick
+            No
           </label>
         </div>
       </div>
@@ -53,11 +53,16 @@
       // of the <form> and then allow it to submit.
     	switch($('input[name="work"]:checked').val())
       {
+
     		case 'in_paid_work':
     	    $('#form').attr('action','work-emp-details');
+
+    		case 'off-sick':
+    	    $('#form').attr('action','last-work');
+
     		  break;
-        case 'no_work':
-    	    $('#form').attr('action','work-emp-details-sick');
+        case 'not-sick':
+    	    $('#form').attr('action','work-self-emp');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

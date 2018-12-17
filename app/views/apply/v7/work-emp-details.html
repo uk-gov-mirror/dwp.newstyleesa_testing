@@ -6,12 +6,14 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="work-self-emp">
+    <form id="form" method="post" action="worksick">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
     Employment details
     </h1>
-
+    <span id="special-rules-hint" class="govuk-hint">
+    If you have more than one job, you will be asked about your other jobs later.
+  </span>
     <input type="hidden" value="" name="employer-details" id="employer-details-hidden"/>
 
     <div class="govuk-form-group">
@@ -109,4 +111,3 @@
 
 
 {% endblock %}
-

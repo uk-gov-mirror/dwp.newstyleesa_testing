@@ -5,33 +5,45 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="work-director-sick">
+    <form id="form" method="post" action="work-another">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Are you self-employed?
-    </h1>
-  
-    <div class="govuk-form-group">
-      <div class="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="in_paid_work">
-          <label class="govuk-label govuk-radios__label" for="work-1">
-            Yes, I'm self-employed
-          </label>
+      <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="self-emp-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            What is your employment status at {{ data['employer-details'] | split(',') | last }}?
+          </h1>
+        </legend>
+        <span id="waste-hint" class="govuk-hint">
+          Select all that apply.
+        </span>
+        <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="self-emp-sick-1" name="employee" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-sick-1">
+              Employee
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="self-emp-sick-2" name="self-employed" type="checkbox" value="mines">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-sick-2">
+              Self-employed
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="self-emp-sick-3" name="sub-contract" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-sick-3">
+              Sub-contractor
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="self-emp-sick-4" name="company-director" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-sick-4">
+              Company director
+            </label>
+          </div>
         </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="in_paid_work">
-          <label class="govuk-label govuk-radios__label" for="work-1">
-            Yes, I'm a sub-contractor
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no_work" aria-controls="no-reveal">
-          <label class="govuk-label govuk-radios__label" for="work-3">
-            No, I am not self-employed
-          </label>
-        </div>
-      </div>
+      </fieldset>
     </div>
 
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-director-sick -->

@@ -2,81 +2,74 @@
 
 {% block content %}
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <form id="form" method="post" action="voluntary-hours">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Voluntary work details
+    Voluntary work details
     </h1>
-
-    <input type="hidden" value="" name="voluntary-organisation" id="organisation-hidden"/>
-
-    <fieldset class="govuk-fieldset">
-      <div class="govuk-form-group">
-      <label class="govuk-label" for="role">
-      Role
-      </label>
-      <input class="govuk-input govuk-!-width-one-half" id="role" name="role" type="text">
-    </div> <!-- form-group -->
-
-      <div class="govuk-form-group">
-      <label class="govuk-label" for="organisation-name">
-      Organisation name
-      </label>
-      <input class="govuk-input govuk-!-width-one-half" id="organisation-name" name="organisation-1" type="text">
-    </div> <!-- form-group-->
+    <span id="special-rules-hint" class="govuk-hint">
+    If you volunteer at more than one place, you will be asked about your other roles later.
+  </span>
+    <input type="hidden" value="" name="voluntary-work-details" id="volunteer-details-hidden"/>
 
     <div class="govuk-form-group">
-      <label class="govuk-label" for="address-line-1">
-      Organisation address
-      <span class="govuk-visually-hidden">line 1 of 2</span>
-      </label>
-      <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
-    </div> <!-- form-group -->
-
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="address-line-2">
-      <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
-      </label>
-      <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
-    </div> <!-- form-group -->
-
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="address-town">
-        Town or city
-      </label>
-      <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
-    </div> <!-- form-group -->
-
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="address-county">
-        County
-      </label>
-      <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
-    </div> <!-- form-group -->
-
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="address-postcode">
-        Postcode
-      </label>
-      <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+    <label class="govuk-label" for="volunteer-organisation-name">
+    Organisation name
+    </label>
+    <input class="govuk-input govuk-!-width-one-half" id="volunteer-organisation-name" name="volunteer-details-1" type="text">
     </div>
-  </fieldset>
- <!-- form-grouo -->
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="job-title">
+    Role
+    </label>
+    <input class="govuk-input govuk-!-width-one-half" id="job-title" name="job-title" type="text">
+    </div>
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="address-line-1">
+    Organisation address
+    <span class="govuk-visually-hidden">line 1 of 2</span>
+    </label>
+    <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+    </div>
+    <div class="govuk-form-group">
+    <label class="govuk-label" for="address-line-2">
+    <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+    </label>
+    <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
+    </div>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-town">
+      Town or city
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+  </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- fitnote -->
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-county">
+      County
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-postcode">
+      Postcode
+    </label>
+    <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+  </div>
+
+    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- work-self-emp -->
 
     </form>
 
   <div><!-- govuk-grid-column-two-thirds -->
-  <div class="govuk-grid-column-one-third">
-
-  </div> <!-- govuk-grid-column-one-third -->
 <div><!-- govuk-grid-row -->
-
 {% endblock %}
+
 
 {% block pageScripts %}
 <!--
@@ -87,22 +80,22 @@
   {
 
     // grab the existing data from the session (if it is there)
-    var session_data = "{{ data['voluntary-organisation'] }}" ;
+    var session_data = "{{ data['voluntary-work-details'] }}" ;
     // put it in log
     console.log(session_data);
 
 
-    // when button is clicked
+    // whemn button is clicked
     $('#formbutton').on('click',function(e)
     {
       // don't submit the form
       e.preventDefault();
       // grab what was typed into the name box.
-      var name = $('#organisation-name').val();
+      var name = $('#volunteer-organisation-name').val();
       // add that to the existing session data
       var new_session_data = (session_data) ? session_data + ',' + name : name;
       // put this new data back into the form (hidden)
-      $('#organisation-hidden').val(new_session_data);
+      $('#volunteer-details-hidden').val(new_session_data);
       // submit the form as usual
       $("#form").submit();
     })
