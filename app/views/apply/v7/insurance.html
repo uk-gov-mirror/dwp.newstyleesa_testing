@@ -5,7 +5,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="consent">
+    <form id="form" method="post" action="insurance-detail">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -26,22 +26,6 @@
               Yes
             </label>
           </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="yes-cond">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="pension-provider">
-                  Policy provider
-                  <span class="govuk-visually-hidden">line 1 of 2</span>
-                </label>
-                <input class="govuk-input govuk-!-width-one-half" id="pension-provider" name="pension-provider" type="text">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="pension-reference-number">
-                  Policy reference number
-                  <span class="govuk-visually-hidden">line 1 of 2</span>
-                </label>
-                <input class="govuk-input govuk-!-width-one-half" id="pension-reference-number" name="pension-reference-number" type="text">
-              </div>
-          </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="changed-name-2">
@@ -52,7 +36,7 @@
       </fieldset>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- consent -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- insurance-detail -->
 
     </form>
 
@@ -75,7 +59,7 @@
       	switch($('input[name="changed-name"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','insurancepremiums');
+      	    $('#form').attr('action','insurance-detail');
       		  break;
           case 'no':
       	    $('#form').attr('action','consent');
