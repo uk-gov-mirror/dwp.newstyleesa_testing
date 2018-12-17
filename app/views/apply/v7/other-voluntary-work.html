@@ -13,13 +13,10 @@
             <h2 class="govuk-fieldset__heading">You have added details for: </h2>
               <ul class="govuk-list govuk-heading-l">
 
-                {% for item in data['volunteer-organisation-name'] | split(',') %}
+                {% for item in data['volunteer-details'] | split(',') %}
                   <li>{{ item }}</li>
                 {% endfor %}
-                {% for item in data['volunteer-organisation-name'] | split(',') %}
-                  <li>{{ item }}</li>
-                {% endfor %}
-
+               
             </ul>
 
           </legend>
@@ -73,13 +70,13 @@
       // depending on the value="" of the <input>
       // that's been checked, change the action=""
       // of the <form> and then allow it to submit.
-    	switch($('input[name="work"]:checked').val())
+    	switch($('input[name="voluntary"]:checked').val())
       {
     		case 'yes':
-    	    $('#form').attr('action','volunteer-details');
+    	    $('#form').attr('action','voluntary-details');
     		  break;
         case 'no':
-    	    $('#form').attr('action','current-work');
+    	    $('#form').attr('action','work');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

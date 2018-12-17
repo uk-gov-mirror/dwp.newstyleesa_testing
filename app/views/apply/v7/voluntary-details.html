@@ -14,13 +14,14 @@
     <span id="special-rules-hint" class="govuk-hint">
     If you volunteer at more than one place, you will be asked about your other roles later.
   </span>
-    <input type="hidden" value="" name="voluntary-work-details" id="volunteer-details-hidden"/>
+
+    <input type="hidden" value="" name="volunteer-details" id="volunteer-details-hidden"/>
 
     <div class="govuk-form-group">
-    <label class="govuk-label" for="volunteer-organisation-name">
+    <label class="govuk-label" for="volunteer-details-name">
     Organisation name
     </label>
-    <input class="govuk-input govuk-!-width-one-half" id="volunteer-organisation-name" name="volunteer-details-1" type="text">
+    <input class="govuk-input govuk-!-width-one-half" id="volunteer-details-name" name="volunteer-details-1" type="text">
     </div>
     <div class="govuk-form-group">
     <label class="govuk-label" for="job-title">
@@ -80,7 +81,7 @@
   {
 
     // grab the existing data from the session (if it is there)
-    var session_data = "{{ data['voluntary-work-details'] }}" ;
+    var session_data = "{{ data['volunteer-details'] }}" ;
     // put it in log
     console.log(session_data);
 
@@ -91,7 +92,7 @@
       // don't submit the form
       e.preventDefault();
       // grab what was typed into the name box.
-      var name = $('#volunteer-organisation-name').val();
+      var name = $('#volunteer-details-name').val();
       // add that to the existing session data
       var new_session_data = (session_data) ? session_data + ',' + name : name;
       // put this new data back into the form (hidden)
