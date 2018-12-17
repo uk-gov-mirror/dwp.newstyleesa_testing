@@ -5,12 +5,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="work-director">
+    <form id="form" method="post" action="work-hours">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Are you self-employed?
+      Are you self-employed at {{ data['employer-details'] | split(',') | last }}?
     </h1>
-  
+
     <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
@@ -28,7 +28,7 @@
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no_work" aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="work-3">
-            No, I am not self-employed
+            No, I'm an employee
           </label>
         </div>
       </div>

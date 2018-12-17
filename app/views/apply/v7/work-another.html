@@ -9,9 +9,9 @@
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h2 class="govuk-fieldset__heading">You have added details for: </h2>
-            <ul class="govuk-list">
+            <ul class="govuk-list govuk-heading-l">
 
               {% for item in data['employer-details'] | split(',') %}
                 <li>{{ item }}</li>
@@ -27,7 +27,7 @@
      <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Are you doing any other paid work?
+          Do you want to add another job?
           </h1>
         </legend>
 
@@ -73,7 +73,7 @@
     	switch($('input[name="pension"]:checked').val())
       {
     		case 'yes':
-    	    $('#form').attr('action','worksick-another');
+    	    $('#form').attr('action','work-emp-details');
     		  break;
         case 'no':
     	    $('#form').attr('action','statutory-pay');
