@@ -53,8 +53,10 @@
       // of the <form> and then allow it to submit.
     	switch($('input[name="work"]:checked').val())
       {
+
     		case 'off-sick':
     	    $('#form').attr('action','last-work');
+
     		  break;
         case 'not-sick':
     	    $('#form').attr('action','work-self-emp');

@@ -11,9 +11,14 @@
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Did you inherit your pension from {{ data['pension-provider'] | split(',') | last }}?
+            Was the {{ data['pension-provider'] | split(',') | last }} pension left to you by someone who has died?
           </h1>
         </legend>
+
+        <span id="dob-hint" class="govuk-hint">
+		      This is also know as an inherited pension.
+		    </span>
+
         <div class="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="england">

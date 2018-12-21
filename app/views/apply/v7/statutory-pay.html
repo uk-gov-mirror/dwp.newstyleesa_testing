@@ -14,6 +14,11 @@
             Are you getting Statutory Sick Pay?
           </h1>
         </legend>
+
+        <span id="dob-hint" class="govuk-hint">
+		      Your employer or accountant can tell you this.
+		    </span>
+        
         <div class="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="statutory-pay-1" name="statutory-pay" type="radio" value="yes">
@@ -57,10 +62,10 @@
       switch($('input[name="statutory-pay"]:checked').val())
       {
         case 'yes':
-          $('#form').attr('action','sickpay-end');
+          $('#form').attr('action','statutory-pay-end');
           break;
         case 'no':
-          $('#form').attr('action','stat-pay-recent');
+          $('#form').attr('action','statutory-pay-recent');
           break;
 
         // if nothing is ticked don't submit the form.
