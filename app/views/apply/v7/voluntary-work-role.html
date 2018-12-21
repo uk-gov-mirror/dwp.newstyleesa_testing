@@ -6,20 +6,16 @@
   <div class="govuk-grid-column-two-thirds">
 
         <div class="govuk-form-group">
-    <form id="form" method="post" action="work-another">
+    <form id="form" method="post" action="voluntary-hours">
+
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
         <h1 class="govuk-fieldset__heading">
-        What are the expenses for and how much do you get?
+        What do you do at {{ data['voluntary-work-details'] | split(',') | last }}?
         </h1>
         </legend>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="more-detail">
-          Provide as much information as you can.
-          </label>
-          <div>
             <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
 
