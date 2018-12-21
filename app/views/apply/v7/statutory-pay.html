@@ -62,10 +62,10 @@
       switch($('input[name="statutory-pay"]:checked').val())
       {
         case 'yes':
-          $('#form').attr('action','sickpay-end');
+          $('#form').attr('action','statutory-pay-end');
           break;
         case 'no':
-          $('#form').attr('action','stat-pay-recent');
+          $('#form').attr('action','statutory-pay-recent');
           break;
 
         // if nothing is ticked don't submit the form.
