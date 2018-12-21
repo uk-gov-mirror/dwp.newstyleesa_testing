@@ -11,7 +11,7 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Did you pay more than half of the premiums for this policy yourself?
+            Did you pay more than half of the premiums for the {{ data['insurance-provider'] | split(',') | last }} policy yourself?
           </h1>
         </legend>
 
@@ -40,11 +40,11 @@
 <div><!-- govuk-grid-row -->
 {% endblock %}
 
-<!-- {% block pageScripts %} -->
+{% block pageScripts %} 
 <!--
   Using jQuery to branch the page flow based on which radio buttons are checked.
 -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   $(document).on('ready',function()
   {
     // target the #form element
@@ -58,10 +58,10 @@
       switch($('input[name="hospital"]:checked').val())
       {
         case 'yes':
-          $('#form').attr('action','work');
+          $('#form').attr('action','insurance-another');
           break;
         case 'no':
-          $('#form').attr('action','carehome');
+          $('#form').attr('action','insurance-payment');
           break;
         // if nothing is ticked don't submit the form.
         default: return false; break;
@@ -72,4 +72,4 @@
     });
   });
 </script>
-{% endblock %} -->
+{% endblock %}
