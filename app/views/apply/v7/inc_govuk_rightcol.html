@@ -231,3 +231,21 @@
   </ul>
 
 </div>
+
+{% block pageScripts %}
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/node_modules/govuk-frontend/all.js"></script>
+<script src="/public/javascripts/docs.js"></script>
+
+
+<script src="/public/javascripts/auto-store-data.js"></script>
+
+
+
+<script src="/public/javascripts/step-by-step-navigation.js"></script>
+<script type="text/javascript">
+var $element = $('#step-by-step-navigation')
+var stepByStepNavigation = new GOVUK.Modules.StepByStepNavigation()
+stepByStepNavigation.start($element)
+</script>
+{% endblock %}

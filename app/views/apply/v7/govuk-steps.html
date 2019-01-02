@@ -27,12 +27,11 @@
 
       <p>You might be eligible for ‘new style’ ESA if you have a disability or health condition that affects how much you can work.
 
-<div class="app-step-nav__controls"><button aria-expanded="false" class="app-step-nav__button app-step-nav__button--controls js-step-controls-button" aria-controls="step-panel-check-youre-allowed-to-drive-1">Show all</button></div>
 
-  <div id="step-by-step-navigation" data-module="gemstepnav" class="app-step-nav js-hidden " data-id="e01e924b-9c7c-4c71-8241-66a575c2f61f" data-show-text="show" data-hide-text="hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
-    <ol class="app-step-nav__steps">
-      <li class="app-step-nav__step js-step" aria-current="step" data-show id="check-youre-allowed-to-drive" >
-        <div class="app-step-nav__header js-toggle-panel" data-position="1">
+        <div id="step-by-step-navigation" class="app-step-nav app-step-nav--large app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
+            <ol class="app-step-nav__steps">
+              <li class="app-step-nav__step js-step" id="check-youre-allowed-to-drive" >
+                <div class="app-step-nav__header js-toggle-panel" data-position="1">
           <h2 class="govuk-heading-m">
             <span class="app-step-nav__circle app-step-nav__circle--number">
               <span class="app-step-nav__circle-inner">
@@ -196,7 +195,7 @@
 </li>
 <li class="app-step-nav__step js-step" id="book-and-manage-your-theory-test" >
 <div class="app-step-nav__header js-toggle-panel" data-position="7">
-  <h2 class="govuk-heading-m">
+  <h2 class="app-step-nav__title">
     <span class="app-step-nav__circle app-step-nav__circle--number">
       <span class="app-step-nav__circle-inner">
         <span class="app-step-nav__circle-background">
@@ -252,4 +251,32 @@
 
   <div><!-- govuk-grid-column-two-thirds -->
 <div><!-- govuk-grid-row -->
+{% endblock %}
+{% block pageScripts %}
+<!-- Javascript -->
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/node_modules/govuk-frontend/all.js"></script>
+<script src="/node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js"></script>
+<script src="/public/javascripts/application.js"></script>
+
+
+<script src="/public/javascripts/auto-store-data.js"></script>
+
+
+
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/node_modules/govuk-frontend/all.js"></script>
+<script src="/public/javascripts/docs.js"></script>
+
+
+<script src="/public/javascripts/auto-store-data.js"></script>
+
+
+
+<script src="/public/javascripts/step-by-step-navigation.js"></script>
+<script type="text/javascript">
+var $element = $('#step-by-step-navigation')
+var stepByStepNavigation = new GOVUK.Modules.StepByStepNavigation()
+stepByStepNavigation.start($element)
+</script>
 {% endblock %}
