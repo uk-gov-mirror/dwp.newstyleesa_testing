@@ -5,13 +5,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="insurancepremiums">
+    <form id="form" method="post" action="insurance-another">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            What is the amount before deductions from you get from {{ data['insurance-provider'] | split(',') | last }}?
+            How much do you get before deductions from {{ data['insurance-provider'] | split(',') | last }}?
           </h1>
         </legend>
 
