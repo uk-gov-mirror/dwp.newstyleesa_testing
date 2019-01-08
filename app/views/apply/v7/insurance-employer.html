@@ -11,13 +11,9 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Are you getting any payments from a permanent health insurance policy?
+            Did a previous employer pay more than half of the premiums for the {{ data['insurance-provider'] | split(',') | last }} policy?
           </h1>
         </legend>
-
-        <p>
-        Permanent health insurance protects your income if you stop work due to an illness, injury or disability.
-      </p>
 
         <div class="govuk-radios" data-module="radios">
           <div class="govuk-radios__item">
