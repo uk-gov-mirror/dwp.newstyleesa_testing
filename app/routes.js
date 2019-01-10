@@ -10,8 +10,11 @@ var conditions = require('./data/conditions/source/conditions-canonical-list.jso
 var conditionsList = [''];
 
 // Convert map to array of objects
-for (const [text, value] of conditions) {
-  conditionsList.push({ text, value })
+for (const condition of conditions) {
+  conditionsList.push({
+     text: condition, 
+     value: condition.toLowerCase().split(" ").join("-")
+  })
 }
 
 // Data sources
