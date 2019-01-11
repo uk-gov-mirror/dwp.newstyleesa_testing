@@ -1,4 +1,4 @@
-[
+var conditions = [
 	"Stomach cramps",
 	"Abdominal pain",
 	"Stomach pains",
