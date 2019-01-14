@@ -53,10 +53,10 @@
   }
 </style>
 <script>
-document.querySelectorAll('.hidden').forEach(function(e) {
+Array.from(document.querySelectorAll('.hidden')).forEach(function(e) {
   e.classList.remove('hidden');
 })
-document.querySelectorAll('.fallback, .js-hidden, .additional').forEach(function(e) {
+Array.from(document.querySelectorAll('.fallback, .js-hidden, .additional')).forEach(function(e) {
   e.classList.add('hidden');
 })
 
@@ -79,7 +79,7 @@ window.onload = function() {
     if(visible == 12) this.classList.add('hidden');
   });
 
-  document.querySelectorAll('.remove').forEach(function(r){
+  Array.from(document.querySelectorAll('.remove')).forEach(function(r){
     r.addEventListener('click', function(e){
       e.preventDefault();
       visible--;
