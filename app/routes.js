@@ -14,7 +14,7 @@ router.all('/data/:data/source/:source', (req, res) => {
 
 router.get('/*/claimdate', function (req, res, next) {
   console.log('hello')
-  var date = req.session.data['dob-year'] + '-' +req.session.data['dob-month'] + '-' + req.session.data['dob-day'];
+  var date = req.session.data['ssp-dob-year'] + '-' +req.session.data['ssp-dob-month'] + '-' + req.session.data['ssp-dob-day'];
   date = moment(date, 'YYYY-MM-DD');
   date.add(1, 'days');
   res.locals.statDatePlusOne = date.format('DD/MM/YYYY');
