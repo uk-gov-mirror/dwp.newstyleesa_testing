@@ -48,16 +48,19 @@
     		      For example, 07 00 00
     		    </span>
     		        <div class="govuk-form-group">
-    		          <input class="govuk-input govuk-input--width-2 govuk-!-margin-1" id="sortcode-1" name="sortcode-digits-1-and-2" type="number" pattern="[0-9]*">
+                  <input class="govuk-input govuk-input--width-2" id="sortcode-1" name="sortcode-digits-1-and-2" type="text" maxlength="2"> &mdash;
+                  <input class="govuk-input govuk-input--width-2" id="sortcode-2" name="sortcode-digits-3-and-4" type="text" maxlength="2"> &mdash;
+                  <input class="govuk-input govuk-input--width-2" id="sortcode-3" name="sortcode-digits-5-and-6" type="text" maxlength="2">
+    		          <!--<input class="govuk-input govuk-input--width-2 govuk-!-margin-1" id="sortcode-1" name="sortcode-digits-1-and-2" type="number" pattern="[0-9]*">
                   <input class="govuk-input govuk-input--width-2 govuk-!-margin-1" id="sortcode-2" name="sortcode-digits-3-and-4" type="number" pattern="[0-9]*">
-                  <input class="govuk-input govuk-input--width-2 govuk-!-margin-1" id="sortcode-3" name="sortcode-digits-5-and-6" type="number" pattern="[0-9]*">
+                  <input class="govuk-input govuk-input--width-2 govuk-!-margin-1" id="sortcode-3" name="sortcode-digits-5-and-6" type="number" pattern="[0-9]*"> -->
     		        </div>
     		  </fieldset>
           <div class="govuk-form-group">
             <label class="govuk-label" for="pay-account-holder">
               Account number
             </label>
-            <input class="govuk-input govuk-input--width-10" id="pay-account-holder" name="pay-account-holder" type="text">
+            <input class="govuk-input govuk-input--width-10" id="pay-account-holder" name="pay-account-holder" type="text" maxlength="8">
           </div>
 
           <div class="govuk-form-group">
