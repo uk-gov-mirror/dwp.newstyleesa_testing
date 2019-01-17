@@ -22,6 +22,16 @@ router.get('/*/claimdate', function (req, res, next) {
   next();
 })
 
+router.get('/*/claimdate', function (req, res, next) {
+  console.log('hello')
+  var date = req.session.data['ssp-recent-dob-year'] + '-' +req.session.data['ssp-recent-dob-month'] + '-' + req.session.data['ssp-recent-dob-day'];
+  date = moment(date, 'YYYY-MM-DD');
+  date.add(1, 'days');
+  res.locals.statDatePlusOne = date.format('DD/MM/YYYY');
+  console.log(date)
+  next();
+})
+
 // Page routing
 router.get('*', function (req, res, next) {
   if (req.params[0].substr(-1) == '/') res.locals.path = req.params[0].slice(0,-1).substr(1);
