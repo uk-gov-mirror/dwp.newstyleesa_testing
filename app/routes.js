@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const moment = require('moment');
 
 // Add your routes here - above the module.exports line
 
@@ -9,6 +10,16 @@ var path = require('path')
 router.all('/data/:data/source/:source', (req, res) => {
   const { data, source } = req.params
   res.json(require(`./data/${data}/source/${source}`))
+})
+
+router.get('/*/claimdate', function (req, res, next) {
+  console.log('hello')
+  var date = req.session.data['dob-year'] + '-' +req.session.data['dob-month'] + '-' + req.session.data['dob-day'];
+  date = moment(date, 'YYYY-MM-DD');
+  date.add(1, 'days');
+  res.locals.statDatePlusOne = date.format('DD/MM/YYYY');
+  console.log(date)
+  next();
 })
 
 // Page routing
