@@ -14,13 +14,13 @@
     <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="off-sick">
+          <input class="govuk-radios__input" id="work-1" name="offSick" type="radio" value="yes">
           <label class="govuk-label govuk-radios__label" for="work-1">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="not-sick" aria-controls="no-reveal">
+          <input class="govuk-radios__input" id="work-3" name="offSick" type="radio" value="no" aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="work-3">
             No
           </label>
@@ -51,14 +51,14 @@
       // depending on the value="" of the <input>
       // that's been checked, change the action=""
       // of the <form> and then allow it to submit.
-    	switch($('input[name="work"]:checked').val())
+    	switch($('input[name="offSick"]:checked').val())
       {
 
-    		case 'off-sick':
+    		case 'yes':
     	    $('#form').attr('action','last-work');
 
     		  break;
-        case 'not-sick':
+        case 'no':
     	    $('#form').attr('action','work-self-emp');
     		  break;
         // if nothing is ticked don't submit the form.
