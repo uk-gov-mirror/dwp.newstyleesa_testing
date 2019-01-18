@@ -31,21 +31,21 @@ router.get('/*/claimdate', function (req, res, next) {
     if(req.session.data.offSick == 'yes') {
 
       if(req.session.data['statutory-pay'] == 'yes') {
-        res.locals.sspDatePlusOne = ssp.format('DD/MM/YYYY');
-      }
-
-      if(req.session.data['statutory-pay-recent'] == 'yes') {
-        res.locals.lastWorkDatePlusOne = last.format('DD/MM/YYYY');
+        res.locals.sspDatePlusOne = ssp.format('D MMMM YYYY');
+      } else {
+        if(req.session.data['statutory-pay-recent'] == 'yes') {
+          res.locals.lastWorkDatePlusOne = last.format('D MMMM YYYY');
+        } 
       }
     } else { // still working
 
       if(req.session.data['statutory-pay-recent'] == 'yes') {
-        res.locals.sspRecentDatePlusOne = recent.format('DD/MM/YYYY');
+        res.locals.sspRecentDatePlusOne = recent.format('D MMMM YYYY');
       }
     }
   } else { // not working
     if(req.session.data['statutory-pay-recent'] == 'yes') {
-      res.locals.sspRecentDatePlusOne = recent.format('DD/MM/YYYY');
+      res.locals.sspRecentDatePlusOne = recent.format('D MMMM YYYY');
     }
   }
 
