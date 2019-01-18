@@ -16,13 +16,13 @@
         </legend>
         <div class="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="statutory-pay-1" name="statutory-pay" type="radio" value="yes">
+            <input class="govuk-radios__input" id="statutory-pay-1" name="statutory-pay-recent" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="statutory-pay-1">
              Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="statutory-pay-2" name="statutory-pay" type="radio" value="no">
+            <input class="govuk-radios__input" id="statutory-pay-2" name="statutory-pay-recent" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="statutory-pay-2">
             No
             </label>
@@ -54,7 +54,7 @@
       // depending on the value="" of the <input>
       // that's been checked, change the action=""
       // of the <form> and then allow it to submit.
-      switch($('input[name="statutory-pay"]:checked').val())
+      switch($('input[name="statutory-pay-recent"]:checked').val())
       {
         case 'yes':
           $('#form').attr('action','statutory-pay-recent-end');

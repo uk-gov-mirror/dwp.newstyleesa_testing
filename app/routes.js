@@ -15,32 +15,40 @@ router.all('/data/:data/source/:source', (req, res) => {
 
 // Adding the moment plug in for Claim Date screen
 router.get('/*/claimdate', function (req, res, next) {
-  console.log('hello')
-  var date = req.session.data['ssp-dob-year'] + '-' +req.session.data['ssp-dob-month'] + '-' + req.session.data['ssp-dob-day'];
-  date = moment(date, 'YYYY-MM-DD');
-  date.add(1, 'days');
-  res.locals.statDatePlusOne = date.format('DD/MM/YYYY');
-  console.log(date)
-  next();
-})
+  var ssp = req.session.data['ssp-dob-year'] + '-' +req.session.data['ssp-dob-month'] + '-' + req.session.data['ssp-dob-day'];
+  ssp = moment(ssp, 'YYYY-MM-DD');
+  ssp.add(1, 'days');
+  
+  var recent = req.session.data['ssp-recent-dob-year'] + '-' +req.session.data['ssp-recent-dob-month'] + '-' + req.session.data['ssp-recent-dob-day'];
+  recent = moment(recent, 'YYYY-MM-DD');
+  recent.add(1, 'days');
+  
+  var last = req.session.data['last-dob-year'] + '-' +req.session.data['last-dob-month'] + '-' + req.session.data['last-dob-day'];
+  last = moment(last, 'YYYY-MM-DD');
+  last.add(1, 'days');
+  
+  if(req.session.data.work == 'employed') {
+    if(req.session.data.offSick == 'yes') {
 
-router.get('/*/claimdate', function (req, res, next) {
-  console.log('hello')
-  var date = req.session.data['ssp-recent-dob-year'] + '-' +req.session.data['ssp-recent-dob-month'] + '-' + req.session.data['ssp-recent-dob-day'];
-  date = moment(date, 'YYYY-MM-DD');
-  date.add(1, 'days');
-  res.locals.statDatePlusOne = date.format('DD/MM/YYYY');
-  console.log(date)
-  next();
-})
+      if(req.session.data['statutory-pay'] == 'yes') {
+        res.locals.sspDatePlusOne = ssp.format('DD/MM/YYYY');
+      }
 
-router.get('/*/claimdate', function (req, res, next) {
-  console.log('hello')
-  var date = req.session.data['last-dob-year'] + '-' +req.session.data['last-dob-month'] + '-' + req.session.data['last-dob-day'];
-  date = moment(date, 'YYYY-MM-DD');
-  date.add(1, 'days');
-  res.locals.statDatePlusOne = date.format('DD/MM/YYYY');
-  console.log(date)
+      if(req.session.data['statutory-pay-recent'] == 'yes') {
+        res.locals.lastWorkDatePlusOne = last.format('DD/MM/YYYY');
+      }
+    } else { // still working
+
+      if(req.session.data['statutory-pay-recent'] == 'yes') {
+        res.locals.sspRecentDatePlusOne = recent.format('DD/MM/YYYY');
+      }
+    }
+  } else { // not working
+    if(req.session.data['statutory-pay-recent'] == 'yes') {
+      res.locals.sspRecentDatePlusOne = recent.format('DD/MM/YYYY');
+    }
+  }
+
   next();
 })
 
