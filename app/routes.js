@@ -12,6 +12,8 @@ router.all('/data/:data/source/:source', (req, res) => {
   res.json(require(`./data/${data}/source/${source}`))
 })
 
+
+// Adding the moment plug in for Claim Date screen
 router.get('/*/claimdate', function (req, res, next) {
   console.log('hello')
   var date = req.session.data['ssp-dob-year'] + '-' +req.session.data['ssp-dob-month'] + '-' + req.session.data['ssp-dob-day'];
@@ -25,6 +27,16 @@ router.get('/*/claimdate', function (req, res, next) {
 router.get('/*/claimdate', function (req, res, next) {
   console.log('hello')
   var date = req.session.data['ssp-recent-dob-year'] + '-' +req.session.data['ssp-recent-dob-month'] + '-' + req.session.data['ssp-recent-dob-day'];
+  date = moment(date, 'YYYY-MM-DD');
+  date.add(1, 'days');
+  res.locals.statDatePlusOne = date.format('DD/MM/YYYY');
+  console.log(date)
+  next();
+})
+
+router.get('/*/claimdate', function (req, res, next) {
+  console.log('hello')
+  var date = req.session.data['last-dob-year'] + '-' +req.session.data['last-dob-month'] + '-' + req.session.data['last-dob-day'];
   date = moment(date, 'YYYY-MM-DD');
   date.add(1, 'days');
   res.locals.statDatePlusOne = date.format('DD/MM/YYYY');
