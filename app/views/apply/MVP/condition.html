@@ -28,13 +28,23 @@
             <div id="conditions-{{ i }}"></div>
           </div>
 
-          {{ govukInput({
-            label: {
-              text: "When it started"
+          {% from "date-input/macro.njk" import govukDateInput %}
+
+          {{ govukDateInput({
+            id: "dob",
+            namePrefix: "dob",
+            fieldset: {
+              legend: {
+                text: "When it started",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "For example, 31 3 1980"
             },
             id: "conditions-" + i + "-started",
-            name: "conditions-" + i + "-started",
-            classes: "govuk-!-width-two-thirds"
+            name: "conditions-" + i + "-started"
           }) }}
         
           {% if i != 0 %}<p><a data-index="{{ i }}" href="#" class="govuk-link remove hidden">Remove</a></p>{% endif %}
