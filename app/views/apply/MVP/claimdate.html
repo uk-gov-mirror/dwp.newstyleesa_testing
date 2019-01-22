@@ -12,104 +12,46 @@
           <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h1 class="govuk-fieldset__heading">
-                Claim start date
+                What date do you want to claim from?
               </h1>
-              {% if sspDatePlusOne or sspRecentDatePlusOne or lastWorkDatePlusOne %}
-              <p>Based on your answers you can claim from:</p>
-              {% endif %}
             </legend>
-            
-            {% if sspDatePlusOne %}
-            <h2 class="govuk-heading-l">
-              {{ sspDatePlusOne }}
-              <p>This is the day after you will stop getting Statutory Sick Pay</p>
-            </h2>
-            {% endif %}
-
-            {% if sspRecentDatePlusOne %}
-            <h2 class="govuk-heading-l">
-              {{ sspRecentDatePlusOne }}
-              <p>This is the day after your Statutory Sick Pay stopped</p>
-            </h2>
-            
-            {% endif %}
-
-            {% if lastWorkDatePlusOne %}
-            <h2 class="govuk-heading-l">
-              {{ lastWorkDatePlusOne }}
-              <p>This is the day after your last day worked</p>
-            </h2>
-            {% endif %}
-
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading">
-                      Do you want to claim from a different date?
-                    </h1>
-                    <p>You can claim from:</p>
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li>todays date</li>
-                        <li>the day after your Statutory Sick Pay ends</li>
-                        <li>the day after your last day at work, if you're off sick and not currenty getting Statutory Sick Pay</li>
-                        <li>a date up to 3 months ago as long as you have fit notes (you may know these as sick notes) to cover that period</li>
-                      </ul>
-                  </legend>
-                  
-                  <div class="govuk-radios govuk-radios--conditional" data-module="radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
-                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
-                        Yes
-                      </label>
-                    </div>
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label" for="contact-by-email">
-                          Date you want to claim from
-                        </label>
+            <p>You can claim from:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the day after your Statutory Sick Pay finishes</li>
+            <li>a date up to 3 months ago if you have fit notes to cover that period</li>
+            </ul>
+            <p>This date will be confirmed with you to make sure you're getting the money you're entitled to.</p>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+                    <div class="govuk-date-input" id="dob">
+                      <div class="govuk-date-input__item">
                         <div class="govuk-form-group">
-                          <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
-                            <div class="govuk-date-input" id="dob">
-                              <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                  <label class="govuk-label govuk-date-input__label" for="dob-day">
-                                    Day
-                                  </label>
-                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
-                                </div>
-                              </div>
-                              <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                  <label class="govuk-label govuk-date-input__label" for="dob-month">
-                                    Month
-                                  </label>
-                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
-                                </div>
-                              </div>
-                              <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                  <label class="govuk-label govuk-date-input__label" for="dob-year">
-                                    Year
-                                  </label>
-                                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
-                                </div>
-                              </div>
-                            </div>
-                          </fieldset>
+                          <label class="govuk-label govuk-date-input__label" for="dob-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
                         </div>
                       </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
 
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
-                      <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                        No
-                      </label>
-                    </div>
-                   
-                </fieldset>
-            </div>
 
             </div>
           </fieldset>
