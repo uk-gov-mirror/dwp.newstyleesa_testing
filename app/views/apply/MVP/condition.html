@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="pregnant">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        What are the names of the conditions, illnesses, or injuries you have?
+      </h1>
+      <p class="govuk-hint js-hidden">Enter as many as you have<p>
+      {% for i in range(0, 12) %}
+        
+        <div id="block-{{ i }}" class="{{ 'additional' if i != 0 }}">
+          <div class="fallback">
+            {{ govukInput({
+              label: {
+                text: "Name of condition"
+              },
+              id: "fallback",
+              name: "fallback"
+            }) }}
+          </div>
+          
+          <div class="govuk-form-group hidden autocomplete">
+            <label for="conditions-{{ i }}-name" class="govuk-label">Name of condition</label>
+            <div id="conditions-{{ i }}"></div>
+          </div>
+
+          {{ govukInput({
+            label: {
+              text: "When it started"
+            },
+            id: "conditions-" + i + "-started",
+            name: "conditions-" + i + "-started",
+            classes: "govuk-!-width-two-thirds"
+          }) }}
+        
+          {% if i != 0 %}<p><a data-index="{{ i }}" href="#" class="govuk-link remove hidden">Remove</a></p>{% endif %}
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        </div>
+      
+      {% endfor %}
+      <p><a id="add-another" href="#" class="govuk-link hidden">Add another condition</a></p>
+      <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- pregnant -->
+    </form>
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
+<script>
+Array.prototype.slice.call(document.querySelectorAll('.hidden')).forEach(function(e) {
+  e.classList.remove('hidden');
+})
+Array.prototype.slice.call(document.querySelectorAll('.fallback, .js-hidden, .additional')).forEach(function(e) {
+  e.classList.add('hidden');
+})
+
+{% include '../../includes/conditions-canonical-list.js' %}
+
+window.onload = function() {
+  for (var i = 0; i < 12; i++) {
+    accessibleAutocomplete({
+      element: document.querySelector('#conditions-' + i),
+      id: 'conditions-' + i + '-name',
+      source: conditions
+    })
+  }
+  var visible = 1;
+  document.querySelector('#add-another').addEventListener('click', function(e){
+    e.preventDefault();
+    document.querySelector('#block-'+visible).classList.remove('hidden');
+    visible++;
+    this.blur();
+    if(visible == 12) this.classList.add('hidden');
+  });
+
+  Array.prototype.slice.call(document.querySelectorAll('.remove')).forEach(function(r){
+    r.addEventListener('click', function(e){
+      e.preventDefault();
+      visible--;
+      this.blur();
+      var values = $('.additional').map(function(a){
+        return {
+          name: $('#conditions-'+(a+1)+'-name').val(),
+          started: $('#conditions-'+(a+1)+'-started').val()
+        }
+      })
+      values.splice(this.getAttribute('data-index')-1, 1)
+      for (var i = 1; i <= $('.additional').length; i++) {
+        $('#conditions-'+(i)+'-name').val((values[i-1] ? values[i-1].name : ''));
+        $('#conditions-'+(i)+'-started').val((values[i-1] ? values[i-1].started : ''));
+        if(i > visible-1) document.querySelector('#block-'+i).classList.add('hidden');
+      }
+      values = [];
+      document.querySelector('#add-another').classList.remove('hidden');
+    });
+  });
+}
+</script>
+{% endblock %}
