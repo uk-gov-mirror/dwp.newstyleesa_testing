@@ -18,7 +18,7 @@
               <p>Based on your answers you can claim from:</p>
               {% endif %}
             </legend>
-            
+
             {% if sspDatePlusOne %}
             <h2 class="govuk-heading-l">
               {{ sspDatePlusOne }}
@@ -31,7 +31,7 @@
               {{ sspRecentDatePlusOne }}
               <p>This is the day after your Statutory Sick Pay stopped</p>
             </h2>
-            
+
             {% endif %}
 
             {% if lastWorkDatePlusOne %}
@@ -47,15 +47,14 @@
                     <h1 class="govuk-fieldset__heading">
                       Do you want to claim from a different date?
                     </h1>
-                    <p>You can claim from:</p>
-                      <ul class="govuk-list govuk-list--bullet">
-                        <li>todays date</li>
-                        <li>the day after your Statutory Sick Pay ends</li>
-                        <li>the day after your last day at work, if you're off sick and not currenty getting Statutory Sick Pay</li>
-                        <li>a date up to 3 months ago as long as you have fit notes (you may know these as sick notes) to cover that period</li>
-                      </ul>
                   </legend>
-                  
+                  <p>You can claim from:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>today's date</li>
+                      <li>the day after your Statutory Sick Pay ends</li>
+                      <li>the day after your last day at work, if you're off sick and not currenty getting Statutory Sick Pay</li>
+                      <li>a date up to 3 months ago as long as you have fit notes (you may know these as sick notes) to cover that period</li>
+                    </ul>
                   <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
@@ -107,7 +106,7 @@
                         No
                       </label>
                     </div>
-                   
+
                 </fieldset>
             </div>
 
