@@ -16,23 +16,23 @@
           </legend>
           <div class="govuk-radios govuk-radios--conditional" data-module="radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="hospital-name" data-aria-controls="conditional-how-contacted-conditional-1">
+              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="hospital-current" data-aria-controls="conditional-how-contacted-conditional-1">
               <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="hospital-name">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="hospital-current">
                   Hospital name
                 </label>
-                <input class="govuk-input govuk-!-width-one-third" id="hospital-name" name="hospital-name" type="text">
+                <input class="govuk-input govuk-!-width-one-third" id="hospital-current" name="hospital-current" type="text">
               </div>
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="hospital-ward">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="hospital-ward-current">
                   Ward name or number
                 </label>
-                <input class="govuk-input govuk-!-width-one-third" id="hospital-ward" name="hospital-ward" type="text">
+                <input class="govuk-input govuk-!-width-one-third" id="hospital-ward-current" name="hospital-ward-current" type="text">
               </div>
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
@@ -48,7 +48,7 @@
                         <label class="govuk-label govuk-date-input__label" for="dob-day">
                           Day
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" maxlength="2">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -56,7 +56,7 @@
                         <label class="govuk-label govuk-date-input__label" for="dob-month">
                           Month
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" maxlength="2">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -64,7 +64,7 @@
                         <label class="govuk-label govuk-date-input__label" for="dob-year">
                           Year
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*"maxlength="4">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
                       </div>
                     </div>
                   </div>

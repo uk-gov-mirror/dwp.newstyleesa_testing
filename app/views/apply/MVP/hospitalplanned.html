@@ -16,23 +16,23 @@
           </legend>
           <div class="govuk-radios govuk-radios--conditional" data-module="radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
+              <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="hospital-planned" data-aria-controls="conditional-how-contacted-conditional-1">
               <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
                 Yes, I'm going into hospital in the next 3 months
               </label>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="contact-by-email">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="hospital-planned">
                   Hospital name
                 </label>
-                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email">
+                <input class="govuk-input govuk-!-width-one-third" id="hospital-planned" name="hospital-planned" type="text">
               </div>
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="contact-by-email">
+                <label class="govuk-label govuk-body govuk-!-font-weight-bold" for="hospital-ward-planned">
                   Ward name or number
                 </label>
-                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email">
+                <input class="govuk-input govuk-!-width-one-third" id="hospital-ward-planned" name="hospital-ward-planned" type="text">
               </div>
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
@@ -49,7 +49,7 @@
                         <label class="govuk-label govuk-date-input__label" for="dob-day">
                           Day
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" maxlength="2">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -57,7 +57,7 @@
                         <label class="govuk-label govuk-date-input__label" for="dob-month">
                           Month
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" maxlength="2">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -65,7 +65,7 @@
                         <label class="govuk-label govuk-date-input__label" for="dob-year">
                           Year
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" maxlength="4">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
                       </div>
                     </div>
                   </div>
