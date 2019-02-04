@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="pension-deductions">
+
+    
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              How often do you get your {{ data['pension-provider'] | split(',') | last }} pension paid?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="pension-frequency-1" name="pension-frequency" type="radio" value="weekly">
+              <label class="govuk-label govuk-radios__label" for="pension-frequency-1">
+                Weekly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="pension-frequency-2" name="pension-frequency" type="radio" value="2weeks">
+              <label class="govuk-label govuk-radios__label" for="pension-frequency-2">
+                Every 2 weeks
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="pension-frequency-3" name="pension-frequency" type="radio" value="4weeks">
+              <label class="govuk-label govuk-radios__label" for="pension-frequency-3">
+                Every 4 weeks
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="pension-frequency-4" name="pension-frequency" type="radio" value="monthly">
+              <label class="govuk-label govuk-radios__label" for="pension-frequency-4">
+                Monthly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="pension-frequency-5" name="pension-frequency" type="radio" value="6weeks">
+              <label class="govuk-label govuk-radios__label" for="pension-frequency-5">
+                Every 6 weeks
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="pension-frequency-6" name="pension-frequency" type="radio" value="annual">
+              <label class="govuk-label govuk-radios__label" for="pension-frequency-6">
+                Annually
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="pension-frequency-conditional-1" name="pension-frequency" type="radio" value="text" data-aria-controls="conditional-pension-frequency-conditional-1">
+              <label class="govuk-label govuk-radios__label" for="pension-frequency-conditional-1">
+                Other
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pension-frequency-conditional-1">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="frequency-how-often">
+                  How often
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="frequency-how-often" name="frequency-how-often" type="text">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div> <!-- form-group -->
+
+     
+
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- occ-pension-details -->
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+  {% endblock %}
