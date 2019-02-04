@@ -41,39 +41,45 @@
                 Monthly
               </label>
             </div>
+
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="pension-frequency-5" name="pension-frequency" type="radio" value="6weeks">
               <label class="govuk-label govuk-radios__label" for="pension-frequency-5">
                 Every 6 weeks
               </label>
             </div>
+
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="pension-frequency-6" name="pension-frequency" type="radio" value="annual">
               <label class="govuk-label govuk-radios__label" for="pension-frequency-6">
                 Annually
               </label>
             </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pension-frequency-conditional-1" name="pension-frequency" type="radio" value="text" data-aria-controls="conditional-pension-frequency-conditional-1">
-              <label class="govuk-label govuk-radios__label" for="pension-frequency-conditional-1">
-                Other
-              </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pension-frequency-conditional-1">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="frequency-how-often">
-                  How often
+
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="pension-frequency-conditional-1" name="pension-frequency" type="radio" value="text" data-aria-controls="conditional-pension-frequency-conditional-1">
+                <label class="govuk-label govuk-radios__label" for="pension-frequency-conditional-1">
+                  Other
                 </label>
-                <input class="govuk-input govuk-!-width-one-third" id="frequency-how-often" name="frequency-how-often" type="text">
               </div>
-            </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pension-frequency-conditional-1">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="frequency-how-often">
+                    How often
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="frequency-how-often" name="frequency-how-often" type="text">
+                </div>
+              </div>
+             </div> <!--data-module -->
+              
           </div>
         </fieldset>
       </div> <!-- form-group -->
 
      
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- occ-pension-details -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- pension-deductions -->
 
     </form>
 
