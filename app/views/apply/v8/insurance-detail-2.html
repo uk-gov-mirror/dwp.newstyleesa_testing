@@ -5,13 +5,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="insurance-payment">
+    <form id="form" method="post" action="insurance-premium-half-2">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
       Permanent health insurance details 
     </h1>
 
-    <input type="hidden" value="" name="insurance-provider" id="insurance-provider-hidden"/>
+    <input type="hidden" value="" name="insurance-provider-2" id="insurance-provider-hidden"/>
 
     <fieldset class="govuk-fieldset">
         <div class="govuk-form-group">
@@ -72,7 +72,7 @@
       <button id="add-button" class="govuk-button button-add-another-vertical" onclick="javascript:return false">Add another</button>
     </div> -->
 
-    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- insurnacepremiums -->
+    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- insurnace-premium-half-1 -->
 
     </form>
 
@@ -92,7 +92,7 @@
   {
 
     // grab the existing data from the session (if it is there)
-    var session_data = "{{ data['insurance-provider'] }}" ;
+    var session_data = "{{ data['insurance-provider-2'] }}" ;
     // put it in log
     console.log(session_data);
 
