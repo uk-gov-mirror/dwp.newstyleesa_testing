@@ -5,13 +5,13 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="insurance-detail-2">
+    <form id="form" method="post" action="insurance-detail-1">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            How much was your last permanent health insurance payment from {{ data['insurance-provider-1'] | split(',') | last }}?
+            How much was your last permanent health insurance payment from {{ data['insurance-providers'] | split(',') | last }}?
           </h1>
         </legend>
 
