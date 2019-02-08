@@ -11,21 +11,21 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            How many health insurnace policies to you have?
+            Do you have more than one insurance policy?
           </h1>
         </legend>
 
         <div class="govuk-radios" data-module="radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="one" data-aria-controls="just-one">
+            <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes" data-aria-controls="just-one">
             <label class="govuk-label govuk-radios__label" for="changed-name-1">
-              Just one
+              Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="more">
+            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="changed-name-2">
-              More than one
+              No
             </label>
           </div>
         </div>
@@ -54,11 +54,11 @@
         // of the <form> and then allow it to submit.
       	switch($('input[name="changed-name"]:checked').val())
         {
-      		case 'one':
-      	    $('#form').attr('action','insurance-premium-paid');
-      		  break;
-          case 'more':
+      		case 'yes':
       	    $('#form').attr('action','insurance-detail-1');
+      		  break;
+          case 'no':
+      	    $('#form').attr('action','insurance-premium-paid');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;
