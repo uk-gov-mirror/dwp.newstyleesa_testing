@@ -41,10 +41,10 @@
 {% endblock %}
 
 {% block pageScripts %}
-<!--
-  Using jQuery to branch the page flow based on which radio buttons are checked.
+
+  <!-- Using jQuery to branch the page flow based on which radio buttons are checked.
 -->
-<!-- <script type="text/javascript">
+ <script type="text/javascript">
   $(document).on('ready',function()
   {
     // target the #form element
@@ -58,10 +58,10 @@
       switch($('input[name="hospital"]:checked').val())
       {
         case 'yes':
-          $('#form').attr('action','insurance-another');
+          $('#form').attr('action','insurance-payment');
           break;
         case 'no':
-          $('#form').attr('action','insurance-payment');
+          $('#form').attr('action','insurance-employer');
           break;
         // if nothing is ticked don't submit the form.
         default: return false; break;
@@ -72,4 +72,4 @@
     });
   });
 </script>
-{% endblock %} -->
+{% endblock %}
