@@ -11,7 +11,7 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Did you pay more than half of the permanent health insurance policy premiums yourself?
+            Did you pay more than half of the premiums for this {{ data['insurance-provider-2'] | split(',') | last }} yourself?
           </h1>
         </legend>
 
