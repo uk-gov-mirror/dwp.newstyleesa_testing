@@ -18,7 +18,7 @@
     <fieldset class="govuk-fieldset">
         <div class="govuk-form-group">
           <label class="govuk-label" for="insurance-provider-name">
-            Insurer
+            Insurance company
           </label>
           <input class="govuk-input govuk-!-width-one-half" id="insurance-provider-name" name="tmp" type="text">
         </div>
@@ -30,14 +30,14 @@
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="surgery">
-            Insurer's telephone number
+            Insurance company telephone number
           </label>
           <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-line-1">
-            Insurer's address
+            Insurance company address
             <span class="govuk-visually-hidden">line 1 of 2</span>
           </label>
           <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
@@ -101,7 +101,7 @@
 
     // whemn button is clicked
     $('#formbutton').on('click',function(e)
-    {      
+    {
       // don't submit the form
       e.preventDefault();
       // grab what was typed into the name box.
