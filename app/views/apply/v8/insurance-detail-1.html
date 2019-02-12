@@ -5,39 +5,44 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ data | log }}
-
-    <form id="form" method="post" action="insurance-premium-half-1">
+     <form id="form" method="post" action="insurance-payment">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Policy details
+      Permanent health insurance details 
     </h1>
 
     <input type="hidden" value="" name="insurance-providers" id="insurance-provider-hidden"/>
 
-    <fieldset class="govuk-fieldset">
+   
         <div class="govuk-form-group">
           <label class="govuk-label" for="insurance-provider-name">
-            Insurance company
+            Insurance provider
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="insurance-provider-name" name="tmp" type="text">
+          <input class="govuk-input govuk-!-width-one-half" id="insurance-provider-name" name="insurance-provider-1" type="text">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="surgery">
-            Insurance policy number
+            Insurance reference number
           </label>
           <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="surgery">
-            Insurance company telephone number
+            Insurance provider telephone number
           </label>
           <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
         </div>
 
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h2 class="govuk-fieldset__heading">
+            Insurance provider address
+          </h2>
+        </legend>
+
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-line-1">
-            Insurance company address
+            Building and street
             <span class="govuk-visually-hidden">line 1 of 2</span>
           </label>
           <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
@@ -55,12 +60,12 @@
           <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
         </div>
 
-        <!-- <div class="govuk-form-group">
+        <div class="govuk-form-group">
           <label class="govuk-label" for="address-county">
             County
           </label>
           <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
-        </div> -->
+        </div> 
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-postcode">
