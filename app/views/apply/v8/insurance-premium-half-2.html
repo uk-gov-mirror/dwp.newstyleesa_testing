@@ -11,7 +11,7 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
   
-            Did you pay for more than half of this insurance?
+            Did you pay for more than half of this insurance {{ data['insurance-provider-2'] | split(',') | last }}?
 
           </h1>
         </legend>
