@@ -11,9 +11,16 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Are you getting money from a pension or annuity?
+            Are you getting regular payments from a pension or annuity?
           </h1>
         </legend>
+
+        <div class="govuk-form-group">
+          <span id="national-insurance-number-hint" class="govuk-hint">
+            Do not include one-off lump sum payments.
+          </span>
+        </div>
+
         <details class="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
@@ -38,13 +45,13 @@
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="changed-name-1" name="pension" type="radio" value="yes" data-aria-controls="yes-cond">
             <label class="govuk-label govuk-radios__label" for="changed-name-1">
-              Yes, I'm getting money from a pension or annuity
+              Yes, I'm getting regular payments from a pension or annuity
             </label>
           </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="changed-name-2" name="pension" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="changed-name-2">
-              No, I'm not getting money from a pension or annuity
+              No, I'm not getting regular payments from a pension or annuity
             </label>
           </div>
         </div>
