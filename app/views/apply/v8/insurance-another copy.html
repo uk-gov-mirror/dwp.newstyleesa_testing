@@ -5,7 +5,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="consent">
+    <form id="form" method="post" action="insurance">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -13,11 +13,7 @@
           <h2 class="govuk-fieldset__heading">You have added details for: </h2>
             <ul class="govuk-list govuk-heading-l">
 
-              {% for item in data['insurance-provider-1'] | split(',') %}
-                <li>{{ item }}</li>
-              {% endfor %}
-
-              {% for item in data['insurance-provider-2'] | split(',') %}
+              {% for item in data['pension-provider'] | split(',') %}
                 <li>{{ item }}</li>
               {% endfor %}
 
@@ -28,19 +24,19 @@
      <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Do you get any money from another insurance policy?
+            Are you getting any other pensions or annuities?
           </h1>
         </legend>
 
         <div class="govuk-radios govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-1" name="insurance" type="radio" value="yes" data-aria-controls="yes-cond">
+            <input class="govuk-radios__input" id="changed-name-1" name="pension" type="radio" value="yes" data-aria-controls="yes-cond">
             <label class="govuk-label govuk-radios__label" for="changed-name-1">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-2" name="insurance" type="radio" value="no">
+            <input class="govuk-radios__input" id="changed-name-2" name="pension" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="changed-name-2">
               No
             </label>
@@ -49,7 +45,7 @@
       </fieldset>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- consent -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- occ-pension-details -->
 
     </form>
 
@@ -71,13 +67,13 @@
       // depending on the value="" of the <input>
       // that's been checked, change the action=""
       // of the <form> and then allow it to submit.
-    	switch($('input[name="insurance"]:checked').val())
+    	switch($('input[name="pension"]:checked').val())
       {
     		case 'yes':
-    	    $('#form').attr('action','insurance-detail');
+    	    $('#form').attr('action','pension-details');
     		  break;
         case 'no':
-    	    $('#form').attr('action','name');
+    	    $('#form').attr('action','insurance');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;
