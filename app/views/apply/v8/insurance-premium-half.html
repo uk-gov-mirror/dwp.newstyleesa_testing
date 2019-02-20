@@ -5,26 +5,26 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="insurance-detail">
+    <form id="form" method="post" action="insurance-payment">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Did you pay for more than half of this insurance?
+            Did a previous employer pay more than half towards this {{ data['insurance-providers'] | split(',') | last }} insurance?
           </h1>
         </legend>
 
-        <div class="govuk-radios" data-module="radios">
+        <div class="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="insurance-paid-1" name="insurance-paid" type="radio" value="yes" data-aria-controls="yes">
-            <label class="govuk-label govuk-radios__label" for="insurance-paid-1">
+            <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="changed-name-1">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="insurance-paid-2" name="insurance-paid" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="insurance-paid-2">
+            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
               No
             </label>
           </div>
@@ -32,7 +32,7 @@
       </fieldset>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- insurance-premium-paid-->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- insurance-payment-1-->
 
     </form>
 
@@ -41,35 +41,32 @@
 {% endblock %}
 
 {% block pageScripts %}
-<!--
-  Using jQuery to branch the page flow based on which radio buttons are checked.
--->
-<script type="text/javascript">
-  $(document).on('ready',function()
-  {
-    // target the #form element
-    // attached an event listener that runs
-    // a function when the form is submitted
-    $('#form').on('submit', function(e)
+  <script type="text/javascript">
+    $(document).on('ready',function()
     {
-      // depending on the value="" of the <input>
-      // that's been checked, change the action=""
-      // of the <form> and then allow it to submit.
-      switch($('input[name="insurance-paid"]:checked').val())
+      // target the #form element
+      // attached an event listener that runs
+      // a function when the form is submitted
+      $('#form').on('submit', function(e)
       {
-        case 'yes':
-          $('#form').attr('action','consent');
-          break;
-        case 'no':
-          $('#form').attr('action','insurance-detail');
-          break;
-        // if nothing is ticked don't submit the form.
-        default: return false; break;
-      }
-      // returning 'true' allows the form to submit
-      // after we're finished with the above.
-      return true;
+        // depending on the value="" of the <input>
+        // that's been checked, change the action=""
+        // of the <form> and then allow it to submit.
+        switch($('input[name="changed-name"]:checked').val())
+        {
+          case 'yes':
+            $('#form').attr('action','insurance-payment');
+            break;
+          case 'no':
+            $('#form').attr('action','insurance-another');
+            break;
+          // if nothing is ticked don't submit the form.
+          default: return false; break;
+        }
+        // returning 'true' allows the form to submit
+        // after we're finished with the above.
+        return true;
+      });
     });
-  });
-</script>
+  </script>
 {% endblock %}

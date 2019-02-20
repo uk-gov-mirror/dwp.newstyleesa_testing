@@ -74,10 +74,10 @@
     	switch($('input[name="insurance"]:checked').val())
       {
     		case 'yes':
-    	    $('#form').attr('action','insurance-detail-3');
+    	    $('#form').attr('action','insurance-detail');
     		  break;
         case 'no':
-    	    $('#form').attr('action','consent');
+    	    $('#form').attr('action','name');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;
