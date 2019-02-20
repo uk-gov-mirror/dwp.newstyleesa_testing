@@ -55,29 +55,29 @@
               </legend>
               <p>If you don’t know the exact date, you can give an estimate.</p>
               <span id="conditions-0-started-hint" class="govuk-hint">For example, 30 3 1997</span>
-              <div class="govuk-date-input" id="conditions-0-started">
+              <div class="govuk-date-input" id="conditions-{{ i }}-started">
                 <div class="govuk-date-input__item">
                   <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="conditions-0-started-day">
+                    <label class="govuk-label govuk-date-input__label" for="conditions-{{ i }}-started-day">
                       Day
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="conditions-0-started-day" name="conditions-0-started-day" type="number" pattern="[0-9]*">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="conditions-{{ i }}-started-day" name="conditions-{{ i }}-started-day" type="number" pattern="[0-9]*">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
                   <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="conditions-0-started-month">
+                    <label class="govuk-label govuk-date-input__label" for="conditions-{{ i }}-started-month">
                       Month
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="conditions-0-started-month" name="conditions-0-started-month" type="number" pattern="[0-9]*">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="conditions-{{ i }}-started-month" name="conditions-{{ i }}-started-month" type="number" pattern="[0-9]*">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
                   <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="conditions-0-started-year">
+                    <label class="govuk-label govuk-date-input__label" for="conditions-{{ i }}-started-year">
                       Year
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="conditions-0-started-year" name="conditions-0-started-year" type="number" pattern="[0-9]*">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="conditions-{{ i }}-started-year" name="conditions-{{ i }}-started-year" type="number" pattern="[0-9]*">
                   </div>
                 </div>
               </div>
@@ -114,7 +114,8 @@ window.onload = function() {
     accessibleAutocomplete({
       element: document.querySelector('#conditions-' + i),
       id: 'conditions-' + i + '-name',
-      source: conditions
+      source: conditions,
+      showNoOptionsFound: false
     })
   }
   var visible = 1;

@@ -10,10 +10,11 @@ $(document).ready(function () {
 })
 
 // Autocomplete
-var autocomplete = document.querySelector('[data-source]')
-if (autocomplete) {
-  accessibleAutocomplete.enhanceSelectElement({
-    defaultValue: '',
-    selectElement: autocomplete
-  })
-}
+// var autocomplete = document.querySelector('[data-source]')
+// if (autocomplete) {
+//   accessibleAutocomplete.enhanceSelectElement({
+//     // showNoOptionsFound: false;
+//     defaultValue: '',
+//     selectElement: autocomplete
+//   })
+// }
