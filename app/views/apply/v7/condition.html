@@ -9,21 +9,9 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
       What are the names of the conditions, illnesses, or injuries you have?
       </h1>
-      {{ govukSelect({
-        id: "more-detail",
-        name: "more-detail",
-        attributes: {
-          "data-source": "true"
-        },
-        label: {
-          text: "",
-          isPageHeading: false,
-          classes: "govuk-label"
-        },
-        items: conditions
-      }) }}
+       <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
 
-<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- pregnant -->
+        <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- pregnant -->
 
     </form>
 
