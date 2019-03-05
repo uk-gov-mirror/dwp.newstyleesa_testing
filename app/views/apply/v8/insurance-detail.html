@@ -49,81 +49,41 @@
         </legend>
 
         <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Building and street
+            <span class="govuk-visually-hidden">line 1 of 2</span>
+          </label>
+          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-2">
+            <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+          </label>
+          <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-town">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+        </div>
 
-            <label class="govuk-label" for="surgery">
-              Is the insurance provider address in the UK or overseas?
-            </label>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <span id="event-name-hint" class="govuk-hint">
+            If the address is outside the UK and does not have a postcode you can enter the province, state or department.
+          </span>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+        </div>
 
-            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
-                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">UK</label>
-              </div>
-
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address-line-1">
-                    Building and street
-                    <span class="govuk-visually-hidden">line 1 of 2</span>
-                  </label>
-                  <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address-line-2">
-                    <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
-                  </label>
-                  <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address-town">
-                    Town or city
-                  </label>
-                  <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address-postcode">
-                    Postcode
-                  </label>
-                  <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
-                </div>
-              </div>{# /govuk-radios--conditional #}
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
-                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
-                  Overseas
-                </label>
-              </div>
-
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address2-line-1">
-                    Address
-                    <span class="govuk-visually-hidden">line 1 of 2</span>
-                  </label>
-                  <input class="govuk-input" id="address2-line-1" name="address2-line-1" type="text">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address2-line-2">
-                    <span class="govuk-visually-hidden">Building and street line 2 of 3</span>
-                  </label>
-                  <input class="govuk-input" id="address2-line-2" name="address2-line-2" type="text">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address2-line-3">
-                    <span class="govuk-visually-hidden">Building and street line 3 of 3</span>
-                  </label>
-                  <input class="govuk-input" id="address2-line-3" name="address2-line-3" type="text">
-                </div>
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="address2-country">
-                    Country
-                  </label>
-                  <input class="govuk-input govuk-input--width-10" id="address2-country" name="address2-country" type="text">
-                </div>
-              </div>
-            </div>
-          </div>{# /govuk-form-group #}
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Country (if outside the UK)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+        </div>
 
     </fieldset>
     <!-- <div class="form-group">
