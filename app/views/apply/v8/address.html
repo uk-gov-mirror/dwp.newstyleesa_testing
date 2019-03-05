@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -21,14 +25,12 @@
           </label>
           <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
         </div>
-
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-line-2">
             <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
           </label>
           <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
         </div>
-
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-town">
             Town or city
@@ -36,18 +38,21 @@
           <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
         </div>
 
-       <!-- <div class="govuk-form-group">
-          <label class="govuk-label" for="address-county">
-            County
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
-        </div> -->
-
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-postcode">
             Postcode
           </label>
-          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+          <span id="event-name-hint" class="govuk-hint">
+            If the address is outside the UK and does not have a postcode you can enter the province, state or department.
+          </span>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Country (if outside the UK)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
         </div>
 
       </fieldset>
@@ -78,6 +83,7 @@
                 <label class="govuk-label govuk-!-font-weight-bold" for="contact-by-phone">
                   Enter the address you want letters sent to
                 </label>
+
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="address-line-1">
                     Building and street
@@ -85,14 +91,12 @@
                   </label>
                   <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
                 </div>
-
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="address-line-2">
                     <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
                   </label>
                   <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
                 </div>
-
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="address-town">
                     Town or city
@@ -104,8 +108,20 @@
                   <label class="govuk-label" for="address-postcode">
                     Postcode
                   </label>
-                  <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+                  <span id="event-name-hint" class="govuk-hint">
+                    If the address is outside the UK and does not have a postcode you can enter the province, state or department.
+                  </span>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
                 </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="address-postcode">
+                    Country (if outside the UK)
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+                </div>
+                
+
               </div> <!-- form group -->
 
             </div> <!-- radios-conditional -->

@@ -1,11 +1,15 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="terminalprognosis">
+    <form id="form" method="post" action="ds1500">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -59,7 +63,7 @@
       	switch($('input[name="changed-name"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','terminalprognosis');
+      	    $('#form').attr('action','ds1500');
       		  break;
           case 'no':
       	    $('#form').attr('action','hospital');

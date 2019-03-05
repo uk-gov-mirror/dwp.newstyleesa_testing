@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
 {% block content %}
 
 
@@ -50,11 +54,22 @@
             </label>
             <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
           </div>
+
           <div class="govuk-form-group">
             <label class="govuk-label" for="address-postcode">
               Postcode
             </label>
-            <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+            <span id="event-name-hint" class="govuk-hint">
+              If the address is outside the UK and does not have a postcode you can enter the province, state or department.
+            </span>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+              Country (if outside the UK)
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
           </div>
 
         </fieldset>
