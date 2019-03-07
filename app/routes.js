@@ -17,36 +17,36 @@ router.all('/data/:data/source/:source', (req, res) => {
 router.get('/*/claimdate', function (req, res, next) {
   var ssp = req.session.data['ssp-dob-year'] + '-' +req.session.data['ssp-dob-month'] + '-' + req.session.data['ssp-dob-day'];
   ssp = moment(ssp, 'YYYY-MM-DD');
-  ssp.add(1, 'days');
   
   var recent = req.session.data['ssp-recent-dob-year'] + '-' +req.session.data['ssp-recent-dob-month'] + '-' + req.session.data['ssp-recent-dob-day'];
   recent = moment(recent, 'YYYY-MM-DD');
-  recent.add(1, 'days');
   
   var last = req.session.data['last-dob-year'] + '-' +req.session.data['last-dob-month'] + '-' + req.session.data['last-dob-day'];
   last = moment(last, 'YYYY-MM-DD');
-  last.add(1, 'days');
   
-  if(req.session.data.work == 'employed') {
-    if(req.session.data.offSick == 'yes') {
+  var dateToShow, whichDate;
+  if (last.isValid() && req.session.data['self-employed'] == 'mines') {
+    whichDate = 'lastWorked';
+    dateToShow = last;
+  }
 
-      if(req.session.data['statutory-pay'] == 'yes') {
-        res.locals.sspDatePlusOne = ssp.format('D MMMM YYYY');
-      } else {
-        if(req.session.data['statutory-pay-recent'] == 'yes') {
-          res.locals.lastWorkDatePlusOne = last.format('D MMMM YYYY');
-        } 
-      }
-    } else { // still working
+  if(recent.isValid()) {
+    whichDate = 'sspRecent';
+    dateToShow = recent;
+  }
 
-      if(req.session.data['statutory-pay-recent'] == 'yes') {
-        res.locals.sspRecentDatePlusOne = recent.format('D MMMM YYYY');
-      }
-    }
-  } else { // not working
-    if(req.session.data['statutory-pay-recent'] == 'yes') {
-      res.locals.sspRecentDatePlusOne = recent.format('D MMMM YYYY');
-    }
+  if(ssp.isValid()) {
+    whichDate = 'ssp';
+    dateToShow = ssp;
+  }
+
+  if(dateToShow > moment().subtract(3, 'months')) {
+    dateToShow.add(1, 'days');
+    res.locals.dateToShow = dateToShow.format('D MMMM YYYY');
+    res.locals.whichDate = whichDate;
+  } else {
+    res.locals.whichDate = whichDate;
+    res.locals.date3monthsAgo = moment().subtract(3, 'months').add(1, 'days').format('D MMMM YYYY')
   }
 
   next();
