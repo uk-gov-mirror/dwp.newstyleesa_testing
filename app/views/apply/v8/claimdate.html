@@ -10,8 +10,8 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form id="form" method="post" action="pension">
-
-{# {{dateToShow}}
+{# 
+{{dateToShow}}
 
 {{whichDate}}
 
@@ -21,7 +21,6 @@
 
 {{date3monthsAgo}} #}
 
-
       <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -29,38 +28,38 @@
                 Claim start date
               </h1>
             </legend>
-            {% if sspDatePlusOne or sspRecentDatePlusOne or lastWorkDatePlusOne %}
-            <p>Based on your answers you can claim from:</p>
+
+            {% if whichDate == 'lastWorked' %}
+              {% if date3monthsAgo %}
+                <p class="govuk-body-l">Based on your answers you can claim from:<br><strong>{{date3monthsAgo}}</strong></p>
+              {% elseif dateToShow %}
+                <p>Based on your answers you can claim from: <strong>{{dateToShow}}</strong></p>
+                <p>This is the last day you worked as self-employed.</p>
+              {% endif %}
             {% endif %}
 
-            {% if sspDatePlusOne %}
-            <h2 class="govuk-heading-l">
-              {{ sspDatePlusOne }}
-              <p>This is the day after you will stop getting Statutory Sick Pay.</p>
-            </h2>
+            {% if whichDate == 'sspRecent' %}
+              {% if date3monthsAgo %}
+                <p class="govuk-body-l">Based on your answers you can claim from:<br><strong>{{date3monthsAgo}}</strong></p>
+              {% elseif dateToShow %}
+                <p>Based on your answers you can claim from: <strong>{{dateToShow}}</strong></p>
+                <p>This is the day after your Statutory Sick Pay ended.</p>
+              {% endif %}
             {% endif %}
 
-            {% if sspRecentDatePlusOne %}
-            <h2 class="govuk-heading-l">
-              {{ sspRecentDatePlusOne }}
-              <p>This is the day after your Statutory Sick Pay ended.</p>
-            </h2>
-
-            {% endif %}
-
-            {% if lastWorkDatePlusOne %}
-            <h2 class="govuk-heading-l">
-              {{ lastWorkDatePlusOne }}
-              <p>This is the day after your last day at work.</p>
-            </h2>
+            {% if whichDate == 'ssp' %}
+              {% if dateToShow %}
+                <p>Based on your answers you can claim from: <strong>{{dateToShow}}</strong></p>
+                <p>This is the day after you will stop getting Statutory Sick Pay.</p>
+              {% endif %}
             {% endif %}
 
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading">
+                    <h2 class="govuk-fieldset__heading govuk-!-font-size-27">
                       Do you want to claim from this date?
-                    </h1>
+                    </h2>
                   </legend>
                   <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                     <div class="govuk-radios__item">
@@ -75,7 +74,7 @@
                         No, I want to claim from a different date
                       </label>
                       <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
-This date can be up to 3 months ago as long as you were not getting Statutory Sick Pay at the time and have fit notes (you might call these sick notes) from that date.                      </span>
+This date can be up to 3 months ago as long as you were not getting Statutory Sick Pay at the time and have fit notes (you might call these sick notes) from that date.</span>
                     </div>
                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
                       <div class="govuk-form-group">
@@ -117,9 +116,9 @@ This date can be up to 3 months ago as long as you were not getting Statutory Si
                     </div>
 
                 </fieldset>
-            </div>
+            </div>{# /govuk-form-group #}
 
-            </div>
+            </div>{# /govuk-form-group #}
           </fieldset>
 
          <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- declaration -->
