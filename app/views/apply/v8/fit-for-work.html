@@ -8,9 +8,16 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+{# 
+{{whichDate}}
+{{dateToShow}}
+{{date3monthsAgo}} #}
 
-
-    <form id="form" method="post" action="claimdate">
+    {% if whichDate %}
+      <form id="form" method="post" action="claimdate">
+    {% else %}
+      <form id="form" method="post" action="claimdate-blank">
+    {% endif %}
 
       <div class="govuk-form-group">
        <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
