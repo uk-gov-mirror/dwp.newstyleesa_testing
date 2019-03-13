@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Do you agree that your doctor or others named in this form can share information about your health condition?
+      </h1>
+    </legend>
+    <P>
+    The Department for Work and Pensions (DWP), and any healthcare professionals approved by their <a href="https://www.gov.uk/government/ministers/secretary-of-state-for-work-and-pensions">Secretary of State</a>, might need more information or evidence to support your claim.
+  </P>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-1" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-1-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-1">
+          Yes, I agree
+        </label>
+        <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">
+          The DWP will collect and store your consent on behalf of your doctor or any others you've named.
+        </span>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="sign-in-2">
+          No, I do not agree
+        </label>
+        <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">
+          The DWP will make a decision on your claim using the information they have already.
+        </span>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What if I change my mind?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p>You can change your mind at any time. If you do, the DWP will not ask your doctor or others to share any more information.</P>
+  <p>It does not affect the way in which they use your information.</p>
+  <p>You can do this at any time by calling 0800 169 0310 and saying you withdraw your agreement.</p>
+  </div>
+</details>
+  <a href="name" class="govuk-button">I've read and understood</a>
+
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
