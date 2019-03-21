@@ -9,51 +9,55 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="consent">
+    <form id="form" method="post" action="insurance">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h2 class="govuk-fieldset__heading">You have added details for: </h2>
-            <ul class="govuk-list govuk-heading-l">
-
-              {% for item in data['insurance-provider-1'] | split(',') %}
-                <li>{{ item }}</li>
-              {% endfor %}
-
-              {% for item in data['insurance-provider-2'] | split(',') %}
-                <li>{{ item }}</li>
-              {% endfor %}
-
-          </ul>
-
-        </legend>
-
-     <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Do you get any money from another insurance policy?
+            Are you getting regular payments from a pension or annuity?
           </h1>
         </legend>
 
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with pensions and annuities
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p id="pension-payments-hint">
+          <strong>Pensions</strong> include:
+              <ul class="govuk-list govuk-list--bullet">
+                <li>workplace pensions</li>
+                <li>personal pensions</li>
+                <li>public service pensions</li>
+                <li>stakeholder pensions</li>
+                <li>pension from a self employed pension scheme</li>
+              </ul>
+            </p>
+            <p>You do not need to include any single lump sum pension payments.</p>
+            <p>An <strong>annuity</strong> is an insurance product that allows you to swap your pension savings for a guaranteed regular income that will last for the rest of your life.</p>
+          </div>
+        </details>
         <div class="govuk-radios govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-1" name="insurance" type="radio" value="yes" data-aria-controls="yes-cond">
+            <input class="govuk-radios__input" id="changed-name-1" name="pension" type="radio" value="yes" data-aria-controls="yes-cond">
             <label class="govuk-label govuk-radios__label" for="changed-name-1">
-              Yes
+              Yes, I’m getting regular payments from a pension or annuity
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-2" name="insurance" type="radio" value="no">
+            <input class="govuk-radios__input" id="changed-name-2" name="pension" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="changed-name-2">
-              No
+              No, I’m not getting regular payments from a pension or annuity
             </label>
           </div>
         </div>
       </fieldset>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- consent -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- occ-pension-details -->
 
     </form>
 
@@ -75,13 +79,13 @@
       // depending on the value="" of the <input>
       // that's been checked, change the action=""
       // of the <form> and then allow it to submit.
-    	switch($('input[name="insurance"]:checked').val())
+    	switch($('input[name="pension"]:checked').val())
       {
     		case 'yes':
-    	    $('#form').attr('action','insurance-who-paid');
+    	    $('#form').attr('action','pension-details');
     		  break;
         case 'no':
-    	    $('#form').attr('action','name');
+    	    $('#form').attr('action','insurance');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;
