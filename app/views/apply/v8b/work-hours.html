@@ -8,8 +8,11 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">
+          Paid work
+    </span>
 
-    <form id="form" method="post" action="payfrequency">
+    <form id="form" method="post" action="work-pay-frequency">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -50,7 +53,7 @@
   </fieldset>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- payfrequency -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-pay-frequency -->
 
     </form>
 
@@ -77,10 +80,10 @@
       switch($('input[name="work-hours"]:checked').val())
       {
         case 'yes':
-          $('#form').attr('action','payfrequency');
+          $('#form').attr('action','work-pay-frequency');
           break;
         case 'no':
-          $('#form').attr('action','pay-varies-frequency');
+          $('#form').attr('action','work-pay-varies-frequency');
           break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

@@ -8,6 +8,9 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">
+          Paid work
+    </span>
 
     <form id="form" method="post" action="statutory-pay">
       <div class="govuk-form-group">
@@ -60,7 +63,7 @@
       	switch($('input[name="expenses"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','expenses-details');
+      	    $('#form').attr('action','work-expenses-details');
       		  break;
           case 'no':
       	    $('#form').attr('action','work-another');
