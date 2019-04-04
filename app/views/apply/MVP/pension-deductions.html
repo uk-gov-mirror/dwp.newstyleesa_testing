@@ -27,6 +27,12 @@
               No
             </label>
           </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pension-deductions-not-sure" name="pension-deductions" type="radio" value="notsure">
+            <label class="govuk-label govuk-radios__label" for="pension-deductions-not-sure">
+              I'm not sure
+            </label>
+          </div>
       </fieldset>
     </div>
 
@@ -61,6 +67,9 @@
           case 'no':
             $('#form').attr('action','pension-amount');
             break;
+            case 'notsure':
+              $('#form').attr('action','pension-amount');
+              break;
           // if nothing is ticked don't submit the form.
           default: return false; break;
         }

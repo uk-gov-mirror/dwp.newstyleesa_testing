@@ -11,10 +11,10 @@
       <h1 class="govuk-heading-xl">
         Give details of all deductions from your last {{ data['pension-provider'] | split(',') | last }} pension payment?
       </h1>
-  
+  <p>If you're not sure what deductions are taken off your pension, continue to the next question.</p>
       {% for i in range(0, 20) %}
       <div id="block-{{ i }}" class="{{ 'additional' if i != 0 }}">
-        
+
         <div class="govuk-form-group">
           <label class="govuk-label govuk-!-width-one-half" for="pension-amount-{{i}}">
             Deduction amount
@@ -33,7 +33,7 @@
           </label>
           <input class="govuk-input govuk-!-width-one-half" id="deductions-{{i}}" name="deductions-{{i}}" type="text">
         </div>
-      
+
         {% if i != 0 %}<p><a data-index="{{ i }}" href="#" class="govuk-link remove hidden">Remove</a></p>{% endif %}
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </div>

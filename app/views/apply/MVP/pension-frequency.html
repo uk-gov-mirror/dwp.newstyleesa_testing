@@ -7,7 +7,7 @@
 
     <form id="form" method="post" action="pension-deductions">
 
-    
+
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -16,7 +16,8 @@
               How often do you get your {{ data['pension-provider'] | split(',') | last }} pension paid?
             </h1>
           </legend>
-          <div class="govuk-radios">
+          <p>This helps us to work out what you're eligible to receive. The question is optional so continue with the form if you do not know the answer.</p>
+            <div class="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="england">
               <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
@@ -69,7 +70,7 @@
         </fieldset>
       </div> <!-- form-group -->
 
-     
+
 
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- pension-deductions -->
 
