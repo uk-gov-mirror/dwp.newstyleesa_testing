@@ -14,7 +14,7 @@
             How much was your last {{ data['pension-provider'] | split(',') | last }} pension payment?
           </h1>
         </legend>
-        <p>This helps us to work out how much you're eligible to receive. If you're not sure how much you were paid, continue to the next question.</p>
+        {% include "includes/non-mandatory-message.html" %}
 
          <div class="govuk-form-group">
 

@@ -10,8 +10,9 @@
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
       Pension or annuity details
     </h1>
-      <p>
-      These details are optional, but any information you give will help us to deal with your claim as quickly.</p>
+
+    {% include "includes/non-mandatory-message.html" %}
+      
       <p>If you have more than one pension or annuity, you will be asked if you want to add details for them later.
     </p>
     <input type="hidden" value="" name="pension-provider" id="pension-provider-hidden"/>
