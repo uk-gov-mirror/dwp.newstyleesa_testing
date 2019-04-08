@@ -1,46 +1,38 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
 {% block content %}
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="pension-start">
+    <form id="form" method="post" action="voluntary-work-role">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Pension or annuity details
-    </h1>
+        <span class="govuk-caption-l">Part 2 of 6: Work</span>
+        <h1 class="govuk-heading-l">
+        Voluntary work details
+        </h1>
+        <span id="special-rules-hint" class="govuk-hint">
+        If you volunteer for more than one organisation, you will be asked about the others later in this form.
+        </span>
 
-    {% include "includes/non-mandatory-message.html" %}
-      
-      <p>If you have more than one pension or annuity, you will be asked if you want to add details for them later.
-    </p>
-    <input type="hidden" value="" name="pension-provider" id="pension-provider-hidden"/>
-
+        <input type="hidden" value="" name="volunteer-details" id="volunteer-details-hidden"/>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="pension-provider-name">
-            Pension or annuity provider
+          <label class="govuk-label" for="volunteer-details-name">
+          Organisation name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="pension-provider-name" name="pension-provider-1" type="text">
-        </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="surgery">
-            Pension or annuity reference number
-          </label>
-          <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
-        </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="surgery">
-            Pension or annuity provider telephone number
-          </label>
-          <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+          <input class="govuk-input govuk-!-width-one-half" id="volunteer-details-name" name="volunteer-details-1" type="text">
         </div>
 
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             <h2 class="govuk-fieldset__heading">
-              Pension provider address
+              Organisation address
             </h2>
           </legend>
 
@@ -64,33 +56,31 @@
             <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
           </div>
 
-          {# <div class="govuk-form-group">
-            <label class="govuk-label" for="address-county">
-              County
-            </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
-          </div>  #}
-
           <div class="govuk-form-group">
             <label class="govuk-label" for="address-postcode">
               Postcode
             </label>
-            <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+            <span id="event-name-hint" class="govuk-hint">
+              If the address is outside the UK and does not have a postcode you can enter the province, state or department.
+            </span>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
           </div>
 
-       </fieldset>
-    <!-- <div class="form-group">
-      <button id="add-button" class="govuk-button button-add-another-vertical" onclick="javascript:return false">Add another</button>
-    </div> -->
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+              Country (if outside the UK)
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+          </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- pension-start -->
+        </fieldset>
+
+        <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- work-self-emp -->
 
     </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
-
-
 {% endblock %}
 
 
@@ -103,7 +93,7 @@
   {
 
     // grab the existing data from the session (if it is there)
-    var session_data = "{{ data['pension-provider'] }}" ;
+    var session_data = "{{ data['volunteer-details'] }}" ;
     // put it in log
     console.log(session_data);
 
@@ -114,11 +104,11 @@
       // don't submit the form
       e.preventDefault();
       // grab what was typed into the name box.
-      var name = $('#pension-provider-name').val();
+      var name = $('#volunteer-details-name').val();
       // add that to the existing session data
       var new_session_data = (session_data) ? session_data + ',' + name : name;
       // put this new data back into the form (hidden)
-      $('#pension-provider-hidden').val(new_session_data);
+      $('#volunteer-details-hidden').val(new_session_data);
       // submit the form as usual
       $("#form").submit();
     })

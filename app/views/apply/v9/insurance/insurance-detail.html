@@ -1,19 +1,25 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="insurancepremiums">
+     <form id="form" method="post" action="insurance-premium-half">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
       Permanent health insurance details
     </h1>
-    {% include "includes/non-mandatory-message.html" %}
-    <p>If you have more than one insurance policy, you will be asked if you want to add details for them later.
-  </p>
-    <input type="hidden" value="" name="insurance-provider" id="insurance-provider-hidden"/>
+
+    <span id="special-rules-hint" class="govuk-hint">
+      If you have more than one policy, you’ll be asked about your other policies later in this form.
+    </span>
+
+    <input type="hidden" value="" name="insurance-providers" id="insurance-provider-hidden"/>
 
 
         <div class="govuk-form-group">
@@ -62,18 +68,21 @@
           <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
         </div>
 
-        {# <div class="govuk-form-group">
-          <label class="govuk-label" for="address-county">
-            County
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
-        </div>  #}
-
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-postcode">
             Postcode
           </label>
-          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+          <span id="event-name-hint" class="govuk-hint">
+            If the address is outside the UK and does not have a postcode you can enter the province, state or department.
+          </span>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Country (if outside the UK)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
         </div>
 
     </fieldset>
@@ -81,7 +90,7 @@
       <button id="add-button" class="govuk-button button-add-another-vertical" onclick="javascript:return false">Add another</button>
     </div> -->
 
-    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- insurnacepremiums -->
+    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- insurnace-premium-half-1 -->
 
     </form>
 
@@ -101,7 +110,7 @@
   {
 
     // grab the existing data from the session (if it is there)
-    var session_data = "{{ data['insurance-provider'] }}" ;
+    var session_data = "{{ data['insurance-providers'] }}" ; // "name" of hidden input
     // put it in log
     console.log(session_data);
 
@@ -112,11 +121,13 @@
       // don't submit the form
       e.preventDefault();
       // grab what was typed into the name box.
-      var name = $('#insurance-provider-name').val();
+      var name = $('#insurance-provider-name').val(); // "id" of temp input
       // add that to the existing session data
       var new_session_data = (session_data) ? session_data + ',' + name : name;
+
+      console.log(new_session_data)
       // put this new data back into the form (hidden)
-      $('#insurance-provider-hidden').val(new_session_data);
+      $('#insurance-provider-hidden').val(new_session_data); // "id" of hidden input
       // submit the form as usual
       $("#form").submit();
     })

@@ -1,44 +1,55 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
 {% block content %}
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="insurancepremiums">
+    <form id="form" method="post" action="worksick">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Permanent health insurance details
-    </h1>
-    {% include "includes/non-mandatory-message.html" %}
-    <p>If you have more than one insurance policy, you will be asked if you want to add details for them later.
-  </p>
-    <input type="hidden" value="" name="insurance-provider" id="insurance-provider-hidden"/>
 
+          <span class="govuk-caption-l">Part 2 of 6: Work</span>
+          <h1 class="govuk-heading-l">
+            Employment details
+          </h1>
+
+
+        <span id="special-rules-hint" class="govuk-hint">
+        If you have more than one job, you will be asked about your other jobs later in this form.
+        </span>
+      
+        <input type="hidden" value="" name="employer-details" id="employer-details-hidden"/>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="insurance-provider-name">
-            Insurance provider
+          <label class="govuk-label" for="job-title">
+          Job title
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="insurance-provider-name" name="insurance-provider-1" type="text">
+          <input class="govuk-input govuk-!-width-one-half" id="job-title" name="job-title" type="text">
         </div>
+
         <div class="govuk-form-group">
-          <label class="govuk-label" for="surgery">
-            Insurance reference number
+          <label class="govuk-label" for="employer-details-name">
+          Employer name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+          <input class="govuk-input govuk-!-width-one-half" id="employer-details-name" name="employer-details-1" type="text">
         </div>
+
         <div class="govuk-form-group">
-          <label class="govuk-label" for="surgery">
-            Insurance provider telephone number
+          <label class="govuk-label" for="telephone">
+          Telephone number
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
+          <input class="govuk-input govuk-!-width-one-half" id="telephone" name="telephone" type="text">
         </div>
 
         <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
           <h2 class="govuk-fieldset__heading">
-            Insurance provider address
+            Employer address
           </h2>
         </legend>
 
@@ -62,33 +73,31 @@
           <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
         </div>
 
-        {# <div class="govuk-form-group">
-          <label class="govuk-label" for="address-county">
-            County
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
-        </div>  #}
-
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-postcode">
             Postcode
           </label>
-          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+          <span id="event-name-hint" class="govuk-hint">
+            If the address is outside the UK and does not have a postcode you can enter the province, state or department.
+          </span>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Country (if outside the UK)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
         </div>
 
     </fieldset>
-    <!-- <div class="form-group">
-      <button id="add-button" class="govuk-button button-add-another-vertical" onclick="javascript:return false">Add another</button>
-    </div> -->
 
-    <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- insurnacepremiums -->
+        <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- work-self-emp -->
 
     </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
-
-
 {% endblock %}
 
 
@@ -101,7 +110,7 @@
   {
 
     // grab the existing data from the session (if it is there)
-    var session_data = "{{ data['insurance-provider'] }}" ;
+    var session_data = "{{ data['employer-details'] }}" ;
     // put it in log
     console.log(session_data);
 
@@ -112,11 +121,11 @@
       // don't submit the form
       e.preventDefault();
       // grab what was typed into the name box.
-      var name = $('#insurance-provider-name').val();
+      var name = $('#employer-details-name').val();
       // add that to the existing session data
       var new_session_data = (session_data) ? session_data + ',' + name : name;
       // put this new data back into the form (hidden)
-      $('#insurance-provider-hidden').val(new_session_data);
+      $('#employer-details-hidden').val(new_session_data);
       // submit the form as usual
       $("#form").submit();
     })

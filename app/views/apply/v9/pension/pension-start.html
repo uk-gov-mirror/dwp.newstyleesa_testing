@@ -1,25 +1,28 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="pension-frequency">
+    <form id="form" method="post" action="pension-frequency">		
 
 
 		<div class="govuk-form-group">
 		  <fieldset class="govuk-fieldset" aria-describedby="pension-start-hint" role="group">
-		    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+		    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+		    <span class="govuk-caption-l">Part 4 of 6: Pensions and insurance</span>
 		      <h1 class="govuk-fieldset__heading">
 		        When did your pension from {{ data['pension-provider'] | split(',') | last }} start?
 		      </h1>
 		    </legend>
-		    {% include "includes/non-mandatory-message.html" %}
 		    <span id="pension-start-hint" class="govuk-hint">
-		      For example, 31 3 1980
+		      For example, 29&nbsp;1&nbsp;2019
 		    </span>
-        
 		    <div class="govuk-date-input" id="pension-start">
 		      <div class="govuk-date-input__item">
 		        <div class="govuk-form-group">
@@ -49,11 +52,11 @@
 		  </fieldset>
 		</div>
 
-		<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- pension-frequency -->
+		<input type="submit" class="govuk-button" value="Continue" id="submit"><!-- pension-frequency -->	
 
  	</form>
 
  </div>
-</div>
+</div> 	
 
 {% endblock %}

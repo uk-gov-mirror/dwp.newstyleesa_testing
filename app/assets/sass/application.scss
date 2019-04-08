@@ -773,3 +773,21 @@ $govuk-global-styles: true;
 .app-step-nav__substep--optional:after {
   border-left-style: dotted;
 }
+
+// Blue border for non-mandatory fields 
+
+.blue-border {
+  border: 5px solid govuk-colour("blue");
+  padding: 15px;
+  margin-bottom: 20px;
+  @include govuk-media-query($from: tablet) {
+    padding: 20px;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+

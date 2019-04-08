@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -14,10 +18,9 @@
             How much was your last {{ data['pension-provider'] | split(',') | last }} pension payment?
           </h1>
         </legend>
-        {% include "includes/non-mandatory-message.html" %}
 
          <div class="govuk-form-group">
-
+        
             <div class="govuk-currency-input">
               <div class="govuk-currency-input__inner">
                 <span class="govuk-currency-input__inner__unit govuk-body">£</span>
