@@ -13,10 +13,8 @@
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-l">Part 2 of 6: Work</span>
-            <p>You have added details for: </p>
+            <h2 class="govuk-fieldset__heading">You have added details for: </h2>
               <ul class="govuk-list govuk-heading-l">
 
                 {% for item in data['volunteer-details'] | split(',') %}
@@ -28,10 +26,9 @@
           </legend>
 
        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              Do you do any other voluntary work?
+            Do you do any other voluntary work?
             </h1>
           </legend>
 
@@ -83,7 +80,7 @@
     	    $('#form').attr('action','voluntary-details');
     		  break;
         case 'no':
-    	    $('#form').attr('action','work');
+    	    $('#form').attr('action','../list');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

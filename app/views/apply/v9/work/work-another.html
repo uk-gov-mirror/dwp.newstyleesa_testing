@@ -11,12 +11,10 @@
 
     <form id="form" method="post" action="statutory-pay">
 
-      <span class="govuk-caption-l">Part 2 of 6: Work</span>
-
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <p>You have added details for: </p>
+          <h2 class="govuk-fieldset__heading">You have added details for: </h2>
             <ul class="govuk-list govuk-heading-l">
 
               {% for item in data['employer-details'] | split(',') %}
@@ -31,7 +29,7 @@
         </legend>
 
      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
           Do you have another job?
           </h1>
@@ -82,7 +80,7 @@
     	    $('#form').attr('action','work-emp-details');
     		  break;
         case 'no':
-    	    $('#form').attr('action','statutory-pay');
+    	    $('#form').attr('action','../list');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

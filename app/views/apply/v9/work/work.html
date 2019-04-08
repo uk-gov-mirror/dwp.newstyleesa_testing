@@ -11,14 +11,13 @@
 
     <form id="form" method="post" action="work-hours">
 
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <span class="govuk-caption-l">Part 2 of 6: Work</span>
-        <h1 class="govuk-fieldset__heading">
-          Are you currently employed, even if you’re not working at the moment?
-        </h1>
-      </legend>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Are you currently employed, even if you’re not working at the moment?
+    </h1>
 
-    <p class="govuk-hint">Select yes if you’re self employed or on a zero hours contract.</p>
+    <p>
+        Select yes if you’re self employed or on a zero hours contract.
+        </p>
 
     <div class="govuk-form-group">
       <div class="govuk-radios">
@@ -66,7 +65,7 @@
     	    $('#form').attr('action','work-emp-details');
     		  break;
         case 'not_employed':
-    	    $('#form').attr('action','statutory-pay-recent');
+    	    $('#form').attr('action','../list');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

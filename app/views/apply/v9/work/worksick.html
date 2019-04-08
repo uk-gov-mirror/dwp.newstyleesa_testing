@@ -11,12 +11,9 @@
 
     <form id="form" method="post" action="work-self-emp-sick">
 
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <span class="govuk-caption-l">Part 2 of 6: Work</span>
-      <h1 class="govuk-fieldset__heading">
-        Are you off sick from your job at {{ data['employer-details'] | split(',') | last }}?
-      </h1>
-    </legend>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Are you off sick from your job at {{ data['employer-details'] | split(',') | last }}?
+    </h1>
 
     <div class="govuk-form-group">
       <div class="govuk-radios">

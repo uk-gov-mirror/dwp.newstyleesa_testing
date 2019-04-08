@@ -9,12 +9,11 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="pension-inherited">
+    <form id="form" method="post" action="pension-deductions-amount">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <span class="govuk-caption-l">Part 4 of 6: Pensions and insurance</span>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
             How much was your last {{ data['pension-provider'] | split(',') | last }} pension payment?
           </h1>

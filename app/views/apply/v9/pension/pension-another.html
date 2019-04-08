@@ -14,7 +14,6 @@
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <span class="govuk-caption-l">Part 4 of 6: Pensions and insurance</span>
           <h2 class="govuk-fieldset__heading">You have added details for: </h2>
             <ul class="govuk-list govuk-heading-l">
 
@@ -78,7 +77,7 @@
     	    $('#form').attr('action','pension-details');
     		  break;
         case 'no':
-    	    $('#form').attr('action','insurance');
+    	    $('#form').attr('action','../list');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

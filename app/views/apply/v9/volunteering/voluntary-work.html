@@ -9,14 +9,11 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-  <form id="form" method="post" action="work">
+    <form id="form" method="post" action="work">
 
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-    <span class="govuk-caption-l">Part 2 of 6: Work</span>
-    <h1 class="govuk-fieldset__heading">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
       Are you currently doing any voluntary work?
     </h1>
-  </legend>
 
     <div class="govuk-form-group">
       <div class="govuk-radios">
@@ -64,7 +61,7 @@
     	    $('#form').attr('action','voluntary-details');
     		  break;
         case 'not_volunteering':
-    	    $('#form').attr('action','work');
+    	    $('#form').attr('action','../list');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

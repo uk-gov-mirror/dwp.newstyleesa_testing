@@ -9,7 +9,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="pension">
+    <form id="form" method="post" action="../list">
 {# 
 {{dateToShow}}
 
@@ -27,12 +27,11 @@
 
       <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <span class="govuk-caption-l">Part 3 of 6: Claim date</span>
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-          Claim date
-        </h1>
-      </legend>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Claim start date
+              </h1>
+            </legend>
 
             {% if whichDate == 'lastWorked' %}
               {% if date3monthsAgo %}
