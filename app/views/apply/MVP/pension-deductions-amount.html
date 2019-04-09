@@ -11,7 +11,7 @@
       <h1 class="govuk-heading-xl">
         Give details of all deductions from your last {{ data['pension-provider'] | split(',') | last }} pension payment?
       </h1>
-  <p>If you're not sure what deductions are taken off your pension, continue to the next question.</p>
+  {% include "includes/non-mandatory-message.html" %}
       {% for i in range(0, 20) %}
       <div id="block-{{ i }}" class="{{ 'additional' if i != 0 }}">
 
