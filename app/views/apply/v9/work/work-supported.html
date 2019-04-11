@@ -11,7 +11,7 @@
 
     <form id="form" method="post" action="expenses">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
       Do you get help from a professional support worker at {{ data['employer-details'] | split(',') | last }}?
     </h1>
 
@@ -40,7 +40,9 @@
         </div>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- expenses -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+    {% include "apply/v9/work/_return-link.html" %}
 
     </form>
 

@@ -11,7 +11,7 @@
 
     <form id="form" method="post" action="work-hours">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
       Are you currently employed, even if you’re not working at the moment?
     </h1>
 
@@ -37,6 +37,8 @@
     </div>
 
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-hours -->
+
+    {% include "apply/v9/work/_return-link.html" %}
 
     </form>
 
@@ -65,7 +67,7 @@
     	    $('#form').attr('action','work-emp-details');
     		  break;
         case 'not_employed':
-    	    $('#form').attr('action','../list');
+    	    $('#form').attr('action','checkanswers-1');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

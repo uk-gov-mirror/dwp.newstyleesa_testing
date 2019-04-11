@@ -12,7 +12,7 @@
 
     <form id="form" method="post" action="voluntary-work-role">
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
         Voluntary work details
         </h1>
         <span id="special-rules-hint" class="govuk-hint">
@@ -75,6 +75,8 @@
         </fieldset>
 
         <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- work-self-emp -->
+
+        {% include "apply/v9/volunteering/_return-link.html" %}
 
     </form>
 

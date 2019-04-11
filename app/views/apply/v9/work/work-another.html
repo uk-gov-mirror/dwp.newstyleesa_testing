@@ -29,7 +29,7 @@
         </legend>
 
      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
           Do you have another job?
           </h1>
@@ -53,6 +53,8 @@
     </div>
 
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- statutory-pau -->
+
+    {% include "apply/v9/work/_return-link.html" %}
 
     </form>
 
@@ -80,7 +82,7 @@
     	    $('#form').attr('action','work-emp-details');
     		  break;
         case 'no':
-    	    $('#form').attr('action','../list');
+    	    $('#form').attr('action','checkanswers-2');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

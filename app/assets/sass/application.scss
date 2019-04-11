@@ -791,3 +791,11 @@ $govuk-global-styles: true;
   }
 }
 
+// Tags on hub and spoke design
+
+.tag-started {
+  background-color: govuk-colour("white");
+  color: govuk-colour("blue");
+  border: 2px solid govuk-colour("blue");
+}
+

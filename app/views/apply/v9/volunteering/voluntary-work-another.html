@@ -26,7 +26,7 @@
           </legend>
 
        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
             Do you do any other voluntary work?
             </h1>
@@ -55,6 +55,8 @@
 
     </form>
 
+    {% include "apply/v9/volunteering/_return-link.html" %}
+
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
 {% endblock %}
@@ -80,7 +82,7 @@
     	    $('#form').attr('action','voluntary-details');
     		  break;
         case 'no':
-    	    $('#form').attr('action','../list');
+    	    $('#form').attr('action','checkanswers-2');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

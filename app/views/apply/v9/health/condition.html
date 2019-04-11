@@ -10,7 +10,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form id="form" method="post" action="gpsurgery">
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
         What health conditions, illnesses, disabilities or injuries do you have?
       </h1>
       <p class="govuk-hint js-hidden">Enter as many as you have<p>
@@ -96,6 +96,9 @@
       <p><a id="add-another" href="#" class="govuk-link hidden">Add another condition</a></p>
       <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- pregnant -->
     </form>
+
+    {% include "apply/v9/health/_return-link.html" %}
+
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
 <style>

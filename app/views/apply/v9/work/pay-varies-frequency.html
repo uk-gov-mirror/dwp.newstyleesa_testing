@@ -12,13 +12,13 @@
   <form id="form" method="post" action="work-supported">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
               Earnings
             </h1>
           </legend>
           
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
                 How often are you paid by {{ data['employer-details'] | split(',') | last }}?
               </h2>
@@ -80,7 +80,7 @@
             </div> <!-- govuk-radios -->
    
       
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-padding-top-6">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-padding-top-6">
               <h2 class="govuk-fieldset__heading">
                 How much do you get paid by {{ data['employer-details'] | split(',') | last }}?
               </h2>
@@ -99,6 +99,8 @@
       </div> <!-- govuk-form-group -->
 
       <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-supported -->
+
+      {% include "apply/v9/work/_return-link.html" %}
 
     </form>
 

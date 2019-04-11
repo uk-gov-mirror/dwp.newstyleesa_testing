@@ -11,7 +11,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-l">
         Apply for ‘new style’ Employment Support Allowance
       </h1>
 
@@ -19,43 +19,63 @@
 
       <ol class="app-task-list">
         <li>
-{#           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Health
-          </h2> #}
           <ul class="app-task-list__items" style="padding: 0">
             <li class="app-task-list__item">
-              <a class="app-task-list__task-name app-task-list__section" href="health/condition" aria-describedby="#">
-                Health
-              </a>
-              <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+              {% if getData.yourhealth === "completed" %}
+                <a class="app-task-list__task-name app-task-list__section" href="health/checkanswers" aria-describedby="#">Your health</a>
+                <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+              {% elif getData.yourhealth === "started" %}
+                <a class="app-task-list__task-name app-task-list__section" href="health/condition" aria-describedby="#">Your health</a>
+                <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+              {% else %}
+                <a class="app-task-list__task-name app-task-list__section" href="health/condition" aria-describedby="#">
+                  Your health
+                </a>
+              {% endif %}
+            </li>
+
+            <li class="app-task-list__item">
+              {% if getData.voluntarywork === "completed" %}
+                <a class="app-task-list__task-name app-task-list__section" href="volunteering/checkanswers-2" aria-describedby="#">Voluntary work</a>
+                <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+              {% elif getData.voluntarywork === "started" %}
+                <a class="app-task-list__task-name app-task-list__section" href="volunteering/voluntary-work" aria-describedby="#">Voluntary work</a>
+                <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+              {% else %}
+                <a class="app-task-list__task-name app-task-list__section" href="volunteering/voluntary-work" aria-describedby="#">
+                  Voluntary work
+                </a>
+              {% endif %}
+            </li>
+
+            <li class="app-task-list__item">
+              {% if getData.paidwork === "completed" %}
+                <a class="app-task-list__task-name app-task-list__section" href="work/checkanswers-2" aria-describedby="#">Paid work</a>
+                <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+              {% elif getData.paidwork === "started" %}
+                <a class="app-task-list__task-name app-task-list__section" href="work/work" aria-describedby="#">Paid work</a>
+                <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+              {% else %}
+                <a class="app-task-list__task-name app-task-list__section" href="work/work" aria-describedby="#">
+                  Paid work
+                </a>
+              {% endif %}
             </li>
             <li class="app-task-list__item">
-              <a class="app-task-list__task-name app-task-list__section" href="volunteering/voluntary-work" aria-describedby="#">
-                Volunteering
-              </a>
-              {# <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong> #}
-            </li>
-            <li class="app-task-list__item">
-              <a class="app-task-list__task-name app-task-list__section" href="work/work" aria-describedby="#">
-                Paid work
-              </a>
-              {# <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong> #}
-            </li>
-            <li class="app-task-list__item">
-              <a class="app-task-list__task-name app-task-list__section" href="claim-date/claimdate" aria-describedby="#">
-                Claim date
+              <a class="app-task-list__task-name app-task-list__section" href="pension/pension" aria-describedby="#">
+                Pensions
               </a>
               {# <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong> #}
             </li>
             <li class="app-task-list__item">
               <a class="app-task-list__task-name app-task-list__section" href="pension/pension" aria-describedby="#">
-                Pensions and insurance
+                Income protection insurance
               </a>
               {# <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong> #}
             </li>
             <li class="app-task-list__item">
               <a class="app-task-list__task-name app-task-list__section" href="about-you/name" aria-describedby="#">
-                About you
+                Your details
               </a>
 {#               <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong> #}
             </li>
@@ -66,12 +86,14 @@
             </li> #}
             <li class="app-task-list__item">
               <span class="app-task-list__task-name app-task-list__section" href="#" aria-describedby="#">
-                Declaration (do this last)
+                <span style="opacity: 0.6">Claim date and declaration <span style="font-weight: normal">(do this last)</span></span>
               </span>
             </li>
           </ul>
         </li>
       </ol>
+
+      <p><a href="cancel-application">Cancel application</a></p>
 
     </div>
   </div>

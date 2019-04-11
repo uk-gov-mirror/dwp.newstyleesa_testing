@@ -13,7 +13,7 @@
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
             Does your condition mean your doctor expects you to live less than 6 months?
           </h1>
@@ -43,6 +43,8 @@
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- terminalprognosis -->
 
     </form>
+
+    {% include "apply/v9/health/_return-link.html" %}
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

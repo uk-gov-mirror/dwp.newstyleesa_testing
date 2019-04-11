@@ -12,7 +12,7 @@
     <form id="form" method="post" action="statutory-pay">
       <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
             Does {{ data['employer-details'] | split(',') | last }} pay you any expenses?
           </h1>
@@ -34,7 +34,12 @@
       </fieldset>
       </div>
       <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- statutory-pay -->
+
+      {% include "apply/v9/work/_return-link.html" %}
     </div>
+
+    
+
   </form>
 
     </div><!-- govuk-grid-column-two-thirds -->

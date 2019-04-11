@@ -12,7 +12,7 @@
     <form id="form" method="post" action="work-self-emp-sick">
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
         What date did you last work at {{ data['employer-details'] | split(',') | last }}?
       </h1>
@@ -52,6 +52,8 @@
 </div>
 
 <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-self-emp-sick -->
+
+{% include "apply/v9/work/_return-link.html" %}
 
 </form>
 </div><!-- govuk-grid-column-two-thirds -->
