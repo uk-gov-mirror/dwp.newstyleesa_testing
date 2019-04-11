@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="declaration">
+
+      <h1 class="govuk-heading-l">Check your answers: statutory pay</h1>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+             <dt class="app-check-your-answers__question">
+               Getting Statutory Sick Pay
+             </dt>
+             <dd class="app-check-your-answers__answer">
+               Yes
+
+             </dd>
+             <dd class="app-check-your-answers__change">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+           <div class="app-check-your-answers__contents">
+             <dt class="app-check-your-answers__question">
+               Sick Pay ends
+             </dt>
+             <dd class="app-check-your-answers__answer">
+               18 January 2019
+             </dd>
+             <dd class="app-check-your-answers__change">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+           <div class="app-check-your-answers__contents">
+             <dt class="app-check-your-answers__question">
+               Other statutory payments
+             </dt>
+             <dd class="app-check-your-answers__answer">
+               Statutory Maternity Pay
+             </dd>
+             <dd class="app-check-your-answers__change">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+           <div class="app-check-your-answers__contents">
+             <dt class="app-check-your-answers__question">
+               When you will be fit for work
+             </dt>
+             <dd class="app-check-your-answers__answer">
+               18 March 2019
+             </dd>
+             <dd class="app-check-your-answers__change">
+               <a href="#">
+                 Change
+               </a>
+             </dd>
+           </div>
+        </dl>
+
+        <a href="../list?yourhealth=completed&voluntarywork=completed&ssp=completed" class="govuk-button">Confirm and continue</a>
+
+
+
+
+</div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

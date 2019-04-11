@@ -34,8 +34,6 @@
               {% endif %}
             </li>
 
-            
-
             <li class="app-task-list__item">
               {% if getData.paidwork === "completed" %}
                 <a class="app-task-list__task-name app-task-list__section" href="work/checkanswers-2" aria-describedby="#">Paid work</a>
@@ -51,7 +49,17 @@
             </li>
 
             <li class="app-task-list__item">
-              SSP
+              {% if getData.ssp === "completed" %}
+                <a class="app-task-list__task-name app-task-list__section" href="ssp/checkanswers-2" aria-describedby="#">Statutory pay</a>
+                <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+              {% elif getData.ssp === "started" %}
+                <a class="app-task-list__task-name app-task-list__section" href="ssp/statutory-pay" aria-describedby="#">Statutory pay</a>
+                <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+              {% else %}
+                <a class="app-task-list__task-name app-task-list__section" href="ssp/statutory-pay" aria-describedby="#">
+                  Statutory pay
+                </a>
+              {% endif %}
             </li>
 
             <li class="app-task-list__item">
