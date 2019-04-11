@@ -61,12 +61,21 @@
                 </a>
               {% endif %}
             </li>
+
             <li class="app-task-list__item">
-              <a class="app-task-list__task-name app-task-list__section" href="pension/pension" aria-describedby="#">
-                Pensions
-              </a>
-              {# <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong> #}
+              {% if getData.pension === "completed" %}
+                <a class="app-task-list__task-name app-task-list__section" href="pension/checkanswers-2" aria-describedby="#">Pensions</a>
+                <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+              {% elif getData.pension === "started" %}
+                <a class="app-task-list__task-name app-task-list__section" href="pension/pension" aria-describedby="#">Pensions</a>
+                <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+              {% else %}
+                <a class="app-task-list__task-name app-task-list__section" href="pension/pension" aria-describedby="#">
+                  Pensions
+                </a>
+              {% endif %}
             </li>
+
             <li class="app-task-list__item">
               <a class="app-task-list__task-name app-task-list__section" href="pension/pension" aria-describedby="#">
                 Income protection insurance

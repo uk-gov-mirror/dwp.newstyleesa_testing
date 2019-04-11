@@ -61,6 +61,8 @@
 
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- occ-pension-details -->
 
+    {% include "apply/v9/pension/_return-link.html" %}
+
     </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
@@ -87,7 +89,7 @@
     	    $('#form').attr('action','pension-details');
     		  break;
         case 'no':
-    	    $('#form').attr('action','../list');
+    	    $('#form').attr('action','checkanswers-1');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;
