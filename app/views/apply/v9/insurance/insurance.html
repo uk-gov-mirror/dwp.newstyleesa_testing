@@ -43,6 +43,8 @@
 
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- insurance-detail -->
 
+    {% include "apply/v9/insurance/_return-link.html" %}
+
     </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
@@ -67,7 +69,7 @@
       	    $('#form').attr('action','insurance-who-paid');
       		  break;
           case 'no':
-      	    $('#form').attr('action','name');
+      	    $('#form').attr('action','checkanswers-1');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;

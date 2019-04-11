@@ -13,7 +13,7 @@
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">You have added details for: </h2>
             <ul class="govuk-list govuk-heading-l">
 
@@ -55,6 +55,8 @@
 
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- consent -->
 
+    {% include "apply/v9/insurance/_return-link.html" %}
+
     </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
@@ -81,7 +83,7 @@
     	    $('#form').attr('action','insurance-who-paid');
     		  break;
         case 'no':
-    	    $('#form').attr('action','name');
+    	    $('#form').attr('action','checkanswers-2');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

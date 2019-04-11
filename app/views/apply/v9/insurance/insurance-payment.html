@@ -18,7 +18,7 @@
             </h1>
           </legend>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
                 How often does {{ data['insurance-providers'] | split(',') | last }} pay you?
               </h2>
@@ -80,7 +80,7 @@
             </div> <!-- govuk-radios -->
 
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-padding-top-6">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-padding-top-6">
               <h2 class="govuk-fieldset__heading">
                 How much do you get paid by {{ data['insurance-providers'] | split(',') | last }}?
               </h2>
@@ -102,6 +102,8 @@
       </div> <!-- govuk-form-group -->
 
       <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- insurance-another -->
+
+      {% include "apply/v9/insurance/_return-link.html" %}
 
     </form>
 
