@@ -105,16 +105,19 @@
             </li>
 
             <li class="app-task-list__item">
-              <a class="app-task-list__task-name app-task-list__section" href="about-you/name" aria-describedby="#">
-                Your details
-              </a>
-{#               <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong> #}
+              {% if getData.yourdetails === "completed" %}
+                <a class="app-task-list__task-name app-task-list__section" href="about-you/checkanswers" aria-describedby="#">Your details</a>
+                <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+              {% elif getData.yourdetails === "started" %}
+                <a class="app-task-list__task-name app-task-list__section" href="about-you/name" aria-describedby="#">Your details</a>
+                <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+              {% else %}
+                <a class="app-task-list__task-name app-task-list__section" href="about-you/name" aria-describedby="#">
+                  Your details
+                </a>
+              {% endif %}
             </li>
-{#             <li class="app-task-list__item">
-              <a class="app-task-list__task-name app-task-list__section" href="#" aria-describedby="#">
-                Final steps
-              </a>
-            </li> #}
+
             <li class="app-task-list__item">
               <span class="app-task-list__task-name app-task-list__section" href="#" aria-describedby="#">
                 <span style="opacity: 0.6">Claim date and declaration <span style="font-weight: normal">(do this last)</span></span>
