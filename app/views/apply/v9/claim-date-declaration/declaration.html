@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -31,7 +35,7 @@
 
   </div>
 
-    <a href="done-private-beta" class="govuk-button">I understand, send my application</a>
+    <a href="../done-public-beta" class="govuk-button">I understand, send my application</a>
 
     </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
