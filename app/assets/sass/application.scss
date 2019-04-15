@@ -791,7 +791,7 @@ $govuk-global-styles: true;
   }
 }
 
-// Tags on hub and spoke design
+// Hub and spoke pattern (v9)
 
 .tag-started {
   background-color: govuk-colour("white");
@@ -799,3 +799,31 @@ $govuk-global-styles: true;
   border: 2px solid govuk-colour("blue");
 }
 
+// // Tag layout to include the label within the link
+
+.app-task-list__task-name {
+  span {
+    display: block;
+  }
+}
+
+.app-task-list__item .govuk-tag {
+  display: inline-block;
+  clear: both;
+}
+
+@include govuk-media-query($from: 450px) {
+  .app-task-list__task-name {
+    width: 100%;
+    span {
+      display: inline;
+    }
+  }
+}
+
+@include govuk-media-query($from: 450px) {
+  .app-task-list__item .govuk-tag {
+    display: inline;
+    width: auto;
+  }
+}

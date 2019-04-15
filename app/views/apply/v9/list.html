@@ -19,8 +19,9 @@
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="before-you-start" aria-describedby="#">
                 Check what you need
+                <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span>
               </a>
-              <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+              
             </li>
           </ul>
         </li>
@@ -31,11 +32,10 @@
               <ul class="app-task-list__items" style="padding: 0">
                 <li class="app-task-list__item">
                   {% if getData.yourhealth === "completed" %}
-                    <a class="app-task-list__task-name " href="health/checkanswers" aria-describedby="#">Your health</a>
-                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                    <a class="app-task-list__task-name " href="health/checkanswers" aria-describedby="#">Your health <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
+                    
                   {% elif getData.yourhealth === "started" %}
-                    <a class="app-task-list__task-name " href="health/condition" aria-describedby="#">Your health</a>
-                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                    <a class="app-task-list__task-name " href="health/condition" aria-describedby="#">Your health <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
                   {% else %}
                     <a class="app-task-list__task-name " href="health/condition" aria-describedby="#">
                       Your health
@@ -45,11 +45,9 @@
 
                 <li class="app-task-list__item">
                   {% if getData.paidwork === "completed" %}
-                    <a class="app-task-list__task-name " href="work/checkanswers-2" aria-describedby="#">Paid work</a>
-                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                    <a class="app-task-list__task-name " href="work/checkanswers-2" aria-describedby="#">Paid work <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
                   {% elif getData.paidwork === "started" %}
-                    <a class="app-task-list__task-name " href="work/work" aria-describedby="#">Paid work</a>
-                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                    <a class="app-task-list__task-name " href="work/work" aria-describedby="#">Paid work <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
                   {% else %}
                     <a class="app-task-list__task-name " href="work/work" aria-describedby="#">
                       Paid work
@@ -59,11 +57,9 @@
 
                 <li class="app-task-list__item">
                   {% if getData.ssp === "completed" %}
-                    <a class="app-task-list__task-name " href="ssp/checkanswers-2" aria-describedby="#">Statutory pay</a>
-                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                    <a class="app-task-list__task-name " href="ssp/checkanswers-2" aria-describedby="#">Statutory pay <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
                   {% elif getData.ssp === "started" %}
-                    <a class="app-task-list__task-name " href="ssp/statutory-pay" aria-describedby="#">Statutory pay</a>
-                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                    <a class="app-task-list__task-name " href="ssp/statutory-pay" aria-describedby="#">Statutory pay <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
                   {% else %}
                     <a class="app-task-list__task-name " href="ssp/statutory-pay" aria-describedby="#">
                       Statutory pay
@@ -73,11 +69,9 @@
 
                 <li class="app-task-list__item">
                   {% if getData.voluntarywork === "completed" %}
-                    <a class="app-task-list__task-name " href="volunteering/checkanswers-2" aria-describedby="#">Voluntary work</a>
-                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                    <a class="app-task-list__task-name " href="volunteering/checkanswers-2" aria-describedby="#">Voluntary work <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
                   {% elif getData.voluntarywork === "started" %}
-                    <a class="app-task-list__task-name " href="volunteering/voluntary-work" aria-describedby="#">Voluntary work</a>
-                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                    <a class="app-task-list__task-name " href="volunteering/voluntary-work" aria-describedby="#">Voluntary work <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
                   {% else %}
                     <a class="app-task-list__task-name " href="volunteering/voluntary-work" aria-describedby="#">
                       Voluntary work
@@ -87,11 +81,9 @@
 
                 <li class="app-task-list__item">
                   {% if getData.pension === "completed" %}
-                    <a class="app-task-list__task-name " href="pension/checkanswers-2" aria-describedby="#">Pensions</a>
-                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                    <a class="app-task-list__task-name " href="pension/checkanswers-2" aria-describedby="#">Pensions <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
                   {% elif getData.pension === "started" %}
-                    <a class="app-task-list__task-name " href="pension/pension" aria-describedby="#">Pensions</a>
-                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                    <a class="app-task-list__task-name " href="pension/pension" aria-describedby="#">Pensions <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
                   {% else %}
                     <a class="app-task-list__task-name " href="pension/pension" aria-describedby="#">
                       Pensions
@@ -101,11 +93,9 @@
 
                 <li class="app-task-list__item">
                   {% if getData.insurance === "completed" %}
-                    <a class="app-task-list__task-name " href="insurance/checkanswers-2" aria-describedby="#">Income protection insurance</a>
-                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                    <a class="app-task-list__task-name " href="insurance/checkanswers-2" aria-describedby="#">Income protection insurance <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
                   {% elif getData.insurance === "started" %}
-                    <a class="app-task-list__task-name " href="insurance/insurance" aria-describedby="#">Income protection insurance</a>
-                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                    <a class="app-task-list__task-name " href="insurance/insurance" aria-describedby="#">Income protection insurance <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
                   {% else %}
                     <a class="app-task-list__task-name " href="insurance/insurance" aria-describedby="#">
                       Income protection insurance
@@ -115,11 +105,9 @@
 
                 <li class="app-task-list__item">
                   {% if getData.yourdetails === "completed" %}
-                    <a class="app-task-list__task-name " href="about-you/checkanswers" aria-describedby="#">Your details</a>
-                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                    <a class="app-task-list__task-name " href="about-you/checkanswers" aria-describedby="#">Your details <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
                   {% elif getData.yourdetails === "started" %}
-                    <a class="app-task-list__task-name " href="about-you/name" aria-describedby="#">Your details</a>
-                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                    <a class="app-task-list__task-name " href="about-you/name" aria-describedby="#">Your details <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
                   {% else %}
                     <a class="app-task-list__task-name " href="about-you/name" aria-describedby="#">
                       Your details
