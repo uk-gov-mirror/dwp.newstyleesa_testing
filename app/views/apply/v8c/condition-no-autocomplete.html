@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-  <a href="../list" class="govuk-back-link">Back</a>
+  {% include "includes/back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -9,8 +9,9 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="gpsurgery">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+    <form id="form" method="post" action="pregnant">
+      <span class="govuk-caption-l">Part 1 of 6: Health</span>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
         What health conditions, illnesses, disabilities or injuries do you have?
       </h1>
       <span id="event-name-hint" class="govuk-hint">
@@ -30,10 +31,10 @@
             }) }}
           </div>
 
-          <div class="govuk-form-group hidden autocomplete">
+<!--           <div class="govuk-form-group hidden autocomplete">
             <label for="conditions-{{ i }}-name" class="govuk-label">Name of condition</label>
             <div id="conditions-{{ i }}"></div>
-          </div>
+          </div> -->
 
           {% from "date-input/macro.njk" import govukDateInput %}
 
@@ -56,11 +57,11 @@
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="conditions-0-started-hint" role="group">
-
+              
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <p class="govuk-fieldset__heading">When it first started</p>
               </legend>
-              <p>If you do not know the exact date, you can give an estimate.</p>
+              <p>If you don’t know the exact date, you can give an estimate.</p>
               <span id="conditions-0-started-hint" class="govuk-hint">For example, 30 3 1997</span>
               <div class="govuk-date-input" id="conditions-{{ i }}-started">
                 <div class="govuk-date-input__item">
@@ -99,9 +100,6 @@
       <p><a id="add-another" href="#" class="govuk-link hidden">Add another condition</a></p>
       <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- pregnant -->
     </form>
-
-    {% include "apply/v9/health/_return-link.html" %}
-
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
 <style>
@@ -113,21 +111,11 @@
 Array.prototype.slice.call(document.querySelectorAll('.hidden')).forEach(function(e) {
   e.classList.remove('hidden');
 })
-Array.prototype.slice.call(document.querySelectorAll('.fallback, .js-hidden, .additional')).forEach(function(e) {
+Array.prototype.slice.call(document.querySelectorAll('.js-hidden, .additional')).forEach(function(e) {
   e.classList.add('hidden');
 })
 
-{% include '../../../includes/conditions-canonical-list.js' %}
-
 window.onload = function() {
-  for (var i = 0; i < 12; i++) {
-    accessibleAutocomplete({
-      element: document.querySelector('#conditions-' + i),
-      id: 'conditions-' + i + '-name',
-      source: conditions,
-      showNoOptionsFound: false
-    })
-  }
   var visible = 1;
   document.querySelector('#add-another').addEventListener('click', function(e){
     e.preventDefault();
