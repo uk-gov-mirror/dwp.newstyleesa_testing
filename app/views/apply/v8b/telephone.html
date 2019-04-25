@@ -12,7 +12,7 @@
           Personal details
     </span>
 
-    <form id="form" method="post" action="condition-no-autocomplete">
+    <form id="form" method="post" action="bank">
 
     <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
@@ -78,7 +78,7 @@
       switch($('input[name="mobile"]:checked').val())
       {
         case 'yes':
-          $('#form').attr('action','condition-no-autocomplete');
+          $('#form').attr('action','condition');
           break;
         case 'no':
           $('#form').attr('action','landline');
