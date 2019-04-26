@@ -38,12 +38,12 @@
 
             {% if whichDate == 'lastWorked' %}
               {% if date3monthsAgo %}
-                <p class="govuk-body-l">Based on your answers you can claim from:<br><strong>{{date3monthsAgo}}</strong></p>
               {% elseif dateToShow %}
-                <p>Based on your answers you can claim from: <strong>{{dateToShow}}</strong></p>
-                <p>This is the last day you worked as self-employed.</p>
+                <p class="govuk-body-l">Based on your answers you can claim from:<br> <strong>{{dateToShow}}</strong></p>
+                <p>This is the last day you worked at your self-employed role.</p>
               {% endif %}
             {% endif %}
+
 
             {% if whichDate == 'sspRecent' %}
               {% if date3monthsAgo %}
@@ -60,6 +60,8 @@
                 <p>This is the day after you will stop getting Statutory Sick Pay.</p>
               {% endif %}
             {% endif %}
+
+
 
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
