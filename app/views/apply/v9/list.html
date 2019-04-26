@@ -132,11 +132,16 @@
                 and (sectionStatus.pension === "completed")
                 and (sectionStatus.insurance === "completed")
                 and (sectionStatus.yourdetails === "completed")
-                %}
+              %}
 
-                <a class="app-task-list__task-name " href="claim-date-declaration/claimdate" aria-describedby="#">Submit your application
-
+                {# If dynamic date, go to the claim date screen. If not, go to the generic claim date screen #}
+                {% if whichDate %}
+                  <a class="app-task-list__task-name " href="claim-date-declaration/claimdate" aria-describedby="#">Submit your application</a>
                 {% else %}
+                  <a class="app-task-list__task-name " href="claim-date-declaration/claimdate-blank" aria-describedby="#">Submit your application</a>
+                {% endif %}
+
+              {% else %}
 
                 <span class="app-task-list__task-name " href="#" aria-describedby="#">
                   <span style="opacity: 0.6">Submit your application <span style="font-weight: normal">(do this last)</span></span>
