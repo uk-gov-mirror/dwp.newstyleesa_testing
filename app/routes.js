@@ -25,6 +25,32 @@ router.all('/data/:data/source/:source', (req, res) => {
   res.json(require(`./data/${data}/source/${source}`))
 })
 
+// Code from Steven for dealing with variables on list page
+
+router.get('/apply/v9/list', (req, res, next) => {
+
+  if (!req.session.sectionStatus){
+    console.log('no session');
+    req.session.sectionStatus = {
+      cwyn: 'complete',
+      yh: undefined,
+      paidwork: undefined,
+      sp: undefined,
+      vw: undefined,
+      pensions: undefined,
+      ipi: undefined,
+      yd: undefined,
+      submitted: undefined,
+    }
+  }
+
+  if (req.query.paidwork) {
+    req.session.sectionStatus.paidwork = req.query.paidwork
+  };
+
+  res.render('apply/v9/list.html', {sectionStatus: req.session.sectionStatus});
+});
+
 
 // Adding the moment plug in for Claim Date screen
 router.get('/*/claimdate', function (req, res, next) {
@@ -110,5 +136,7 @@ router.get('*', function (req, res, next) {
   else res.locals.path = path.dirname(req.params[0]).substr(1);
   next();
 })
+
+
 
 module.exports = router

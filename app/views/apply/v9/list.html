@@ -44,9 +44,9 @@
                 </li>
 
                 <li class="app-task-list__item">
-                  {% if getData.paidwork === "completed" %}
+                  {% if sectionStatus.paidwork === "completed" %}
                     <a class="app-task-list__task-name " href="work/checkanswers-2" aria-describedby="#">Paid work <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
-                  {% elif getData.paidwork === "started" %}
+                  {% elif sectionStatus.paidwork === "started" %}
                     <a class="app-task-list__task-name " href="work/work" aria-describedby="#">Paid work <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
                   {% else %}
                     <a class="app-task-list__task-name " href="work/work" aria-describedby="#">
