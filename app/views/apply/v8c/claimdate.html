@@ -10,17 +10,17 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form id="form" method="post" action="pension">
-{# 
+{#
 {{dateToShow}}
 
 {{whichDate}}
 
 {% if date3monthsAgo %}
-  <p>This is because you can only claiM UP TO 3 MONTHS AGAO</p>
+  <p>This is 3 months before today's date. You'll need to have enough fit notes (you might know these as sick notes) to cover the last 3 months.</p>
 {% endif %}
 
 {{date3monthsAgo}} #}
-{# 
+{#
 {{whichDate}}
 {{dateToShow}}
 {{date3monthsAgo}} #}
@@ -39,7 +39,7 @@
                 <p class="govuk-body-l">Based on your answers you can claim from:<br><strong>{{date3monthsAgo}}</strong></p>
               {% elseif dateToShow %}
                 <p>Based on your answers you can claim from: <strong>{{dateToShow}}</strong></p>
-                <p>This is the last day you worked as self-employed.</p>
+                <p>This is the last day you worked at your self-employed role.</p>
               {% endif %}
             {% endif %}
 
