@@ -191,6 +191,13 @@ router.get('/apply/v9/list', (req, res, next) => {
 });
 
 
+// Clear data on the 'application cancelled' screen
+
+router.get('/*/clear-v9', function (req, res) {
+  req.session.destroy()
+  res.render('apply/v9/application-cancelled')
+})
+
 
 
 // Page routing
