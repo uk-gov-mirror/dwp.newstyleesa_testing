@@ -10,8 +10,26 @@
         Apply for ‘new style’ Employment and Support Allowance
         <span class="govuk-caption-xl">v0.8</span>
       </h1>
-
-      <h2 class="govuk-heading-s">Created: 10 Jan 2019</h2>
+      <p>Created 3 different versions to test:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>order of questions</li>
+        <li>how we show progress through the application</li>
+    </ul>
+     <p>These will be tested week commencing 29 April alongside existing version 8 prototype which has been iterated but not fully tested.</p>
+    <p>The versions are:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="https://newstyleesa.herokuapp.com/apply/v8/start-page-steps">Version 8</a> - health questions first, linear form</li>
+          <li><a href="https://newstyleesa.herokuapp.com/apply/v8b/start-page-steps">Version 8b</a> - personal questions first, linear form</li>
+          <li><a href="https://newstyleesa.herokuapp.com/apply/v8c/start-page-steps">Version 8c</a> - health questions first with progress indicator at top of page, linear form</li>
+          <li><a href="https://newstyleesa.herokuapp.com/apply/v9/">Version 9</a> - summary screen with sections, based on <a href="https://design-system.service.gov.uk/patterns/task-list-pages/">GOV.UK task list pattern</a> with reordered sections</li>
+        </ul>
+      <details class="govuk-details">
+      <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+      Full version 8 notes - January 2019 to May 2019
+    </span>
+  </summary>
+  <div class="govuk-details__text">
       <p>Research showed:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>Users still don&rsquo;t understand that they have to do something once they submit</li>
@@ -19,13 +37,17 @@
         <li>The claim date is still difficult to figure out, although the hint text did help</li>
         <li>There is some jargon in the service that we need to describe - particularly fit note, SSP1, and claimant commitment
         <li>Permanent health insurance isn&rsquo;t fully understood</li>
+        <li>Applicants very rarely have permanent health insurance - research on 438 claims showed 0 people with permanent health insurance</li>
+        <li>No users in our check across 438 claims had voluntary work and permitted work was also rare (4 out of 438)</li>
+        <li>37 out of 438 claims checked had a pension</li>
       </ul>
       <p>Changes:</p>
       <ul class="govuk-list govuk-list--bullet">
+        <li>Pension and permanent health insurance questions are now mostly optional, with a message at the top of each optional question to explain that anything they can give will save time later</li>
+        <li>Predictive type-ahead from health conditions removed as IRG needs updating because it contains offensive and outdated conditions</li>
         <li>Information about the appointment is now inset on the start page to draw users&rsquo; eyes to it</li>
         <li>Next steps on the confirmation page arranged as a numbered list</li>
         <li>'Add another condition' button added to the conditions screen - users can add up to 12 health conditions</li>
-        <li>Full list of possible health conditions added to the autocomplete on the conditions screen</li>
         <li>Added a 'when it started' field to the conditions page as staff need it to understand the severity of the condition or if something has changed</li>
         <li>Users whose sick pay ended a while ago are now asked 'When did your sick pay end?'</li>
         <li>More hint text added to the claim date screen to start with - other ideas for how we might address this need below</li>
@@ -33,7 +55,7 @@
         <li>New pension screens added to the question set - business requirement to ask gross and net amounts as well as deductions</li>
         <li>Future hospital stays removed, and previous stays added - requested by Policy</li>
         <li>Added &lsquo;Are you expecting to go back to work?&rsquo; question</li>
-        <li>Permanent Helath Insurnace question flow changed so that the user shouldn&rsquo;t have to answer all the quesitons if they pay more than half the premiums</li>
+        <li>Permanent Health Insurnace question flow changed so that the user shouldn&rsquo;t have to answer all the quesitons if they pay more than half the premiums</li>
         <li>Changed consent screen as per Legal recommendation that users give consent for their doctors to share information, and updated the declaration with 'confirm' rather than 'agree' as the items in the declaration are obligations</li>
         <li>Referring to ‘regular payments’ when asking about pensions</li>
         <li>Re-ordered payment frequency options (pensions, insurance)</li>
@@ -42,9 +64,10 @@
         <li>Updated ‘Done’ screen</li>
         <li>Added a separate ‘Before you start’ screen</li>
         <li>Add updated address fields to account for addresses that are outside the UK</li>
-        <li>updated hint text on DS1500, terminally ill, and GP surgery screens after GDS content review</li>
+        <li>Updated hint text on DS1500, terminally ill, and GP surgery screens after GDS content review</li>
       </ul>
-
+    </div>
+  </details>
 
       <p><a href="/apply/v8/start-page-steps" class="govuk-button">Open prototype</a>
       </p>
@@ -91,7 +114,7 @@
             <h2 class="govuk-heading-s">Prototype notes</h2>
             <p>
               <a href="/apply/v8c/start-page-steps" class="govuk-button">Open prototype</a>
-            </p> 
+            </p>
 
           <span class="govuk-caption-x">v0.7</span>
             </h1>
