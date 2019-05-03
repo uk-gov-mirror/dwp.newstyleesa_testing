@@ -8,22 +8,20 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl" style="display:none">
-          Your health
-    </span>
 
-    <form id="form" method="post" action="ds1500-report">
+    <form id="form" method="post" action="ds1500">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <span class="govuk-caption-l">Part 1 of 6: Health</span>
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
             Does your condition mean your doctor expects you to live less than 6 months?
           </h1>
         </legend>
 
         <span id="special-rules-hint" class="govuk-hint">
-		     If you're expected to live less than 6 months then you will get a faster decision and be paid the higher rate of Employment and Support Allowance.
+		    If you're expected to live less than 6 months then you'll get a faster decision and will be paid the higher rate of Employment and Support Allowance.
 		    </span>
 
         <div class="govuk-radios">
@@ -66,7 +64,7 @@
       	switch($('input[name="changed-name"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','ds1500-report');
+      	    $('#form').attr('action','ds1500');
       		  break;
           case 'no':
       	    $('#form').attr('action','hospital');
