@@ -12,14 +12,14 @@
 		  <fieldset class="govuk-fieldset" aria-describedby="pension-start-hint" role="group">
 		    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
 		      <h1 class="govuk-fieldset__heading">
-		        When did your pension from {{ data['pension-provider'] | split(',') | last }} start?
+		        When did your pension start?
 		      </h1>
 		    </legend>
 		    {% include "includes/non-mandatory-message.html" %}
 		    <span id="pension-start-hint" class="govuk-hint">
 		      For example, 31 3 1980
 		    </span>
-        
+
 		    <div class="govuk-date-input" id="pension-start">
 		      <div class="govuk-date-input__item">
 		        <div class="govuk-form-group">
