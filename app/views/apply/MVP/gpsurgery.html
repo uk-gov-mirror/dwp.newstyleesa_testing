@@ -15,12 +15,9 @@
       Which doctor's surgery or medical centre do you use?
     </h1>
 
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="gp">
-        Name of your doctor
-      </label>
-      <input class="govuk-input govuk-!-width-one-half" id="gp" name="gp" type="text">
-    </div>
+    <span id="gp-hint" class="govuk-hint">
+      The Department for Work and Pensions might need to contact your doctor for more information about your condition.
+    </span>
 
     <div class="govuk-form-group">
       <label class="govuk-label" for="surgery">
@@ -35,6 +32,20 @@
       </label>
       <input class="govuk-input govuk-!-width-one-half" id="surgery" name="surgery" type="text">
     </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="gp">
+        Name of your doctor (optional)
+      </label>
+      <span id="national-insurance-number-hint" class="govuk-hint">
+        This helps identify the right person to speak to.
+      </span>
+      <input class="govuk-input govuk-!-width-one-half" id="gp" name="gp" type="text">
+    </div>
+
+    
+
+    
 
     <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -76,7 +87,17 @@
           <label class="govuk-label" for="address-postcode">
             Postcode
           </label>
-          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+          <span id="event-name-hint" class="govuk-hint">
+            If the address is outside the UK and does not have a postcode you can enter the province, state or department.
+          </span>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-postcode">
+            Country (if outside the UK)
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="address-postcode" name="address-postcode" type="text">
         </div>
 
      </fieldset>
