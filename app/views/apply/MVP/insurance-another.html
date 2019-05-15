@@ -5,7 +5,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="consent">
+    <form id="form" method="post" action="claimdate">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -45,7 +45,7 @@
       </fieldset>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- consent -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
 
     </form>
 
@@ -73,7 +73,7 @@
     	    $('#form').attr('action','insurance-detail');
     		  break;
         case 'no':
-    	    $('#form').attr('action','name');
+    	    $('#form').attr('action','claimdate');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;
