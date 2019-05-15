@@ -6,10 +6,9 @@
 
 {% block content %}
 
-<p class="red">Content updates:</p>
-<ul class="govuk-list govuk-list--bullet red">
-  <li>Latest or current fit note</li>
-  <li>People didn’t know they could add multiple</li>
+<p class="red">Design update:</p>
+<ul class="blue govuk-list govuk-list--bullet red">
+  <li>Need to make 'name of condition' a fieldset heading</li>
 </ul>
 
 <div class="govuk-grid-row">
@@ -20,7 +19,7 @@
         What health conditions, illnesses, disabilities or injuries do you have?
       </h1>
       <span id="event-name-hint" class="govuk-hint">
-        Put what&rsquo;s on your fit note (also known as a sick note), if you have one.
+        You can add more than one condition if you need to.
       </span>
       <p class="govuk-hint js-hidden">Enter as many as you have<p>
       {% for i in range(0, 12) %}
@@ -38,6 +37,7 @@
 
           <div class="govuk-form-group hidden autocomplete">
             <label for="conditions-{{ i }}-name" class="govuk-label">Name of condition</label>
+            <p>Put what's on your current fit note (you might call this a 'sick note'), if you have one.</p>
             <div id="conditions-{{ i }}"></div>
           </div>
 
@@ -62,7 +62,7 @@
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="conditions-0-started-hint" role="group">
-              
+
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <p class="govuk-fieldset__heading">When it first started</p>
               </legend>
