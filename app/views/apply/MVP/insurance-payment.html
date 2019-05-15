@@ -10,14 +10,14 @@
         <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              How often does {{ data['insurance-provider'] | split(',') | last }} pay you?
+              How often are you paid by this insurance?
             </h1>
           </legend>
           {% include "includes/non-mandatory-message.html" %}
 
           <div class="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-often-paid-1" name="how-often-paid"" type="radio" value="daily">
+                <input class="govuk-radios__input" id="how-often-paid-1" name="how-often-paid" type="radio" value="daily">
                 <label class="govuk-label govuk-radios__label" for="how-often-paid-1">
                   Daily
                 </label>
@@ -73,7 +73,7 @@
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-padding-top-6">
               <h2 class="govuk-fieldset__heading">
-                How much do you get paid by {{ data['insurance-provider'] | split(',') | last }}?
+                How much are you paid by this insurance?
               </h2>
             </legend>
             <div class="govuk-currency-input">
