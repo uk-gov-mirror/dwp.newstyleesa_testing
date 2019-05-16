@@ -17,17 +17,23 @@
     <form id="form" method="post" action="work-hours">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Are you currently employed, even if you're not working at the moment?
+      Are you currently employed or self-employed, even if you're unable to work at the moment?
     </h1>
     <p>
-     Select yes if you are self employed or on a zero hours contract.
+     Select 'Yes, I'm employed' if you're on a zero hours contract.
     </p>
     <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="employed">
           <label class="govuk-label govuk-radios__label" for="work-1">
-            Yes, I'm currently employed
+            Yes, I'm employed
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="work-1" name="work" type="radio" value="self-employed">
+          <label class="govuk-label govuk-radios__label" for="work-1">
+            Yes, I'm self-employed
           </label>
         </div>
         <div class="govuk-radios__item">
@@ -67,6 +73,9 @@
     		case 'employed':
     	    $('#form').attr('action','work-emp-details');
     		  break;
+          case 'self-employed':
+      	    $('#form').attr('action','work-emp-details');
+      		  break;
         case 'not_employed':
     	    $('#form').attr('action','statutory-pay-recent');
     		  break;
