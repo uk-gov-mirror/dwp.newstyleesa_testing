@@ -8,22 +8,19 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <span class="govuk-caption-xl" style="display:none">
-          Your health
-    </span>
 
     <form id="form" method="post" action="gpsurgery">
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
         What health conditions, illnesses, disabilities or injuries do you have?
       </h1>
       <span id="event-name-hint" class="govuk-hint">
-        Put what&rsquo;s on your fit note (also known as a sick note), if you have one.
+        You can add more than one condition if you need to.
       </span>
       <p class="govuk-hint js-hidden">Enter as many as you have<p>
       {% for i in range(0, 12) %}
 
         <div id="block-{{ i }}" class="{{ 'additional' if i != 0 }}">
-          <div class="fallback">
+          <div class="fallback bold-label">
             {{ govukInput({
               label: {
                 text: "Name of condition"
@@ -33,8 +30,9 @@
             }) }}
           </div>
 
-          <div class="govuk-form-group hidden autocomplete">
+          <div class="govuk-form-group hidden autocomplete bold-label">
             <label for="conditions-{{ i }}-name" class="govuk-label">Name of condition</label>
+            <p>Put what’s on your current fit note (you might call this a ‘sick note’), if you have one.</p>
             <div id="conditions-{{ i }}"></div>
           </div>
 
@@ -63,7 +61,7 @@
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                 <p class="govuk-fieldset__heading">When it first started</p>
               </legend>
-              <p>If you do not know the exact date, you can give an estimate.</p>
+              <p>If you don’t know the exact date, you can give an estimate.</p>
               <span id="conditions-0-started-hint" class="govuk-hint">For example, 30 3 1997</span>
               <div class="govuk-date-input" id="conditions-{{ i }}-started">
                 <div class="govuk-date-input__item">
