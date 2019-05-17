@@ -9,6 +9,7 @@
 <p class="red">Design update:</p>
 <ul class="blue govuk-list govuk-list--bullet red">
   <li>Need to make 'name of condition' a fieldset heading</li>
+  <li>Added current fit note and hint text that they can add more than one</li>
 </ul>
 
 <div class="govuk-grid-row">
@@ -25,7 +26,7 @@
       {% for i in range(0, 12) %}
 
         <div id="block-{{ i }}" class="{{ 'additional' if i != 0 }}">
-          <div class="fallback">
+          <div class="fallback bold-label">
             {{ govukInput({
               label: {
                 text: "Name of condition"
@@ -35,7 +36,7 @@
             }) }}
           </div>
 
-          <div class="govuk-form-group hidden autocomplete">
+          <div class="govuk-form-group hidden autocomplete bold-label">
             <label for="conditions-{{ i }}-name" class="govuk-label">Name of condition</label>
             <p>Put what's on your current fit note (you might call this a 'sick note'), if you have one.</p>
             <div id="conditions-{{ i }}"></div>

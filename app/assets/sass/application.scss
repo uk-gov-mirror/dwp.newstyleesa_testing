@@ -19,6 +19,10 @@ $govuk-global-styles: true;
   color: red;
 }
 
+.bold-label label {
+  font-weight: bold;
+}
+
 a:visited {color: govuk-colour("blue");}
 
 .js-enabled select[data-source] {
