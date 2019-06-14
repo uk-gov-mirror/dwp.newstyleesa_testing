@@ -9,23 +9,18 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="insurance-another">
+    <form id="form" method="post" action="insurance-deductions">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
-              Insurance payments
+              How often do you get your {{ data['insurance-providers'] | split(',') | last }} insurance paid?
             </h1>
           </legend>
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h2 class="govuk-fieldset__heading">
-                How often does {{ data['insurance-providers'] | split(',') | last }} pay you?
-              </h2>
-            </legend>
             <div class="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-often-paid-1" name="how-often-paid"" type="radio" value="daily">
+                <input class="govuk-radios__input" id="how-often-paid-1" name="how-often-paid"type="radio" value="daily">
                 <label class="govuk-label govuk-radios__label" for="how-often-paid-1">
                   Daily
                 </label>
@@ -80,7 +75,7 @@
             </div> <!-- govuk-radios -->
 
 
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-padding-top-6">
+          <!--   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l govuk-!-padding-top-6">
               <h2 class="govuk-fieldset__heading">
                 How much do you get paid by {{ data['insurance-providers'] | split(',') | last }}?
               </h2>
