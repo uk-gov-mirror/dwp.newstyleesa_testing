@@ -12,7 +12,7 @@
           Your permanent health insurance
     </span>
 
-    <form id="form" method="post" action="insurance-payment">
+    <form id="form" method="post" action="insurance-detail">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -24,15 +24,21 @@
 
         <div class="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="changed-name-1">
+            <input class="govuk-radios__input" id="option-1" name="options" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="option-1">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+            <input class="govuk-radios__input" id="option-2" name="options" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="option-2">
               No
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="option-3" name="options" type="radio" value="notsure">
+            <label class="govuk-label govuk-radios__label" for="option-3">
+              I'm not sure
             </label>
           </div>
         </div>
@@ -59,7 +65,7 @@
         // depending on the value="" of the <input>
         // that's been checked, change the action=""
         // of the <form> and then allow it to submit.
-        switch($('input[name="changed-name"]:checked').val())
+        switch($('input[name="options"]:checked').val())
         {
           case 'yes':
             $('#form').attr('action','insurance-payment');
@@ -67,6 +73,10 @@
           case 'no':
             $('#form').attr('action','insurance-another');
             break;
+          case 'notsure':
+            $('#form').attr('action','insurance-another');
+            break;  
+
           // if nothing is ticked don't submit the form.
           default: return false; break;
         }

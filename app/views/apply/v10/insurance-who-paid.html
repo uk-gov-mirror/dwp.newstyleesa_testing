@@ -12,7 +12,7 @@
           Your permanent health insurance
     </span>
 
-    <form id="form" method="post" action="insurance-another-no-details">
+    <form id="form" method="post" action="insurance-another">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -72,7 +72,7 @@
       	switch($('input[name="options"]:checked').val())
         {
           case 'previous-employer':
-      	    $('#form').attr('action','insurance-detail');
+      	    $('#form').attr('action','insurance-premium-half');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return true; break;

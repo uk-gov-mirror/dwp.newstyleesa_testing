@@ -20,11 +20,7 @@
           <h2 class="govuk-fieldset__heading">You have added details for: </h2>
             <ul class="govuk-list govuk-heading-l">
 
-              {% for item in data['insurance-provider-1'] | split(',') %}
-                <li>{{ item }}</li>
-              {% endfor %}
-
-              {% for item in data['insurance-provider-2'] | split(',') %}
+              {% for item in data['insurance-providers'] | split(',') %}
                 <li>{{ item }}</li>
               {% endfor %}
 
@@ -81,7 +77,7 @@
     	switch($('input[name="insurance"]:checked').val())
       {
     		case 'yes':
-    	    $('#form').attr('action','insurance-who-paid');
+    	    $('#form').attr('action','insurance-detail');
     		  break;
         case 'no':
     	    $('#form').attr('action','checkanswers');

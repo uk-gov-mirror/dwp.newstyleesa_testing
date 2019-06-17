@@ -14,12 +14,11 @@
 
     <form id="form" method="post" action="insurance-detail">
 
-    <div class="govuk-form-group">
+   <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
             Do you get any money from income protection insurance because you’re too ill to work?
-{#             Do you get insurance payments because your job ended due to ill health? #}
           </h1>
         </legend>
 
@@ -38,6 +37,12 @@
             <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="changed-name-2">
               No
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="chnaged-name-3" name="changed-name" type="radio" value="notsure">
+            <label class="govuk-label govuk-radios__label" for="chnaged-name-3">
+              I’m not sure
             </label>
           </div>
         </div>
@@ -67,11 +72,14 @@
       	switch($('input[name="changed-name"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','insurance-who-paid');
+      	    $('#form').attr('action','insurance-detail');
       		  break;
           case 'no':
       	    $('#form').attr('action','checkanswers');
       		  break;
+          case 'notsure':
+            $('#form').attr('action','checkanswers');
+            break;
           // if nothing is ticked don't submit the form.
           default: return false; break;
         }
