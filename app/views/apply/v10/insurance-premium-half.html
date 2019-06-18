@@ -18,9 +18,12 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Did a previous employer pay more than half towards this {{ data['insurance-providers'] | split(',') | last }} insurance?
+            Did your previous employer pay more than half towards this {{ data['insurance-providers'] | split(',') | last }} insurance?
           </h1>
         </legend>
+        <span class="govuk-hint">
+          Some emloyers may share the payments with you
+        </span>
 
         <div class="govuk-radios">
           <div class="govuk-radios__item">
