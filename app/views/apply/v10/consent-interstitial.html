@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="consent-outcome">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-xl">
+        Second consent
+        </h1>
+        <p>As part of your claim to new style ESA, following your New Claim Appointment, you will be asked to take part in a Work Capability Assessment. This will help us understand your current illness, disability, injury or health condition. </p>
+        <p>We will ask you to read, fill in and return a Capability for Work questionnaire about how your illness, disability, injury or health condition affects your ability to work. You may then be asked to go to a face-to-face assessment with a healthcare professional. </p>
+
+      </div>
+
+
+  <input type="submit" class="govuk-button" value="Continue" id="submit"> <!-- consent-outcome -->
+
+    </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
