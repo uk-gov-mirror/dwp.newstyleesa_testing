@@ -18,6 +18,7 @@
             Does any money get deducted from your {{ data['insurance-providers'] | split(',') | last }} insurance payments?
           </h1>
         </legend>
+         {% include "includes/non-mandatory-message.html" %}
         <div class="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="insurance-deductions-yes" name="insurance-deductions" type="radio" value="yes">
@@ -29,6 +30,12 @@
             <input class="govuk-radios__input" id="insurance-deductions-no" name="insurance-deductions" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="insurance-deductions-no">
               No
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="insurance-deductions-notsure" name="insurance-deductions" type="radio" value="not-sure">
+            <label class="govuk-label govuk-radios__label" for="insurance-deductions-not-sure">
+              Not sure
             </label>
           </div>
       </fieldset>
@@ -65,6 +72,9 @@
           case 'no':
             $('#form').attr('action','insurance-amount');
             break;
+          case 'not-sure':
+            $('#form').attr('action','insurance-amount');
+            break;  
           // if nothing is ticked don't submit the form.
           default: return false; break;
         }
