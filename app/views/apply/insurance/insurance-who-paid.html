@@ -50,7 +50,7 @@
       </fieldset>
     </div><!-- govuk-checkboxes -->
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- insurance-another-no-details-->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- insurance-another -->
 
     </form>
 
@@ -73,8 +73,8 @@
       	switch($('input[name="options"]:checked').val())
         {
           case 'previous-employer':
-      	    $('#form').attr('action','insurance-premium-half');
-      		  break;
+            $('#form').attr('action','insurance-premium-half');
+            break;
           // if nothing is ticked don't submit the form.
           default: return true; break;
         }
