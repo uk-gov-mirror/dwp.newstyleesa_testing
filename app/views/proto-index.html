@@ -1,23 +1,27 @@
-{% extends "layout.html" %}
+{% extends "layout_master.html" %}
 
-{% block beforeContent %}
-  <a href="index" class="govuk-back-link">Back</a>
+{% block pageTitle %}
+  Prototypes &ndash; {{ serviceName }}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
+<div style="margin-bottom: 30px;">
+  <a href="index" rel="prev" class="govuk-back-link">Index page</a>
+</div>
+
+{# <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Prototypes</h1>
   </div>
-</div>
+</div> #}
 
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
 
 
-    <h2 class="govuk-heading-l">Version 10a, 10b, 10c, 10d</h2>
+    <h2 class="govuk-heading-l">Versions 10a, 10b, 10c, 10d</h2>
 
     <h3 class="govuk-heading-m">Created: 17 June 2019 (work in progress)</h3>
 

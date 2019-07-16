@@ -1,14 +1,18 @@
-{% extends "layout.html" %}
+{% extends "layout_master.html" %}
 
-{% block beforeContent %}
-  <a href="index" class="govuk-back-link">Back</a>
+{% block pageTitle %}
+  Reference screens for JIRA stories &ndash; {{ serviceName }}
 {% endblock %}
 
 {% block content %}
 
+<div style="margin-bottom: 30px;">
+  <a href="index" rel="prev" class="govuk-back-link">Index page</a>
+</div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Screens to support development stories</h1>
+    <h1 class="govuk-heading-l">Reference screens for JIRA stories</h1>
   </div>
 </div>
 
@@ -17,7 +21,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <div class="blue-border">
-      <h2 class="govuk-heading-l">
+      <h2 class="govuk-heading-m">
         <span class="app-step-nav-related__pretitle">MVP</span>
       </h2>
       <p style="margin-bottom: 0">

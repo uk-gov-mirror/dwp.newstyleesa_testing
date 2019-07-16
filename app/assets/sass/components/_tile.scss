@@ -36,15 +36,17 @@
   }
 }
 
-.tile--blue {
-  background: govuk-colour('blue');
+.tile--grey {
+  background: govuk-colour('grey-4');
+  border: 2px solid govuk-colour('grey-3');
 
   .tile__title,
   .tile__text {
-    color: govuk-colour('white');
+    color: govuk-colour('blue');
   }
 
   &:hover {
-    background: govuk-colour('light-blue');
+    background: govuk-colour('grey-3');
+    border-color: govuk-colour('grey-2');
   }
 }

@@ -11,10 +11,18 @@ $govuk-global-styles: true;
 @import "components/autocomplete";
 @import "components/tile";
 
-// Components that aren't in Frontend
-@import "components/cookie-banner";
+// DWP components
+@import 'dwp/dwp-header';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+// Make consistent with agent UI prototype
+
+.remove-padding .govuk-main-wrapper {
+  padding: 0;
+}
+
+// End of make consistent with agent UI prototype
 
 .red {
   color: red;
