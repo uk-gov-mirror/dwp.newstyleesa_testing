@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form id="form" method="post" action="consent-question">
+
+      <div class="govuk-form-group">
+
+        <div class="govuk-form-group">
+
+          <h1 class="govuk-heading-xl">Sharing information about your health condition</h1>
+
+          <p>We (the Department for Work and Pensions), or healthcare professionals approved by the Secretary of State, might need to ask for information about your health condition and how it affects you.</p>
+          
+            
+            
+
+{#             <p>We might ask for this information from:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>your doctor</li>
+              <li>hospital</li>
+              <li>other relevant professionals that you tell us about</li>
+            </ul>
+            <p>They need your agreement (this is called your consent) to give this information to us.</p> #}
+
+
+            <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-heading-m">
+                Do you give consent for your doctor, or relevant professionals you tell us about, to share information about your health condition with us?</h2>
+
+{#                 <p>We ask for this consent on behalf of your doctor, hospital or relevant professional. This reassures them that they are legally allowed to share this information.</p>
+ #}
+                
+
+                <div class="govuk-radios">
+
+                  <div class="govuk-radios__item">
+
+                    <input class="govuk-radios__input" id="sign-in-1" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-1-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="sign-in-1">
+                      Yes
+                    </label>
+                    <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint" style="color: #111">
+    {#                   I give consent for my doctor, hospital and relevant health care professionals to give information to DWP about my health condition. #}
+                    </span>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint" style="color: #111">
+                    <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                      No
+                    </label> <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint" style="color: #111">
+{#                       I do not give consent. #}
+                    </span>
+                  </div>
+                </div>
+
+              </fieldset>
+
+
+
+              
+
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    How we use this information
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+{#                   <p>We ask for this consent on behalf of your doctor, hospital or relevant professional. This reassures them that they are legally allowed to share this information.</p> #}
+                  <p>This helps us to decide whether you are able to work or if you can get this benefit.<p>
+                  <p>The law allows us to get, keep and use this information to:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>process your claim to ESA</li>
+                    <li>make a decision on your claim or any mandatory reconsideration or appeal you make</li>
+                  </ul>
+                  <p>We ask for this consent on behalf of your doctor, hospital or relevant professional. This reassures them that they are legally allowed to share this information.</p>
+                  <p>We can lawfully ask your doctor, hospital, or other relevant professionals for information about your health condition and how it affects you. This is because we are asking for information to help us carry out our official social security functions.</p>
+                </div>
+              </details>
+
+{#               <p>You do not have to give consent. If you choose not to do so, we will make a decision based on:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>the information we have already</li>
+                <li>any you can give us yourself</li>
+              </ul> #}
+
+              <p>You do not have to give consent. If you choose not to do so, we will make a decision based on the information we have already, as well as any you can give us yourself.</p>
+
+              <h2 class="govuk-heading-m">If you change your mind</h2>
+              <p>You can change your mind later. Call 0800 169 0310 and say you want to give or withdraw your consent.</p>
+              <p>If you withdraw your consent, we cannot get information from your doctor or others named on your form.</p>
+
+
+
+              <a href="voluntary-work" class="govuk-button">I have read and understood</a>
+
+            </div><!-- govuk-grid-column-two-thirds -->
+          </div><!-- govuk-grid-row -->
+          {% endblock %}
+
+
+
