@@ -7,19 +7,22 @@
 {% block content %}
 
 <div class="govuk-grid-row">
+
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="voluntary-work">
+    <form id="form" method="post" action="consent-question">
 
-      <h1 class="govuk-heading-xl">Sharing information about your health condition</h1>
+      <div class="govuk-form-group">
 
-      <p>We (the Department for Work and Pensions) might need to ask for information about your health condition and how it affects you. This helps us to decide whether you are able to work or if you can get this benefit.<p>
+        <h1 class="govuk-heading-xl">Sharing information about your health condition</h1>
+
+        <p>The Department for Work and Pensions (DWP), or approved healthcare professionals that work for them, might need more information about your health condition and how it affects your ability to work.</p>
+        <p>They might ask for this information from your doctor, or any other relevant professional you tell them about.</p>
 
         <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-
-            Do you give consent for your doctor, or relevant professionals you tell us about, to share information about your health condition with us?
+            Do you give consent for your doctor or other relevant professionals to give DWP more information about your health condition?
           </legend>
 
           <div class="govuk-radios">
@@ -27,15 +30,13 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="sign-in-1" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-1-item-hint">
               <label class="govuk-label govuk-radios__label" for="sign-in-1">
-                Yes, information about my health can be shared with the Department for Work and Pensions or healthcare professionals they use.
-              </label>
+              Yes, information about my health can be shared with DWP or the healthcare professionals that work for them                   </label>
             </div>
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint" style="color: #111">
               <label class="govuk-label govuk-radios__label" for="sign-in-2">
-                No, information about my health cannot be shared with the Department for Work and Pensions or healthcare professionals they use.
-              </label>
+              No, information about my health cannot be shared with DWP or the healthcare professionals that work for them                  </label>
             </div>
 
           </div>
@@ -43,28 +44,30 @@
         </fieldset>
 
         <details class="govuk-details govuk-!-margin-top-4">
+
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              How we use this information
+              How DWP uses this information
             </span>
           </summary>
+
           <div class="govuk-details__text">
-            <p>We use the information we get to:</p>
+            <p>DWP uses this information to:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>process your claim</li>
               <li>make a decision on your claim, or any mandatory reconsideration or appeal you make</li>
             </ul>
-            <p>The law allows us to get, keep and use this information.</p>
-            <p>We ask for this consent on behalf of your doctor, hospital or relevant professional. This reassures them that they are legally allowed to share this information.</p>
-            <p>We can lawfully ask your doctor, hospital, or other relevant professionals for information about your health condition and how it affects you. This is because we are asking for information to help us carry out our official social security functions.</p>
+            <p>The law allows them to get, keep and use this information.</p>
+            <p>DWP asks for your consent on behalf of your doctor or other relevant professionals you tell them about. This reassures your doctor and the others that they can legally share this information.
+            <p>DWP can lawfully ask your doctor, hospital, or other relevant professionals for information about your health condition and how it affects you. This is because they are asking for information to help them carry out their official social security functions.</p>
           </div>
+
         </details>
 
-        <p>You do not have to give consent. If you choose not to do so, we will make a decision based on the information we have already, as well as any you can give us yourself.</p>
-
+        <p>You do not have to give consent. If you choose not to do so, DWP will make a decision based on the information they have already, as well as any you can give them yourself.
         <h2 class="govuk-heading-m">If you change your mind</h2>
         <p>You can change your mind later. Call 0800 169 0310 and say you want to give or withdraw your consent.</p>
-        <p>If you withdraw your consent, we cannot get information from your doctor or others named on your form.</p>
+        <p>If you withdraw your consent, DWP cannot get information from your doctor or others named on your form.</p>
 
         <a href="voluntary-work" class="govuk-button">I have read and understood</a>
 
