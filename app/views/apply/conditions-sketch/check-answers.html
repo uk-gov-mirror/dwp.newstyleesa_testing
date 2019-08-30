@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">Your health</h2>
+
+    <dl class="app-check-your-answers app-check-your-answers--short">
+
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Condition 1
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        Broken leg<br>
+        Started 20 August 2019<br>
+      </dd>
+      <dd class="app-check-your-answers__change">
+        <a href="#">
+          Change<span class="govuk-visually-hidden"> conditions</span>
+        </a> /
+        <a href="#">
+          Remove<span class="govuk-visually-hidden"> conditions</span>
+        </a>
+      </dd>
+    </div>
+
+{#     <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Condition 2
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        Broken neck<br>
+        Started 20 August 2019<br>
+      </dd>
+      <dd class="app-check-your-answers__change">
+        <a href="#">
+          Change<span class="govuk-visually-hidden"> conditions</span>
+        </a> /
+        <a href="#">
+          Remove<span class="govuk-visually-hidden"> conditions</span>
+        </a>
+      </dd>
+    </div> #}
+
+{#     <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Condition 3
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        Broken toe<br>
+        Started 20 August 2019<br>
+      </dd>
+      <dd class="app-check-your-answers__change">
+        <a href="#">
+          Change<span class="govuk-visually-hidden"> conditions</span>
+        </a> /
+        <a href="#">
+          Remove<span class="govuk-visually-hidden"> conditions</span>
+        </a>
+      </dd>
+    </div> #}
+
+{#     <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Condition 3
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        Broken knee<br>
+        Started 20 August 2019<br>
+      </dd>
+      <dd class="app-check-your-answers__change">
+        <a href="#">
+          Change<span class="govuk-visually-hidden"> conditions</span>
+        </a> /
+        <a href="#">
+          Remove<span class="govuk-visually-hidden"> conditions</span>
+        </a>
+      </dd>
+    </div> #}
+
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Any other health conditions
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        No
+      </dd>
+      <dd class="app-check-your-answers__change">
+        <a href="#">
+          Change<span class="govuk-visually-hidden"> conditions</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Doctor's details
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        Dr Sarah Philips<br>
+        72 Guild street<br>
+        London<br>
+        SF23 6FH<br>
+        020 7946 0809<br>
+      </dd>
+      <dd class="app-check-your-answers__change">
+        <a href="#">
+          Change<span class="govuk-visually-hidden"> licence period</span>
+        </a>
+      </dd>
+    </div>
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Life expectancy
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        Could be less than 6 months
+      </dd>
+      <dd class="app-check-your-answers__change">
+        <a href="#">
+          Change<span class="govuk-visually-hidden"> life expectancy</span>
+        </a>
+      </dd>
+    </div>
+    <div class="app-check-your-answers__contents">
+      <dt class="app-check-your-answers__question">
+        Doctor has sent DS1500 form
+      </dt>
+      <dd class="app-check-your-answers__answer">
+        No
+      </dd>
+      <dd class="app-check-your-answers__change">
+        <a href="#">
+          Change
+        </a>
+      </dd>
+    </div>
+    <div class="app-check-your-answers__contents">
+       <dt class="app-check-your-answers__question">
+         Currently in hospital
+       </dt>
+       <dd class="app-check-your-answers__answer">
+         Yes
+       </dd>
+       <dd class="app-check-your-answers__change">
+         <a href="#">
+           Change
+         </a>
+       </dd>
+     </div>
+     <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Hospital details
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          Ear, nose and throat ward<br>
+          Hallamshire Hospital<br>
+          <br>
+          Admitted on 19 December 2018<br>
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="#">
+            Change
+          </a>
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Doctor can share details with DWP
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          Yes
+        </dd>
+        <dd class="app-check-your-answers__change">
+          <a href="#">
+            Change
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+
+{% endblock %}
