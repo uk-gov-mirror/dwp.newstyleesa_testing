@@ -14,6 +14,9 @@ $govuk-global-styles: true;
 // DWP components
 @import 'dwp/dwp-header';
 
+// DWP components
+@import 'handover';
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 // Make consistent with agent UI prototype
