@@ -1,0 +1,62 @@
+{% extends "layout_handover.html" %}
+
+{% set items = [
+  { 
+    title: 'Start',
+    screenshot: 'start',
+    why:
+    '
+    Text here about why the screen is the way it is.
+    ',
+    future:
+    '
+    Stuff for the future.
+    '
+  },
+  { 
+    title: 'Before you start',
+    screenshot: 'before-you-start',   
+    why:
+    '
+    Text here about why the screen is the way it is.
+    ',
+    future:
+    '
+    Stuff for the future.
+    '
+  }
+  ]
+  %}
+
+{% block main %}
+
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Handover screenshots</h1>
+        <p class="govuk-body">Some text here</p>
+      </div>{# /govuk-grid-column #}
+    </div>{# /govuk-grid-row #}
+
+    {% for item in items %}
+    <div class="govuk-grid-row screenshot-notes">
+      <div class="govuk-grid-column-one-third">
+        <img src="/public/images/handover-screenshots/{{ item.screenshot }}.png" alt="{{ item.title }} screenshot" style="width: 100%;">
+      </div>{# /govuk-grid-column #}
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">{{ item.title }}</h2>
+        <h2 class="govuk-heading-s">Why it’s there</h2>
+        <p>{{ item.why }}</p>
+        <h2 class="govuk-heading-s">Future plans</h2>
+        <p>{{ item.future }}</p>
+      </div>{# /govuk-grid-column #}
+    </div>{# /govuk-grid-row #}
+    {% endfor %}
+
+  </div>{# /govuk-width-container #}
+
+</main>
+
+{% endblock %}
