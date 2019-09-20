@@ -46,7 +46,7 @@
     ',
     future:
     '
-To check the accessibility of the date input - some services have reported issues with things like Zoom Text and Jaws. Users try to put the whole date in one field.
+To check the accessibility of the date input. Some services have reported issues with things like Voiceover and Jaws. It‘s not tabbing as people expect. This should come out in the accessibility testing.
     '
   },
   {
@@ -58,7 +58,7 @@ To check the accessibility of the date input - some services have reported issue
     ',
     future:
     '
-    To monitor how long people spend on this page. It might tell us whether they did not have their National Insurance number ready.
+    To monitor how long people spend on this page and how many make mistakes users make. It might tell us whether they did not have their National Insurance number ready.
     '
   },
   {
@@ -102,18 +102,18 @@ To check the accessibility of the date input - some services have reported issue
     screenshot: 'Health-condition-1',
     why:
     '
-    To find out what is limiting their ability to work, and build up context for the processors. They will be asked to bring in their fit note to the appointment, and will be asked for more information about their health in the Capability for Work Questionnaire.
+    To find out what is limiting their ability to work, and build up context for the processors and decision makers.
     ',
     future:
     '
-    To test if people know which conditions are relevant, that they can add more than one condition, and what to put in the ‘condition start date’ field as previous research has shown that this is difficult to answer and a precise date is difficult (DD MM YYYY is a JSAPS requirement). We also need to improve the accessibility of the add another pattern, which isn’t clear when you’re using a screen reader.
+    To test if people know which conditions are relevant and that they can add more than one. In particular we want to look at what they put in the ‘condition start date’ field as previous research has shown that this is hard to answer and a precise date is difficult (DD MM YYYY is a JSAPS requirement). We also need to improve the accessibility of the ‘add another’ pattern, which isn’t clear when you’re using a screen reader.
     '
   },
   {
     title: 'Doctor’s surgery',
     screenshot: 'Doctors-surgery',
     why:'So we can contact their doctor for more information about their health, if they give consent to it later.',
-    future:'To check if users understand why we ask for these details. And to check if people know their doctor’s name, and if so what information do they put: for example, Dr Briggs, Jane Briggs, or Dr J Briggs. We also need to explore whether people struggle at all with the address. Some services have tried a GP look up.'
+    future:'To check if users understand why we ask for these details. And to check if people know their doctor’s name. We also need to explore whether people struggle at all with the address. Some services have tried a GP look up.'
   },
   {
     title: 'Terminal illness',
@@ -124,7 +124,7 @@ To check the accessibility of the date input - some services have reported issue
     ',
     future:
     '
-    To test reactions to the question. We have decided to explain the ‘special rules’ and have removed any reference to ‘terminal illness’ as users may be terminal but have a longer life expectancy.
+    To continue to test reactions to the question. Our decision to opt for less ambiguous wording (setting out what the special rules are, not referencing ‘terminal illness’ as that might be longer than 6 months) has tested quite well so far and been taken up by UC. We might want to explore whether ‘could live less’ is better than ‘expects you to live less’; UC have found some users prefer wording that is less definite.
     '
   },
   {
@@ -156,11 +156,11 @@ To check the accessibility of the date input - some services have reported issue
     screenshot: 'Pregnant',
     why:
     '
-   Pregnancy may affect the severity of a condition (for example, high blood pressure) and might mean they will be eligible for Statutory Maternity Pay.
+   Pregnancy may affect the severity of a condition (for example, high blood pressure). It might also mean they will be eligible for Statutory Maternity Pay in a few months time, which they cannot get alongside ESA.
     ',
     future:
     '
-    To explore ways we can hide this question for anyone who has indicated that they have had a miscarriage or still birth or conditions that only a male can have. As with all dates, we need to check they know what to put and whether the date input is accessible.
+    To see if we can hide this question if it is appropriate or would cause distress. For example, anyone who has indicated that they have had a miscarriage or still birth, or if they have listed conditions that indicate they are certainly male. We want to avoid asking people to identify their sex if we can. As with all dates, we also need to check they know what to put and whether the date input is accessible.
     '
   },
   {
@@ -172,7 +172,7 @@ To check the accessibility of the date input - some services have reported issue
     ',
     future:
     '
-    This has taken a lot of work and went into the prototype at the last moment. It was pending approval from a number of different internal and external stakeholders, including the ICO and GMC. We have not had time to test comprehension of this content fully. It is an unusual consent (asking for someone else) and we need to be sure users understand that. There is a lot more content than we would usually provide, and some phrasing that could be clearer. We have agreed with colleagues that we will test it during private beta to better understand whether users know who they are giving consent to, what it is for, what will happen if they say yes, what will happen if they say no, how they can change their response and why we ask for it. It would also be good to explore whether moving the question up within the content and away from the button has any effect.
+     This has taken a lot of work and involved a lot of internal and external stakeholders. Because of the sign off required, it went into the service just before private beta began so we have not had time to test the content properly. There is a lot more content than we would usually provide, and some phrasing could be clearer.  In particular we need to check they understand who they are giving consent to (since it isn‘t us), what will happen if they say yes, what will happen if they say no, how they can change their response, and why we ask for it. We have agreed with colleagues in Strategy, Legal and Data Protection that we will test comprehension fully during private beta and if necessary try out new designs. But we need to keep them informed of any research findings, and share any designs we are testing.
     '
   },
   {
@@ -196,7 +196,7 @@ To check the accessibility of the date input - some services have reported issue
     ',
     future:
     '
-    To test whether users understand that they can add more than one role from the hint text and to check that they know all this information. We should also find out from stakeholders how often we actually contact the organisations.
+    To test whether users understand that they can add more than one role from the hint text and to check that they know all this information.
     '
   },
   {
@@ -208,7 +208,7 @@ To check the accessibility of the date input - some services have reported issue
     ',
     future:
     '
-    This is a free text field so we need to check what people put in this field and how processors interpret it. If only particular activities matter, we could ask them to pick them from a list instead.
+    This is a free text field so we need to check what people put in this field and how processors interpret it. If only particular activities matter, we could ask them to pick them from a list of options instead.
     '
   },
   {
@@ -216,11 +216,11 @@ To check the accessibility of the date input - some services have reported issue
     screenshot: 'Voluntary-hours',
     why:
     '
-   There is no strict limit to the number of hours they can volunteer, but if they work a lot of hours a week a decision maker might look into it to work out if it is true voluntary work.
+   There is no strict limit to the number of hours they can volunteer, but if they work a lot of hours a week a decision maker might look into it to decide if should be voluntary work.
     ',
     future:
     '
-    To see whether most users select ‘no’, and look into whether we need to capture the last 5 weeks of hours if they do. It might be useful to consider whether there are other ways we could get the information the decision makers are looking for, like a conversation at the jobcentre.
+    To see whether most users select ‘no’, and look into whether we need to capture the last 5 weeks of hours if they do.
     '
   },
   {
@@ -232,12 +232,24 @@ To check the accessibility of the date input - some services have reported issue
     ',
     future:
     '
- We have an alternative design for the ‘add another' pattern to make it more accessible and easier to manage. These screens have tested well, but they can make the journey complicated from Check your answers and may not be fully accessible.
+ We have an alternative design for the ‘add another’ pattern to make it more accessible and easier to manage. We still need to test it.
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Work',
+    screenshot: 'Work',
+    why:
+    '
+   To understand whether they are still employed or self employed, even if they are off work. This tells us they might be getting Statutory Sick Pay, or might be working or being paid more than they are allowed.
+    ',
+    future:
+    '
+    To test the comprehension of the question, particularly for self employed users.
+    '
+  },
+  {
+    title: 'Employment details',
+    screenshot: 'Employment-details',
     why:
     '
    At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
@@ -248,11 +260,95 @@ To check the accessibility of the date input - some services have reported issue
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Off sick',
+    screenshot: 'Off-sick',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   People who are off sick do not need to answer all the questions about hours and pay - we just need to know that they are still employed or self employed - so this branches those users away from the following work questions.
+    ',
+    future:
+    '
+    To test whether ‘off sick’ is clear to non-native speakers.
+    '
+  },
+  {
+    title: 'Date you last worked',
+    screenshot: 'Last-work',
+    why:
+    '
+    Only users who are off sick see this question. This tells us how long they have been ill, and whether they should still be receiving Statutory Sick Pay.
+    ',
+    future:
+    '
+    To explore whether users know the exact date. As with all other date inputs, we need to check whether there are any accessibility issues.
+    '
+  },
+  {
+    title: 'Employment status',
+    screenshot: 'Employment-status',
+    why:
+    '
+   This prompts processors or decision makers to look into whether they should be paid or be paying themselves Statutory Sick Pay.
+    ',
+    future:
+    '
+    To test whether people can identify their own employment status, particularly if they do contract, zero hours, or freelance work.
+    '
+  },
+  {
+    title: 'Work hours',
+    screenshot: 'Hours-work',
+    why:
+    '
+   To work out if their work is allowed. If they work less than 16 hours a week then they are still entitled to claim.
+    ',
+    future:
+    '
+    To look at how many users say no. It has currently been designed so that people who work irregular hours don‘t have to guess a figure or give an average. We agreed this would be picked up by processors. As private beta continues, we might need to look at asking them for the hours they have worked over the last 5 weeks.
+    '
+  },
+  {
+    title: 'Earnings - for people who work regular hours',
+    screenshot: 'Earnings-regular',
+    why:
+    '
+   To find out if they earn more than the earnings limit.
+    ',
+    future:
+    '
+    To check whether we need all the frequency options or whether we can reduce the list a little.
+    '
+  },
+  {
+    title: 'Earnings - for people who do not work regular hours',
+    screenshot: 'Earnings-irregular-hours',
+    why:
+    '
+   To ask anyone who does not have regular hours, what they earned in their last pay so we can check if it was over the earnings limit. There will also need to be a conversation with a processor or a decision maker.
+    ',
+    future:
+    '
+    To check whether this is the best way to find out whether they earn less than the limit. We might have to look at how much they got paid each week over the last 5 weeks.
+    '
+  },
+  {
+    title: 'Professional support worker',
+    screenshot: 'Professional-support-worker',
+    why:
+    '
+   Claimants can work more than 16 hours a week if they have support from a professional support worker.
+    ',
+    future:
+    '
+    At the moment everyone sees this question. We might want to test branching users who have indicated they work more than 16 hours.
+    '
+  },
+  {
+    title: 'Expenses',
+    screenshot: 'Expenses',
+    why:
+    '
+  Some of their expenses may be classed as earnings.
     ',
     future:
     '
@@ -260,123 +356,27 @@ To check the accessibility of the date input - some services have reported issue
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Expenses details',
+    screenshot: 'What-are-expenses-for',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   To help decision makers and processors to work out if the expenses count as earnings.
     ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    To find out if only certain expenses count. If so, we can try presenting them to the user in a list and asking them to select the ones they get.
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Other paid work',
+    screenshot: 'Other-paid-work',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   Second looping question. Plays back the employment they have just added and brings the user back to the start of the paid work section if they have more than one job.
     ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
-    '
-  },
-  {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
-    why:
-    '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
-    ',
-    future:
-    '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
-    '
-  },
-  {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
-    why:
-    '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
-    ',
-    future:
-    '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
-    '
-  },
-  {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
-    why:
-    '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
-    ',
-    future:
-    '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
-    '
-  },
-  {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
-    why:
-    '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
-    ',
-    future:
-    '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
-    '
-  },
-  {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
-    why:
-    '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
-    ',
-    future:
-    '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
-    '
-  },
-  {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
-    why:
-    '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
-    ',
-    future:
-    '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
-    '
-  },
-  {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
-    why:
-    '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
-    ',
-    future:
-    '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
-    '
-  },
-  {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
-    why:
-    '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
-    ',
-    future:
-    '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+     We have an alternative design for the ‘add another’ pattern to make it more accessible and easier to manage. We still need to test it.
     '
   },
   {
