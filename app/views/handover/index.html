@@ -1,31 +1,495 @@
 {% extends "layout_handover.html" %}
 
 {% set items = [
-  { 
+  {
     title: 'Start',
     screenshot: 'start',
     why:
     '
-    Text here about why the screen is the way it is.
+    It provides the main route through to the service and reassures the user that they are about to apply for the right thing.
     ',
     future:
     '
-    Stuff for the future.
+    We have requested the public beta start page from GDS and have shared with them the research that led us to this design. For private beta we may have to add a warning that the service is private (in case people find the link online) but we will wait until evidence shows that this is needed.
     '
   },
-  { 
+  {
     title: 'Before you start',
-    screenshot: 'before-you-start',   
+    screenshot: 'before-you-start',
     why:
     '
-    Text here about why the screen is the way it is.
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
     ',
     future:
     '
-    Stuff for the future.
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Name',
+    screenshot: 'Name',
+    why:
+    '
+    To match up their application to existing records in CIS and JSAPS. The name is broken into forename and surname because it needs to match the equivalent JSAPS fields.
+    ',
+    future:
+    '
+    To consider whether asking for first name and last name separately is understood by users and whether it limits anyone with multiple surnames or a name that is presented differently. At the moment we accept all characters here but JSAPS does not - this might affect future correspondence.
+    '
+  },
+  {
+    title: 'Date of birth',
+    screenshot: 'Date-of-birth',
+    why:
+    '
+    To check if users are under State Pension age and over 16 years old.
+    ',
+    future:
+    '
+To check the accessibility of the date input - some services have reported issues with things like Zoom Text and Jaws. Users try to put the whole date in one field.
+    '
+  },
+  {
+    title: 'National Insurance number',
+    screenshot: 'NINO',
+    why:
+    '
+    To check the user’s National insurance record and determine if they have paid enough to be eligible for the benefit.
+    ',
+    future:
+    '
+    To monitor how long people spend on this page. It might tell us whether they did not have their National Insurance number ready.
+    '
+  },
+  {
+    title: 'Address',
+    screenshot: 'Address',
+    why:
+    '
+    To find out where we should send their correspondence, to check their details against CIS, and to work out if they are resident in the UK.
+    ',
+    future:
+    '
+    To check that users understand what we will use their address for and that it does not affect other services.
+    '
+  },
+  {
+    title: 'Mobile number',
+    screenshot: 'Mobile-number',
+    why:
+    '
+    So we can send text message alerts to claimants or call them if there are any processing queries.
+    ',
+    future:
+    '
+    To explore how many have mobile numbers, and whether users understand why we ask for it.
+    '
+  },
+  {
+    title: 'Another contact number',
+    screenshot: 'Another-number',
+    why:
+    '
+    To offer an alternative to mobile numbers for those who do not have them or do not want to use them. Users will only see this if they select no on the previous screen.
+    ',
+    future:
+    '
+    To monitor how many people get to this page and use this research to inform how we ask about contact preferences later in private beta. A mobile number is preferred by Operations and Policy so we can send text message alerts.
+    '
+  },
+  {
+    title: 'Health conditions',
+    screenshot: 'Health-condition-1',
+    why:
+    '
+    To find out what is limiting their ability to work, and build up context for the processors. They will be asked to bring in their fit note to the appointment, and will be asked for more information about their health in the Capability for Work Questionnaire.
+    ',
+    future:
+    '
+    To test if people know which conditions are relevant, that they can add more than one condition, and what to put in the ‘condition start date’ field as previous research has shown that this is difficult to answer and a precise date is difficult (DD MM YYYY is a JSAPS requirement). We also need to improve the accessibility of the add another pattern, which isn’t clear when you’re using a screen reader.
+    '
+  },
+  {
+    title: 'Doctor’s surgery',
+    screenshot: 'Doctors-surgery',
+    why:'So we can contact their doctor for more information about their health, if they give consent to it later.',
+    future:'To check if users understand why we ask for these details. And to check if people know their doctor’s name, and if so what information do they put: for example, Dr Briggs, Jane Briggs, or Dr J Briggs. We also need to explore whether people struggle at all with the address. Some services have tried a GP look up.'
+  },
+  {
+    title: 'Terminal illness',
+    screenshot: 'Terminal-illness',
+    why:
+    '
+   Claimants who have less than 6 months to live qualify for ‘special rules’. This means they go straight into the support group and their claim is prioritised.
+    ',
+    future:
+    '
+    To test reactions to the question. We have decided to explain the ‘special rules’ and have removed any reference to ‘terminal illness’ as users may be terminal but have a longer life expectancy.
+    '
+  },
+  {
+    title: 'DS1500 form',
+    screenshot: 'DS1500',
+    why:
+    '
+   To prompt users who are eligible for a special rules claim that they need to have this form. Doctors send DS1500s to us to confirm that a claimant has a severe life-limiting condition.
+    ',
+    future:
+    '
+    To explore reactions to this question and monitor whether their DS1500 arrives. There are some existing issues with doctors not returning DS1500s. Some work done by the Work and Pensions Select Committee found that doctors were reluctant to define someone’s life expectancy and did not understand the impact of not sending the DS1500.
+    '
+  },
+  {
+    title: 'Staying in hospital',
+    screenshot: 'Hospital',
+    why:
+    '
+    To find out whether they may not be able to attend their appointment and to identify the doctors who may be able to provide more information about their condition. Claimants are also treated as having limited capability for work on days they are in hospital, but are only entitled a certain number of months before they are moved to the lower rate. This is why we ask for the admission date.
+    ',
+    future:
+    '
+    To test whether people understand ’inpatient’ or if they give details of repeat day visits for treatment. As with all dates, we need to test whether they can identify the correct date and also whether the date input is fully accessible.
+    '
+  },
+  {
+    title: 'Pregnant',
+    screenshot: 'Pregnant',
+    why:
+    '
+   Pregnancy may affect the severity of a condition (for example, high blood pressure) and might mean they will be eligible for Statutory Maternity Pay.
+    ',
+    future:
+    '
+    To explore ways we can hide this question for anyone who has indicated that they have had a miscarriage or still birth or conditions that only a male can have. As with all dates, we need to check they know what to put and whether the date input is accessible.
+    '
+  },
+  {
+    title: 'Doctor’s consent',
+    screenshot: 'Doctors-consent',
+    why:
+    '
+    Doctors cannot share medical information with us without their patients consent. This question collects their consent on their doctor’s behalf.
+    ',
+    future:
+    '
+    This has taken a lot of work and went into the prototype at the last moment. It was pending approval from a number of different internal and external stakeholders, including the ICO and GMC. We have not had time to test comprehension of this content fully. It is an unusual consent (asking for someone else) and we need to be sure users understand that. There is a lot more content than we would usually provide, and some phrasing that could be clearer. We have agreed with colleagues that we will test it during private beta to better understand whether users know who they are giving consent to, what it is for, what will happen if they say yes, what will happen if they say no, how they can change their response and why we ask for it. It would also be good to explore whether moving the question up within the content and away from the button has any effect.
+    '
+  },
+  {
+    title: 'Voluntary work',
+    screenshot: 'Voluntary-work',
+    why:
+    '
+  To understand the types of work they can do. We may also need to check whether they should be being paid for the work.
+    ',
+    future:
+    '
+    To explore whether users understand what voluntary work includes and whether we need to be more specific. It is still not clear whether only registered charities or organisations count. We need to verify with stakeholders.
+    '
+  },
+  {
+    title: 'Voluntary work details',
+    screenshot: 'Voluntary-work-details',
+    why:
+    '
+   To find out who they are working for and how we can contact them. Information they give here also populates later questions to give context.
+    ',
+    future:
+    '
+    To test whether users understand that they can add more than one role from the hint text and to check that they know all this information. We should also find out from stakeholders how often we actually contact the organisations.
+    '
+  },
+  {
+    title: 'Type of voluntary work',
+    screenshot: 'What-voluntary-work',
+    why:
+    '
+   To see what type of work they are doing and whether it should be paid.
+    ',
+    future:
+    '
+    This is a free text field so we need to check what people put in this field and how processors interpret it. If only particular activities matter, we could ask them to pick them from a list instead.
+    '
+  },
+  {
+    title: 'Voluntary hours',
+    screenshot: 'Voluntary-hours',
+    why:
+    '
+   There is no strict limit to the number of hours they can volunteer, but if they work a lot of hours a week a decision maker might look into it to work out if it is true voluntary work.
+    ',
+    future:
+    '
+    To see whether most users select ‘no’, and look into whether we need to capture the last 5 weeks of hours if they do. It might be useful to consider whether there are other ways we could get the information the decision makers are looking for, like a conversation at the jobcentre.
+    '
+  },
+  {
+    title: 'Other voluntary work',
+    screenshot: 'Other-voluntary-work',
+    why:
+    '
+   First looping question. Plays back what the user has entred and asks if they want to go back and add another.
+    ',
+    future:
+    '
+ We have an alternative design for the ‘add another' pattern to make it more accessible and easier to manage. These screens have tested well, but they can make the journey complicated from Check your answers and may not be fully accessible.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    '
+  },
+  {
+    title: 'Before you start',
+    screenshot: 'before-you-start',
+    why:
+    '
+   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+    ',
+    future:
+    '
+    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
     '
   }
+
   ]
+
   %}
 
 {% block main %}
@@ -58,5 +522,5 @@
   </div>{# /govuk-width-container #}
 
 </main>
-
+   nhjuyu9
 {% endblock %}
