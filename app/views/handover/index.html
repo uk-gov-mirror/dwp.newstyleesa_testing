@@ -180,11 +180,11 @@ To check the accessibility of the date input. Some services have reported issues
     screenshot: 'Voluntary-work',
     why:
     '
-  To understand the types of work they can do. We may also need to check whether they should be being paid for the work.
+  To find out if they are doing any unpaid work. Users are allowed to do voluntary work at the same time as claiming New Style ESA, but we would want to check that they are not doing work that they should be paid for. We did ask about this at the same time as paid work, but this confused users.
     ',
     future:
     '
-    To explore whether users understand what voluntary work includes and whether we need to be more specific. It is still not clear whether only registered charities or organisations count. We need to verify with stakeholders.
+    To explore whether users understand what we mean by ‘voluntary work’ and whether there is a distinction in users’ minds between volunteering and just helping someone out without being paid.
     '
   },
   {
@@ -196,7 +196,7 @@ To check the accessibility of the date input. Some services have reported issues
     ',
     future:
     '
-    To test whether users understand that they can add more than one role from the hint text and to check that they know all this information.
+    To test whether users understand that they can add more than one role from the hint text and to check that they know all this information and how we will use it.
     '
   },
   {
@@ -208,7 +208,7 @@ To check the accessibility of the date input. Some services have reported issues
     ',
     future:
     '
-    This is a free text field so we need to check what people put in this field and how processors interpret it. If only particular activities matter, we could ask them to pick them from a list of options instead.
+    Check what people put in the free text field and how processors interpret it.
     '
   },
   {
@@ -240,7 +240,7 @@ To check the accessibility of the date input. Some services have reported issues
     screenshot: 'Work',
     why:
     '
-   To understand whether they are still employed or self employed, even if they are off work. This tells us they might be getting Statutory Sick Pay, or might be working or being paid more than they are allowed.
+   If they have a job, even if they are off sick at the moment, we need to ask them further questions about how much they work and earn.
     ',
     future:
     '
@@ -252,11 +252,11 @@ To check the accessibility of the date input. Some services have reported issues
     screenshot: 'Employment-details',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   To find out where they work so we can contact their employer, if needed.
     ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    To test whether users understand they can add further jobs later. As with any of these contact details questions, it would be good to check that the user understands why we are asking and whether they try to leave any details out.
     '
   },
   {
@@ -264,11 +264,11 @@ To check the accessibility of the date input. Some services have reported issues
     screenshot: 'Off-sick',
     why:
     '
-   People who are off sick do not need to answer all the questions about hours and pay - we just need to know that they are still employed or self employed - so this branches those users away from the following work questions.
+   People who are off sick do not need to answer all the questions about hours and pay so this branches those users away from the next work questions.
     ',
     future:
     '
-    To test whether ‘off sick’ is clear to non-native speakers.
+    To test whether the term ‘off sick’ is clear to non-native English speakers. It has tested well with native speakers but he may be too colloquial for anyone who does not have English as a first language.
     '
   },
   {
@@ -380,111 +380,421 @@ To check the accessibility of the date input. Some services have reported issues
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Statutory Sick Pay',
+    screenshot: 'SSP',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   You cannot get Statutory Sick Pay (SSP) at the same time as New Style ESA, unless your SSP is due to finish in the next 3 months. This question prompts the next question about when their SSP will end so we can decide if the claimant is eligible.
     ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    To check that users understand what Statutory Sick Pay is and how it relates to the benefit.
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Statutory Sick Pay end date (if date is in the future)',
+    screenshot: 'When-does-SSP-end',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   To work out if their SSP will end in the next 3 months. If not, they are not eligible for the benefit.
     ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    To test whether users have SSP1 forms (which show the end date), and if they do, whether they understand that the date they need is the day after the one shown.
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Statutory Sick Pay in last 12 weeks',
+    screenshot: 'SSP-in-last-12-weeks',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   If they do not receive Statutory Sick Pay now, but they did recently, then that will affect when their claim can start from. Claimants can backdate up to 3 months.
     ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    To see whether users can answer the question, and if they have an SSP1 form to refer back to for the last date of payment.
     '
   },
   {
-    title: 'Before you start',
+    title: 'Statutory Sick Pay end date (if date was in the past)',
     screenshot: 'before-you-start',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   To find out when their SSP stopped, so we can work out how far back they can backdate their claim.
     ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    To find out whether users know this date, and understand how it will affect their claim. Many users have reported issues with the claim start date, as they do not understand our rules. We can compare this date against their claim start date.
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Other statutory payments',
+    screenshot: 'Other-statutory-payments',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   You cannot get New Style ESA alongside these statutory payments for parents.
     ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    To test whether users understand how this affects their eligibility.
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Planned return to work',
+    screenshot: 'Return-to-work',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   Some claimants might have an imminent return date - for example if they broke their leg a couple of months ago and have only now realised they were entitled to any money. If they provide their planned return date then we will know whether they are going to be on the benefit for long.
     ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    This is not in the clerical form, and there were a number of differing opinions about whether we need to ask this at all. When we tested this during alpha, most claimants did not feel confident giving a date. They felt they would be held to it. We have agreed to test this during private beta to see if this is something users know or feel comfortable giving to us.
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Claim start date',
+    screenshot: 'Claim-date',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   A claimant can backdate their claim by up to 3 months, if they have evidence to cover it and were not getting any statutory payments at the time.
     ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    Research has shown that this is a difficult question. On the clerical form, users often leave it blank or put things like ‘ASAP’. This is not possible on the digital form and they need to put a full date. We know that users struggle to understand the rules around backdating and eligibility and that changing their claim start dates later can be laborious and time consuming for processors. At the moment we are just trying to explain the basic rules and reassure users that we will check it before it is sent (users got nervous when giving a date that they are not sure is right - they know they might have to pay money back if they do it wrong). We have tried a new design where in some cases we give the user the date we think they can claim from, based on information they have given us - for example, the end date for their SSP. It needs more testing, and discussion with stakeholders to make sure we do not misadvise claimants.
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Worked abroad',
+    screenshot: 'Worked-abroad',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
-    ',
+   The claimant might have paid equivalent social security contributions in another country that we can take into account for the benefit. If they have worked abroad in the last 5 years, processors will send an ESA31 form for more detail about where they worked and refer their claim to the International Pensions Centre.
+   ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+    This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
     '
   },
   {
-    title: 'Before you start',
-    screenshot: 'before-you-start',
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'Lived-abroad',
     why:
     '
-   At the moment there is no ‘save and return’ functionality. This means that users need to get certain documents ready before they start as they will not be able to leave their application.
+   The claimant might have received Ministry of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
     ',
     future:
     '
-    To test whether users get everything ready before they begin. Would be good to see how many users exited on this page and how long people stayed on it.
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+  {
+    title: 'Pension payments',
+    screenshot: 'Pension',
+    why:
+    '
+   Pension and annuity payments affect how much New Style ESA you are allowed. The first £85 a week you receive is disregarded, and after that half of what you receive is taken off your ESA payment.
+    ',
+    future:
+    '
+  At the start of private beta, claimants with pensions are being sent to apply through the clerical route. We have kept the questions there in case anyone with a pension gets through. As private beta progresses, we need to start asking these questions of everyone. We should also check how many people open the content within the reveal to find out what the question means.
+    '
+  },
+
+  {
+    title: 'Pension or annuity details',
+    screenshot: 'before-you-start',
+    why:
+    '
+   To find out where they get their pension from in case we need to contact them. This also populates the pension provider name in follow up questions.
+    ',
+    future:
+    '
+  To see what information they know and can easily find. If people spend a long time on this screen or drop out they might be going away to find pension statements or reference numbers. We also need to check that they understand they can add another pension later. At the start of private beta, we should also see how the message about the question being optional affects what claimants give.
+    '
+  },
+
+  {
+    title: 'Pension start date',
+    screenshot: 'Pension-start',
+    why:
+    '
+   To find out from when we should start taking account of their payments. Some could be backdating their claim for 3 months, but only had a pension for 1 month.
+    ',
+    future:
+    '
+  To see what date users give (date of first payment, date it began, date on pension statement etc) and whether they know the precise date. We know people find precise dates difficult for non-memorable things. We should check how the optional message affects how much people tend to know - for example, the month and year but not the day.
+    '
+  },
+
+  {
+    title: 'Pension frequency',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+    '
+  },
+  {
+    title: 'Lived abroad with a relative in the forces',
+    screenshot: 'before-you-start',
+    why:
+    '
+   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+    ',
+    future:
+    '
+  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
     '
   }
 
