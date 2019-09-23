@@ -532,114 +532,114 @@ To check the accessibility of the date input. Some services have reported issues
 
   {
     title: 'Pension frequency',
-    screenshot: 'before-you-start',
+    screenshot: 'Pension-frequency',
     why:
     '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+   So we can calculate how much they get paid each week.
     ',
     future:
     '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+To check whether we need all the frequency options.
     '
   },
 
   {
-    title: 'Lived abroad with a relative in the forces',
+    title: 'Pension deductions',
     screenshot: 'before-you-start',
     why:
     '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+   So we know whether to ask them about deductions - some optional deductions, like giving to a charity, are counted towards the £85 a week even if they are not in the final amount someone gets paid.
     ',
     future:
     '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+  To check whether people understand what deductions are and how many people select ‘I’m not sure’.
     '
   },
 
   {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
+    title: 'Last pension payment - with deductions',
+    screenshot: 'Pension-amount-with-deductions',
     why:
     '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+  To find out whether they get more than £85 a week and if we need to take anything off their ESA payment. Decision makers look at the difference between the amount before and after deductions to work out whether there is anything unusally expensive that they are paying.
     ',
     future:
     '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+  To check that people know both these amounts.
     '
   },
 
   {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
+    title: 'Last pension payment - without deductions',
+    screenshot: 'Pension-amount',
     why:
     '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+   To find out whether they get more than £85 a week and if we need to take anything off their ESA payment.
     ',
     future:
     '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+  To check that people know the amount.
     '
   },
 
   {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
+    title: 'Details of deductions',
+    screenshot: 'Deduction-details',
     why:
     '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+   Some deductions might be optional, like giving to charity, and we therefore take them into account.
     ',
     future:
     '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+  To see whether people can find the exact amounts for their deductions. And to see whether they know they can add other deductions. We have prototyped an alternative ‘add another’ design for health conditions that might be more accessible.
     '
   },
 
   {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
+    title: 'Inherited pensions',
+    screenshot: 'Inherited-pension',
     why:
     '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+   We disregard inherited pensions. If we find out they inherited the pension, we will not take any of the previously entered pension details into account. We still ask the questions because we need the details for decision makers to check.
     ',
     future:
     '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+To check whether people understand it.
     '
   },
 
   {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
+    title: 'Other pensions',
+    screenshot: 'Other-pension',
     why:
     '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+   A looping question that brings users back to add another pension if needed.
     ',
     future:
     '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+  We have a design for a different way of approaching the looping add another pattern. It has not been tested yet.
     '
   },
 
   {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
+    title: 'Permanent health insurance',
+    screenshot: 'Permanent-health-insurance',
     why:
     '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+   Permenant health insurance is treated like a pension. So if a user gets more than £85 a week from their combined pensions and health insurance, half of the amount is taken off their ESA payment.
     ',
     future:
     '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+  Research has shown that users do not understand what this is. We need to check that they read and understand the hint text and do not mistake it for a private income protection policy or private health insurance.
     '
   },
 
   {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
+    title: 'Permanent health insurance details',
+    screenshot: 'Permanent-health-insurance-details',
     why:
     '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+   To find out where they get their permanent health insurance from in case we need to contact their provider. This also populates the insurance provider name in follow up questions.
     ',
     future:
     '
