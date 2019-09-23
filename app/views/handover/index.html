@@ -1,4 +1,8 @@
-{% extends "layout_handover.html" %}
+{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  Handover notes &ndash; {{ serviceName }}
+{% endblock %}
 
 {% set items = [
   {
@@ -492,15 +496,18 @@ To check the accessibility of the date input. Some services have reported issues
 
   %}
 
-{% block main %}
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="dev-index" rel="prev" class="govuk-back-link">Reference screens for JIRA stories</a>
+</div>
 
 <main class="govuk-main-wrapper">
 
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Handover screenshots</h1>
-        <p class="govuk-body">Some text here</p>
+        <h1 class="govuk-heading-l">Handover notes</h1>
       </div>{# /govuk-grid-column #}
     </div>{# /govuk-grid-row #}
 
@@ -522,5 +529,5 @@ To check the accessibility of the date input. Some services have reported issues
   </div>{# /govuk-width-container #}
 
 </main>
-   nhjuyu9
+
 {% endblock %}
