@@ -248,7 +248,7 @@ To check the accessibility of the date input. Some services have reported issues
     ',
     future:
     '
-    To test the comprehension of the question, particularly for self employed users.
+    To test the comprehension of the question, particularly for self employed users. Self employed people struggle to answer this if they are not in a contract right now.
     '
   },
   {
@@ -260,7 +260,7 @@ To check the accessibility of the date input. Some services have reported issues
     ',
     future:
     '
-    To test whether users understand they can add further jobs later. As with any of these contact details questions, it would be good to check that the user understands why we are asking and whether they try to leave any details out.
+    To see if self employed people know what to put - some have put their client’s details in testing, rather than their own company details. We also need to test whether users understand they can add further jobs later and that they can add foreign employers confidently.
     '
   },
   {
@@ -513,7 +513,7 @@ To check the accessibility of the date input. Some services have reported issues
     ',
     future:
     '
-  To see what information they know and can easily find. If people spend a long time on this screen or drop out they might be going away to find pension statements or reference numbers. We also need to check that they understand they can add another pension later. At the start of private beta, we should also see how the message about the question being optional affects what claimants give.
+  To see what information they know and can easily find. If people spend a long time on this screen or drop out they might be going away to find pension statements or reference numbers. We also need to check that they can add details of foreign pension providers, if needed, and that they understand they can add another pension later. At the start of private beta, we should also see how the message about the question being optional affects what claimants give.  In a future iteration (version 10) we allow them to put a provider from outside the UK, because they may have worked and set up the pension abroad.
     '
   },
 
@@ -539,7 +539,7 @@ To check the accessibility of the date input. Some services have reported issues
     ',
     future:
     '
-To check whether we need all the frequency options.
+   Some users who get their pension ad-hoc get confused when they need to select a frequency option. We need to make sure that only people who receive regular payments get this far. We also need to check whether we need all the frequency options or whether we can reduce the list to the most commonly used frequencies.
     '
   },
 
@@ -630,7 +630,7 @@ To check whether people understand it.
     ',
     future:
     '
-  Research has shown that users do not understand what this is. We need to check that they read and understand the hint text and do not mistake it for a private income protection policy or private health insurance.
+  Research has shown that users do not understand what permanent health insurance is. It is mostly an industry term and ‘income protection insurance’ is much better known. However, income protection covers many things so we need to still make sure that we ask questions or provide hints that get across the specific type of insurance we‘re interested in (set up by an employer who you have since left and who paid more than half of the premiums). Some users mistake permanent health insurance for private health insurance, like BUPA. We get very few claims through where the claimant has this type of insurance, but this can mean that processors are not completely clear on the rules themselves as they deal with them so infrequently and there are <a href="https://www.benefitsandwork.co.uk/forum/10-dla-esa-queries-results/101829-esa-and-phi-claims">reports online of people having money unfairly deducted</a>. We have an alternative question flow in prototype version 10 which uses clearer language and asks more questions to direct people away who do not have the right type of insurance.
     '
   },
 
@@ -643,13 +643,104 @@ To check whether people understand it.
     ',
     future:
     '
+  To check they know these details and analyse what answers people can give while the questions are optional. We have an alternative question flow in version 10 of the prototype. On the alternative version of this screen, we use ‘insurance details’ not ‘permanent health insurance details’. We also allow them to put a provider from outside the UK, because they may have worked and set up the policy abroad.
+    '
+  },
+
+  {
+    title: 'Insurance premiums',
+    screenshot: 'Policy-premiums',
+    why:
+    '
+   To find out if the claimant paid most of the premiums themselves. If they did, we disregard it.
+    ',
+    future:
+    '
+    The word ‘premium’ is not plain English and can be confusing. They also may not know excatly what percentage they paid. In the alternative version (version 10) we tried ‘Did your previous employer pay more than half towards this insurance?’ with some additional hint text that explains who they can check with if they are not sure. There is an ‘I‘m not sure’option in the MVP so it would be good to track how many people choose this and need a conversation with a processor.
+    '
+  },
+
+  {
+    title: 'Still working for the employer',
+    screenshot: 'Still-employed-with-policy',
+    why:
+    '
+   If they are still employed by the employer that set up the policy, then the money is counted as sick pay rather than permanent health insurance and therefore has no affect on the benefit.
+    ',
+    future:
+    '
+  To check comprehension and whether they can enter a precise date. There is an alternative question flow in version 10 which asks for information about insurance in stages and removes the need for this question - it asks them first who set up the policy (me, previous employer, current employer), and they‘re only asked about premiums if they selected ‘previous employer’.
+    '
+  },
+
+  {
+    title: 'Insurance frequency',
+    screenshot: 'Insurance-payments',
+    why:
+    '
+   To find out whether they‘re getting more than £85 a week from permanent health insurance and pensions.
+    ',
+    future:
+    '
+  To check whether we need all the options and whether users know what amount to put (net).
+    '
+  },
+
+  {
+    title: 'Other permanent health insurance',
+    screenshot: 'Other-permanent-health-insurance',
+    why:
+    '
+   To loop users back if they have more than one policy.
+    ',
+    future:
+    '
+  To check whether it is accessible and easy to manage from the check answers page. We have tried out a more accessible version of this which allows you to add or remove the list of providers from this page.
+    '
+  },
+
+  {
+    title: 'Bank details',
+    screenshot: 'before-you-start',
+    why:
+    '
+   We need to know how to pay them if their claim is successful. We cannot ask this later as they may not have to return later forms and it might delay their payment.
+    ',
+    future:
+    '
+  Users are sometimes surprised that they have to enter bank details when they don‘t know yet whether they are eligible. In the MVP, we have added some more hint text to reassure how we use this information so we should test whether this helps and if it does not it might be worth considering whether we could ask at a point where they have some reassurance that they are eligible.
+    '
+  },
+
+  {
+    title: 'Consent to sharing the results of an assessment',
+    screenshot: 'Consent-assessment',
+    why:
+    '
+   To find out if the claimant gives consent for us to write to their doctor and tell them the outcome of the claimant’s assessment.
+    ',
+    future:
+    '
+  This has not been thoroughly tested for comprehension. It went in late and we were advised that we could not change the content at all, not even for style. However, we can test this during private beta and feedback to the Data Protection, Legal, Strategy and Comms teams if anything need to change. In particular we need to think about introducing the Work Capability Assessment earlier to see if that eases any surprise or concern. Some users see that saying no has no affect on their claim at all, and wonder why we are asking at all. For others, the idea of telling their doctor about our assessment makes them uncomfortable - like it might change how their doctor views their condition, or like we're challenging their doctors assessment of their condition. Just in terms of basic content issues, there are some style issues, it is longer than we would like, we could improve the phrasing, and we could work on the use of a statement as a question. It is also worth considering whether this letter that we need consent to send is actually needed since it has no affect on their claim.
+    '
+  },
+
+  {
+    title: 'Check your answers',
+    screenshot: 'Check-answers',
+    why:
+    '
+  To give users an opportunity to review the information they have entered and change it if necessary.
+    ',
+    future:
+    '
   This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
     '
   },
 
   {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
+    title: 'Declaration',
+    screenshot: 'Declaration',
     why:
     '
    The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
@@ -661,99 +752,8 @@ To check whether people understand it.
   },
 
   {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
-    why:
-    '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
-    ',
-    future:
-    '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
-    '
-  },
-
-  {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
-    why:
-    '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
-    ',
-    future:
-    '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
-    '
-  },
-
-  {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
-    why:
-    '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
-    ',
-    future:
-    '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
-    '
-  },
-
-  {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
-    why:
-    '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
-    ',
-    future:
-    '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
-    '
-  },
-
-  {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
-    why:
-    '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
-    ',
-    future:
-    '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
-    '
-  },
-
-  {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
-    why:
-    '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
-    ',
-    future:
-    '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
-    '
-  },
-
-  {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
-    why:
-    '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
-    ',
-    future:
-    '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
-    '
-  },
-
-  {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
+    title: 'Confirmation',
+    screenshot: 'Done',
     why:
     '
    The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
