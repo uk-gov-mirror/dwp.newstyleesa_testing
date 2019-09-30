@@ -176,7 +176,7 @@ To check the accessibility of the date input. Some services have reported issues
     ',
     future:
     '
-     This has taken a lot of work and involved a lot of internal and external stakeholders. Because of the sign off required, it went into the service just before private beta began so we have not had time to test the content properly. There is a lot more content than we would usually provide, and some phrasing could be clearer.  In particular we need to check they understand who they are giving consent to (since it isn‘t us), what will happen if they say yes, what will happen if they say no, how they can change their response, and why we ask for it. We have agreed with colleagues in Strategy, Legal and Data Protection that we will test comprehension fully during private beta and if necessary try out new designs. But we need to keep them informed of any research findings, and share any designs we are testing.
+     This has taken a lot of work and involved a lot of internal and external stakeholders. Because of the sign off required, it went into the service just before private beta began so we have not had time to test the content properly. There is a lot more content than we would usually provide, and some phrasing could be clearer.  In particular we need to check they understand who they are giving consent to (since it isn’t us), what will happen if they say yes, what will happen if they say no, how they can change their response, and why we ask for it. We have agreed with colleagues in Strategy, Legal, Comms and Data Protection that we will test comprehension fully during private beta and if necessary try out new designs. Whatever we redesign will need to be signed off through the Customer Communications team, and will likely need to go to their senior civil servant for a final check. We agreed that we would keep all internal stakeholders informed of any research findings, and share any designs we are testing. Ideally we should work with the Comms team as soon as possible so changes are not coming in from them later on before they send it for sign off. They may have to implement similar changes to the clerical form as well.
     '
   },
   {
@@ -308,7 +308,7 @@ To check the accessibility of the date input. Some services have reported issues
     ',
     future:
     '
-    To look at how many users say no. It has currently been designed so that people who work irregular hours don‘t have to guess a figure or give an average. We agreed this would be picked up by processors. As private beta continues, we might need to look at asking them for the hours they have worked over the last 5 weeks.
+    To look at how many users say no. It has currently been designed so that people who work irregular hours don’t have to guess a figure or give an average. We agreed this would be picked up by processors. As private beta continues, we might need to look at asking them for the hours they have worked over the last 5 weeks.
     '
   },
   {
@@ -643,7 +643,7 @@ To check whether people understand it.
     ',
     future:
     '
-  To check they know these details and analyse what answers people can give while the questions are optional. We have an alternative question flow in version 10 of the prototype. On the alternative version of this screen, we use ‘insurance details’ not ‘permanent health insurance details’. We also allow them to put a provider from outside the UK, because they may have worked and set up the policy abroad.
+  To check they know these details and analyse what answers people can give while the questions are optional. We also need to check that they understand they can add more than one policy. We have an alternative question flow in version 10 of the prototype. On the alternative version of this screen, we use ‘insurance details’ not ‘permanent health insurance details’. We also allow them to put a provider from outside the UK, because they may have worked and set up the policy abroad.
     '
   },
 
@@ -701,7 +701,7 @@ To check whether people understand it.
 
   {
     title: 'Bank details',
-    screenshot: 'before-you-start',
+    screenshot: 'Bank-details',
     why:
     '
    We need to know how to pay them if their claim is successful. We cannot ask this later as they cannot do this at the jobcentre and they may not have to return later forms. It is also mandatory in JSAPS.
@@ -721,7 +721,7 @@ To check whether people understand it.
     ',
     future:
     '
-  This has not been thoroughly tested for comprehension. It went in late and we were advised that we could not change the content at all, not even for style. However, we can test this during private beta and feedback to the Data Protection, Legal, Strategy and Comms teams if anything need to change. In particular we need to think about introducing the Work Capability Assessment earlier to see if that eases any surprise or concern. Some users see that saying no has no affect on their claim at all, and wonder why we are asking at all. For others, the idea of telling their doctor about our assessment makes them uncomfortable - like it might change how their doctor views their condition, or like we are challenging their doctors assessment of their condition. Just in terms of basic content issues, there are some style issues, it is longer than we would like, we could improve the phrasing, and we could work on the use of a statement as a question. It is also worth considering whether this letter that we need consent to send is actually needed since it has no affect on their claim.
+  This has not been thoroughly tested for comprehension. It went in late and we were advised that we could not change the content at all, not even for style. However, we can test this during private beta and give feedback to the Data Protection, Legal, Strategy and Comms teams if anything need to change. In particular we need to think about introducing the Work Capability Assessment earlier to see if that eases any surprise or concern. Some users see that saying no has no affect on their claim at all, and wonder why we are asking at all. For others, the idea of telling their doctor about our assessment makes them uncomfortable - like it might change how their doctor views their condition, or like we are challenging their doctors assessment of their condition. Just in terms of basic content issues, there are some style issues, it is longer than we would like, we could improve the phrasing, and we could work on the use of a statement as a question. It is also worth considering whether this letter that we need consent to send is actually needed since it has no affect on their claim.
     '
   },
 
@@ -734,7 +734,7 @@ To check whether people understand it.
     ',
     future:
     '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+To explore the user flow from and back to the Check Answers screen, particularly for any journeys where their change would introduce new not-previously answered questions and for the looping ‘add another’ journeys. We should also look into having only 1 ‘Change’ link per screen. Some screens with lots of fields or reveals on them have a couple of ‘Change’ links.
     '
   },
 
@@ -743,11 +743,11 @@ To check whether people understand it.
     screenshot: 'Declaration',
     why:
     '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+   To warn users that they are about to submit the form and asking them to confirm that the information they are about to submit is correct and that they will update us if anything changes.
     ',
     future:
     '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+  To observe behaviour and see if it makes claimants nervous or stops them submitting. The content is also very similar to the content of their claimant commitment so it might be worth considering whether they need to commit to these things twice.
     '
   },
 
@@ -756,54 +756,14 @@ To check whether people understand it.
     screenshot: 'Done',
     why:
     '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
+   To confirm that the application form is submitted and tell the user what to do next.
     ',
     future:
     '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
-    '
-  },
-
-  {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
-    why:
-    '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
-    ',
-    future:
-    '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
-    '
-  },
-
-  {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
-    why:
-    '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
-    ',
-    future:
-    '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
-    '
-  },
-  {
-    title: 'Lived abroad with a relative in the forces',
-    screenshot: 'before-you-start',
-    why:
-    '
-   The claimant might have received Ministory of Defence National Insurance credits while they were away. We also need to take this into account when considering their residency.
-    ',
-    future:
-    '
-  This is not on the clerical form and there are some differing opinions on whether we should ask it of everyone. It has not been tested much (it went in to the service just before we went into private beta) so the content will need testing to see if people know how to answer the question and why we ask it.
+To explore whether users know that the process of applying is not yet completed and that they still have to go to an appointment. We have tried an alternative design in version 10 which gets across that the user has completed the ‘first part’ of the process and sets out next steps. We also need to check if this is enough of a confirmation. Some users expect a text message or email. Users also cannot properly bookmark this page (as it is dynamic, based on their answers) which means they cannot go back to their confirmation to check what they need at their appointment. In the early stages of private beta, a user submitted twice because their phone battery died as they submitted and they were not sure if it had gone through so some sort of notification would have helped them. We need to watch this through private beta to see if this happens several times and what would help.
     '
   }
-
   ]
-
   %}
 
 {% block content %}
