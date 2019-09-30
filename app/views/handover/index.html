@@ -829,9 +829,9 @@ To check whether people understand it.
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">{{ item.title }}</h2>
         <h2 class="govuk-heading-s">Why it’s there</h2>
-        <p>{{ item.why }}</p>
+        <p>{{ item.why | safe }}</p>
         <h2 class="govuk-heading-s">Future plans</h2>
-        <p>{{ item.future }}</p>
+        <p>{{ item.future | safe }}</p>
       </div>{# /govuk-grid-column #}
     </div>{# /govuk-grid-row #}
     {% endfor %}
