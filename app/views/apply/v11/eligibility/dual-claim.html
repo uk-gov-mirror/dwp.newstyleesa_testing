@@ -14,33 +14,38 @@
 
     <form id="form" method="post" action="insurance-detail">
 
+    <h1 class="govuk-heading-xl">
+        Need to consider journey and content</h1>
+
+    <!-- <p>You can get help paying for your housing if you’re eligible for Universal Credit. This is called your housing payment.</p>
+
    <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">
-            Are you getting Statutory Sick Pay?</h1>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            What do you want to do?</h2>
         </legend>
 
-        <!-- <span id="phi-hint" class="govuk-hint">
-        This is known as permanent health insurance.
-      </span> -->
+        <span id="phi-hint" class="govuk-hint">
+          If you want to appy for Universal Credit and New Style Employment Support Allowance, you need to apply for Universal Credit first.
+      </span>
 
         <div class="govuk-radios" data-module="radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="state-pension-1" name="state-pension" type="radio" value="yes" data-aria-controls="yes-cond">
-            <label class="govuk-label govuk-radios__label" for="state-pension-1">
-              Yes
+            <input class="govuk-radios__input" id="apply-for-uc-1" name="apply-for-uc" type="radio" value="yes" data-aria-controls="yes-cond">
+            <label class="govuk-label govuk-radios__label" for="apply-for-uc-1">
+              Apply for Universal Credit first
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="state-pension-2" name="state-pension" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="state-pension-2">
-              No
+            <input class="govuk-radios__input" id="apply-for-uc-2" name="apply-for-uc" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="apply-for-uc-2">
+              Continue to apply for New Style Employment and Support Allowance
             </label>
           </div>
         </div>
       </fieldset>
-    </div>
+    </div> -->
 
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- insurance-detail -->
 
@@ -62,13 +67,13 @@
         // depending on the value="" of the <input>
         // that's been checked, change the action=""
         // of the <form> and then allow it to submit.
-      	switch($('input[name="state-pension"]:checked').val())
+      	switch($('input[name="apply-for-uc"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','statutory-sick-pay-end');
+      	    $('#form').attr('action','https://www.gov.uk/how-to-claim-universal-credit/');
       		  break;
           case 'no':
-      	    $('#form').attr('action','savings-and-investments');
+      	    $('#form').attr('action','../../MVP/name');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;
@@ -80,3 +85,5 @@
     });
   </script>
 {% endblock %}
+
+
