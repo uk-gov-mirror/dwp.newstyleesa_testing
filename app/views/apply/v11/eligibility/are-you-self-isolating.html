@@ -14,34 +14,24 @@
 
     <form id="form" method="post" action="insurance-detail">
 
-    <h1 class="govuk-heading-xl">
-        You cannot claim New Style Employment Support Allowance for a partner or child</h1>
-
-    <p>You can apply for Universal Credit for your family, or you can continue your application for NS ESA for yourself.
-    </p>
-
    <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">
-            What do you want to do?</h2>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <h1 class="govuk-fieldset__heading">
+            Are you self-isolating because of coronavirus?</h1>
         </legend>
-
-        <span id="phi-hint" class="govuk-hint">
-          If you want to appy for Universal Credit and New Style Employment Support Allowance, you need to apply for Universal Credit first.
-      </span>
 
         <div class="govuk-radios" data-module="radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="apply-for-uc-1" name="apply-for-uc" type="radio" value="yes" data-aria-controls="yes-cond">
-            <label class="govuk-label govuk-radios__label" for="apply-for-uc-1">
-              Apply for Universal Credit first
+            <input class="govuk-radios__input" id="disability-1" name="disability" type="radio" value="yes" data-aria-controls="yes-cond">
+            <label class="govuk-label govuk-radios__label" for="disability-1">
+              Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="apply-for-uc-2" name="apply-for-uc" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="apply-for-uc-2">
-              Continue to apply for New Style Employment and Support Allowance
+            <input class="govuk-radios__input" id="disability-2" name="disability" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="disability-2">
+              No
             </label>
           </div>
         </div>
@@ -68,13 +58,13 @@
         // depending on the value="" of the <input>
         // that's been checked, change the action=""
         // of the <form> and then allow it to submit.
-      	switch($('input[name="apply-for-uc"]:checked').val())
+      	switch($('input[name="disability"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','https://www.gov.uk/how-to-claim-universal-credit/');
+      	    $('#form').attr('action','coronavirus-reason-for-claim');
       		  break;
           case 'no':
-      	    $('#form').attr('action','../MVP/name');
+      	    $('#form').attr('action','disability-or-health-condition');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;
@@ -86,4 +76,3 @@
     });
   </script>
 {% endblock %}
-
