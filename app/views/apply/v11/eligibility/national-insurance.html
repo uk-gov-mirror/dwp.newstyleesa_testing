@@ -38,6 +38,12 @@
               No
             </label>
           </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="severe-disability-2" name="severe-disability" type="radio" value="notsure">
+            <label class="govuk-label govuk-radios__label" for="severe-disability-2">
+              Not sure
+            </label>
+          </div>
         </div>
       </fieldset>
     </div>
@@ -65,10 +71,13 @@
       	switch($('input[name="severe-disability"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','savings-and-investments');
+      	    $('#form').attr('action','statutory-pay');
       		  break;
           case 'no':
-      	    $('#form').attr('action','may-not-be-eligible');
+      	    $('#form').attr('action','may-not-be-eligible-national-insurance');
+      		  break;
+            case 'notsure':
+      	    $('#form').attr('action','statutory-pay');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;

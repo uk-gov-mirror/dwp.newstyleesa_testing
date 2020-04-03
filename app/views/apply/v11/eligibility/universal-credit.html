@@ -65,10 +65,10 @@
       	switch($('input[name="state-pension"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','work-coach');
+      	    $('#form').attr('action','apply-using-universal-credit');
       		  break;
           case 'no':
-      	    $('#form').attr('action','national-insurance');
+      	    $('#form').attr('action','savings-and-investments');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;

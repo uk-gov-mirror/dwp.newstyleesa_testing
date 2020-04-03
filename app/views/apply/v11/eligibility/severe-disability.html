@@ -38,6 +38,12 @@
               No
             </label>
           </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="severe-disability-2" name="severe-disability" type="radio" value="notsure">
+            <label class="govuk-label govuk-radios__label" for="severe-disability-2">
+              Not sure
+            </label>
+          </div>
         </div>
       </fieldset>
     </div>
@@ -68,7 +74,10 @@
       	    $('#form').attr('action','may-not-be-eligible-severe-disability');
       		  break;
           case 'no':
-      	    $('#form').attr('action','universal-credit');
+      	    $('#form').attr('action','may-be-eligible');
+      		  break;
+            case 'notsure':
+      	    $('#form').attr('action','may-be-eligible');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;
