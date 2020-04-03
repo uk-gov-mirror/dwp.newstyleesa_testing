@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
 
+{% block beforeContent %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
 
 {% block content %}
 
@@ -13,25 +16,44 @@
   
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">You can only use this service if you called the helpline and they asked you to</h1>
+    <h1 class="govuk-heading-xl">You can only use this service if you have been invited</h1>
 
-    <!-- <h1 class="govuk-heading-xl">You can only use this service if you have been invited</h1>
+    <p class="govuk-body">If you have not been invited, call the Universal Credit helpline to apply for New Style Employment and Support Allowance (ESA).
+    </p>
 
-    <h1 class="govuk-heading-xl">You can only use this service if you got an email from the Department for Work and Pensions</h1>
-
-    <h1 class="govuk-heading-xl">You can only use this service if you called the helpline</h1>
-
-    <h1 class="govuk-heading-xl">You can only use this service if the helpline invited you</h1> -->
-
-
-
-
-    <p class="govuk-body">If you have not been invited, call 0800 328 5644 to apply for New Style Employment and Support Allowance.</p>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Universal Credit helpline
+        </span>
+      </summary>
+      <div class="govuk-body">
+        
+    <p class="govuk-body">
+        Telephone: 0800 328 5644 (choose option 2)<br>
+        Textphone: 0800 328 1344 (choose option 2)
+    </p>
     
+    <p class="govuk-body">
+        <a href="https://www.ngts.org.uk/" class="govuk-link">NGT text relay</a> (if you cannot hear or speak on the phone): 18001 then 0800 328 5644
+    </p>
+    
+    <p class="govuk-body">
+        <a href="https://dwpesaclaim.signvideo.net/" class="govuk-link">Video relay service</a> for British Sign Language (<abbr title="British Sign Language">BSL</abbr>) users.<a href="https://www.youtube.com/watch?v=Osx7FFxFpNY" class="govuk-link">Check you can use the service</a>.<br>
+    </p>    
+    
+    <p class="govuk-body">Welsh language telephone: 0800 328 1744</p>
+    <p class="govuk-body">Monday to Friday, 9.30am to 3.30pm</p>
+    
+    <p class="govuk-body">
+        <a href="https://www.gov.uk/call-charges" class="govuk-link">Find out about call charges</a>.</p>
+    </p>
 
-    <!-- <p>If you want to apply for Call 0800 328 5644 if you want to apply for New Style Employment and Support Allowance.</p> -->
+  </div>
+</details>
 
-    <p><a href="MVP/start-page-steps" class="govuk-button">Continue</a></p>
+
+    <a href="MVP/start-page-steps" class="govuk-button">Continue</a>
 
   </div>
 
