@@ -18,7 +18,7 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Is coronavirus the main reason for your claim?</h1>
+            Is coronavirus (COVID-19) the main reason for your claim?</h1>
         </legend>
 
         <p class="govuk-body">Select yes if:</p>
@@ -69,10 +69,10 @@
       	switch($('input[name="disability"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','call-helpline-coronavirus');
+      	    $('#form').attr('action','state-pension');
       		  break;
           case 'no':
-      	    $('#form').attr('action','state-pension');
+      	    $('#form').attr('action','disability-or-health-condition');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;

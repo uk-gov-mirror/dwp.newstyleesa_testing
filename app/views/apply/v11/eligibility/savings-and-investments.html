@@ -18,8 +18,10 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Do you have savings or investments of £16,000 or more?</h1>
+            Do you have less than £16,000 in savings or investments?</h1>
         </legend>
+
+        <p>It does not affect your eligibility for New Style ESA whether you answer yes or no.</p>
 
         <!-- <span id="phi-hint" class="govuk-hint">
         This is known as permanent health insurance.
@@ -65,10 +67,10 @@
       	switch($('input[name="state-pension"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','disability-or-health-condition');
+      	    $('#form').attr('action','help-paying-housing');
       		  break;
           case 'no':
-      	    $('#form').attr('action','help-paying-housing');
+      	    $('#form').attr('action','disability-or-health-condition');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;

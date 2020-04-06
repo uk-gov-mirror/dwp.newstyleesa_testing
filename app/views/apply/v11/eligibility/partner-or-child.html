@@ -21,6 +21,8 @@
             Do you have a partner or child you want to add to your claim?</h1>
         </legend>
 
+        <p>New Style ESA is a benefit for one person. To claim for a partner, children or childcare, you'll need to apply for Universal Credit.</p>
+
         <!-- <span id="phi-hint" class="govuk-hint">
         This is known as permanent health insurance.
       </span> -->
@@ -68,7 +70,7 @@
       	    $('#form').attr('action','may-not-be-eligible-partner-child');
       		  break;
           case 'no':
-      	    $('#form').attr('action','disability-or-health-condition');
+      	    $('#form').attr('action','coronavirus-reason-for-claim');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;
