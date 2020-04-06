@@ -23,11 +23,11 @@
 
         <p class="govuk-body">Select yes if:</p>
         <ul class="govuk-list govuk-list--bullet">
-        <li>you're infected with coronavirus</li>
-        <li>you're self-isolating because you came into contact with someone who's infected</li>
+        <li>you might be infected with coronavirus, or recovering from it</li>
+        <li>you're self-isolating because you came into contact with someone who might be infected</li>
         <li>you're caring for a child who's self-isolating for these reasons</li>
         <li>you received a letter or text message from the government telling you to stay indoors for 12 weeks</li>
-        </ul>
+      </ul>
 
         <div class="govuk-radios" data-module="radios">
           <div class="govuk-radios__item">
@@ -72,7 +72,7 @@
       	    $('#form').attr('action','call-helpline-coronavirus');
       		  break;
           case 'no':
-      	    $('#form').attr('action','disability-or-health-condition');
+      	    $('#form').attr('action','state-pension');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;

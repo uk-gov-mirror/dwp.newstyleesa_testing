@@ -15,7 +15,7 @@
       <fieldset class="govuk-fieldset" aria-describedby="statutory-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Does your [statutory pay] end by [date in 3 month]?
+            Does your [statutory pay] end in the next 3 months?
           </h1>
         </legend>
         <div class="govuk-radios" data-module="radios">
@@ -62,7 +62,7 @@
       	switch($('input[name="statutory-pay-end"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','severe-disability');
+      	    $('#form').attr('action','severe-disability-premium');
       		  break;
           case 'no':
       	    $('#form').attr('action','may-not-be-eligible-statutory-pay');

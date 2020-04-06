@@ -18,6 +18,9 @@
             Are you getting any of the following payments?
           </h1>
         </legend>
+
+<p>You can apply for New Style ESA if you do not receive any of these statutory payments, or if they end in the next 3 months.</p>
+
         <span id="waste-hint" class="govuk-hint">
           You only need to select one option.
         </span>
@@ -102,7 +105,7 @@
       	    $('#form').attr('action','statutory-pay-date');
       		  break;
             case 'none':
-      	    $('#form').attr('action','severe-disability');
+      	    $('#form').attr('action','severe-disability-premium');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;
