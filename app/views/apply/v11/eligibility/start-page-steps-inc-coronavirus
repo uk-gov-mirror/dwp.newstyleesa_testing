@@ -20,7 +20,11 @@
     </ul>
 
     <h1 class="govuk-heading-xl">Apply for New Style Employment and Support Allowance (New Style ESA)</h1>
-<p>Use this service if you need financial support because you are off work with a health condition, injury or disability.</p>
+<p>Use this service if:</p>
+<ul class="govuk-list govuk-list--bullet">
+    <li>you need financial support because you are off work with a health condition, injury or disability</li>
+    <li>you're self-isolating because of coronavirus (COVID-19)</li>
+    </ul>
     
     <h2 class="govuk-heading-m">What to expect</h2>
   <p>The online form is divided into 2 parts.</p>
