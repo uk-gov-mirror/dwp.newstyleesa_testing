@@ -27,31 +27,31 @@
 
         <div class="govuk-radios">
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value="SSP">
+                <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value="Statutory Sick Pay">
                 <label class="govuk-label govuk-radios__label" for="sap">
                   Statutory Sick Pay
                 </label>
               </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value="SAP">
+            <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value="Statutory Adoption Pay">
             <label class="govuk-label govuk-radios__label" for="sap">
               Statutory Adoption Pay
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live-2" name="statutory-pay" type="radio" value="SMP">
+            <input class="govuk-radios__input" id="where-do-you-live-2" name="statutory-pay" type="radio" value="Statutory Maternity Pay">
             <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
               Statutory Maternity Pay
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live-3" name="statutory-pay" type="radio" value="SPP">
+            <input class="govuk-radios__input" id="where-do-you-live-3" name="statutory-pay" type="radio" value="Statutory Paternity Pay">
             <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
               Statutory Paternity Pay
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live-4" name="statutory-pay" type="radio" value="SSPP">
+            <input class="govuk-radios__input" id="where-do-you-live-4" name="statutory-pay" type="radio" value="Statutory Shared Parental Pay">
             <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
               Statutory Shared Parental Pay
             </label>
@@ -89,19 +89,19 @@
         // of the <form> and then allow it to submit.
       	switch($('input[name="statutory-pay"]:checked').val())
         {
-      		case 'SSP':
+      		case 'Statutory Sick Pay':
       	    $('#form').attr('action','statutory-pay-date');
       		  break;
-          case 'SAP':
+          case 'Statutory Adoption Pay':
       	    $('#form').attr('action','statutory-pay-date');
       		  break;
-            case 'SMP':
+            case 'Statutory Maternity Pay':
       	    $('#form').attr('action','statutory-pay-date');
       		  break;
-            case 'SPP':
+            case 'Statutory Paternity Pay':
       	    $('#form').attr('action','statutory-pay-date');
       		  break;
-            case 'SSPP':
+            case 'Statutory Shared Parental Pay':
       	    $('#form').attr('action','statutory-pay-date');
       		  break;
             case 'none':
