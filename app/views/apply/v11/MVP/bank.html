@@ -38,37 +38,31 @@
             </label>
             <input class="govuk-input govuk-input--width-20" id="building-soc-name" name="pay-account-holder" type="text">
           </div>
-          <fieldset class="govuk-fieldset" role="group">
-            <legend class="govuk-fieldset__legend">
-              <p class="govuk-label">
-                Sort code
-              </p>
-            </legend>
-            <span id="sortcode-hint" class="govuk-hint">
-              For example, 07 00 00
-            </span>
-                <div class="govuk-form-group">
-                  <input class="govuk-input govuk-input--width-2" id="sortcode-1" name="sortcode-digits-1-and-2" type="text" maxlength="2"> &mdash;
-                  <input class="govuk-input govuk-input--width-2" id="sortcode-2" name="sortcode-digits-3-and-4" type="text" maxlength="2"> &mdash;
-                  <input class="govuk-input govuk-input--width-2" id="sortcode-3" name="sortcode-digits-5-and-6" type="text" maxlength="2">
-                  <!--<input class="govuk-input govuk-input--width-2 govuk-!-margin-1" id="sortcode-1" name="sortcode-digits-1-and-2" type="number" pattern="[0-9]*">
-                  <input class="govuk-input govuk-input--width-2 govuk-!-margin-1" id="sortcode-2" name="sortcode-digits-3-and-4" type="number" pattern="[0-9]*">
-                  <input class="govuk-input govuk-input--width-2 govuk-!-margin-1" id="sortcode-3" name="sortcode-digits-5-and-6" type="number" pattern="[0-9]*"> -->
-                </div>
-          </fieldset>
           <div class="govuk-form-group">
-            <label class="govuk-label" for="account-holder">
+            <label class="govuk-label" for="sort-code">
+              Sort code
+            </label>
+            <span id="sort-code-hint" class="govuk-hint">
+              Must be 6 digits long.
+            </span>
+            <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text" aria-describedby="sort-code-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="account-number">
               Account number
             </label>
-            <input class="govuk-input govuk-input--width-10" id="account-holder" name="pay-account-holder" type="text" maxlength="8">
+            <span id="account-number-hint" class="govuk-hint">
+              Must be between 6 and 8 digits long.
+            </span>
+            <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number" type="text" aria-describedby="account-number-hint" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
           </div>
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="pay-reference-number">
-              Building society roll or reference number (optional)
+              Building society roll number (if you have one)
             </label>
             <span id="pay-reference-number-hint" class="govuk-hint">
-              If your building society uses a roll or reference number, you will find it on your passbook.
+              You can find it on your card, statement or passbook.
             </span>
             <input class="govuk-input govuk-input--width-20" id="pay-reference-number" name="pay-reference-number" type="number" aria-describedby="pay-reference-number-hint" maxlength="18">
           </div>
