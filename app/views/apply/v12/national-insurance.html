@@ -73,13 +73,13 @@
       	switch($('input[name="severe-disability"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','statutory-pay');
+      	    $('#form').attr('action','statutory-pay-eligibility');
       		  break;
           case 'no':
       	    $('#form').attr('action','may-not-be-eligible-national-insurance');
       		  break;
             case 'notsure':
-      	    $('#form').attr('action','statutory-pay');
+      	    $('#form').attr('action','statutory-pay-eligibility');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;
