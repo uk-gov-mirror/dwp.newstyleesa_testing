@@ -17,9 +17,9 @@
 
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
-              <label class="govuk-label" for="more-detail">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 Overall, how did you feel about the service you received today?
-              </label>
+              </legend>
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
@@ -36,7 +36,7 @@
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
                   <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
-                    Neither satisfied nor dissatisfied
+                    Neither satisfied or dissatisfied
                   </label>
                 </div>
                 <div class="govuk-radios__item">
@@ -56,12 +56,19 @@
           </div>
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="more-detail">
-              How could we improve this service?
-            </label>
-            <span id="more-detail-hint" class="govuk-hint">
-              Please don't give us any personal or financial information, for example your National Insurance number or credit card numbers.
-            </span>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              How could we improve this service?            
+            </legend>
+      
+            <p>
+              Do not give us any personal or financial information, for example your National Insurance number or credit card numbers.
+            </p>
+            <p>
+            The feedback you provide is anonymous and not part of your application.
+            </p>
+            <div class="govuk-inset-text">
+              We will not respond to your feedback or use it when we process your claim.
+            </div>
             <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
 
