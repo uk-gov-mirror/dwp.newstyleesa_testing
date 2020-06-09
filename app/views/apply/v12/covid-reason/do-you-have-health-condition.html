@@ -12,22 +12,16 @@
           Content needed
     </span> -->
 
-    <form id="form" method="post" action="self-isolating-contact-coronavirus.html">
+    <form id="form" method="post" action="insurance-detail">
 
    <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Are you self-isolating because you have symptoms of coronavirus?</h1>
+            Do you have any other health conditions, illnesses, disabilities or injuries?</h1>
         </legend>
 
-        <p>This includes you or your child, now or some time in the past.</p>
-
-        <!-- <p class="govuk-body">Select yes if one of the following applies:</p>
-        <ul class="govuk-list govuk-list--bullet">
-        <li>you received a letter or text message from the government telling you to stay indoors for 12 weeks</li>
-        <li>you’re extremely vulnerable but have not been contacted by the NHS</li>
-    </ul> -->
+        
 
         <div class="govuk-radios" data-module="radios">
           <div class="govuk-radios__item">
@@ -69,10 +63,10 @@
       	switch($('input[name="disability"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','coronavirus-date');
+      	    $('#form').attr('action','../condition');
       		  break;
           case 'no':
-      	    $('#form').attr('action','self-isolating-contact-coronavirus');
+      	    $('#form').attr('action','../gpsurgery');
       		  break;
           // if nothing is ticked don't submit the form.
           default: return false; break;

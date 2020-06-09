@@ -18,8 +18,10 @@
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
           <h1 class="govuk-fieldset__heading">
-            Are you you self-isolating because you or your child came into contact with someone who might have coronavirus?</h1>
+            Are you self-isolating because you came into contact with someone who has symptoms of coronavirus?</h1>
         </legend>
+
+        <p>This includes you or your child, now or some time in the past. Say yes if you were told to self-isolate by a track and trace service.</p>
 
         <!-- <p class="govuk-body">Select yes if one of the following applies:</p>
         <ul class="govuk-list govuk-list--bullet">
@@ -67,7 +69,7 @@
       	switch($('input[name="disability"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','../coronavirus-date');
+      	    $('#form').attr('action','coronavirus-date');
       		  break;
           case 'no':
       	    $('#form').attr('action','../condition');
