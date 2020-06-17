@@ -1,8 +1,20 @@
 const express = require('express')
 const router = express.Router()
+
+const radioButtonRedirect = require('radio-button-redirect')
+router.use(radioButtonRedirect)
+
 const moment = require('moment');
 
 // Add your routes here - above the module.exports line
+
+// GET SPRINT NAME - useful for relative templates
+router.use('/', (req, res, next) => {
+  res.locals.currentURL = req.originalUrl; //current screen
+  res.locals.prevURL = req.get('Referrer'); // previous screen
+console.log('previous page is: ' + res.locals.prevURL + " and current page is " + req.url + " " + res.locals.currentURL );
+  next();
+});
 
 // Code supplied by Gary for dealing with query strings
 router.use(function(req, res, next){

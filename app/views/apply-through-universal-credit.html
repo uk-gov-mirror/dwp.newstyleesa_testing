@@ -16,7 +16,7 @@
 
 {% block content %}
 
-<form id="form" method="post" action="coronavirus-reason-for-claim-eligibility">
+<form id="form" method="post" action="coronavirus-eligibility">
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -76,7 +76,7 @@
       	switch($('input[name="apply-for-uc"]:checked').val())
         {
       		case 'yes':
-      	    $('#form').attr('action','coronavirus-reason-for-claim-eligibility');
+      	    $('#form').attr('action','coronavirus-eligibility');
       		  break;
           case 'no':
       	    $('#form').attr('action','https://www.gov.uk/sign-in-universal-credit/');

@@ -31,22 +31,22 @@
             Is coronavirus (COVID-19) the main reason for your claim?</h1>
         </legend>
 
-        <p class="govuk-body">Select yes if one of the following applies:</p>
+        <p class="govuk-body">Select yes if one of the following applies to you or your child, now or some time in the past:</p>
         <ul class="govuk-list govuk-list--bullet">
-        <li>you or your child might have coronavirus or you’re recovering from it</li>
-        <li>you or your child are self-isolating because you came into contact with someone who might have coronavirus</li>
-        <li>you've been told to stay at home for at least 12 weeks by the NHS because you’re at high risk of severe illness</li>
+        <li>you're at high risk because you have an underlying health condition (shielding)</li>
+        <li>you're self-isolating because you have symptoms of coronavirus</li>
+        <li>you're self-isolating because you came into contact with someone who has symptoms of coronavirus. Or you were told to self-isolate by a test and trace service</li>
       </ul>
 
         <div class="govuk-radios" data-module="radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="disability-1" name="disability" type="radio" value="yes" data-aria-controls="yes-cond">
+            <input class="govuk-radios__input" id="disability-1" name="reasonCovid" type="radio" value="yes" data-aria-controls="yes-cond">
             <label class="govuk-label govuk-radios__label" for="disability-1">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="disability-2" name="disability" type="radio" value="no">
+            <input class="govuk-radios__input" id="disability-2" name="reasonCovid" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="disability-2">
               No
             </label>
@@ -75,7 +75,7 @@
         // depending on the value="" of the <input>
         // that's been checked, change the action=""
         // of the <form> and then allow it to submit.
-      	switch($('input[name="disability"]:checked').val())
+      	switch($('input[name="reasonCovid"]:checked').val())
         {
       		case 'yes':
       	    $('#form').attr('action','state-pension');
