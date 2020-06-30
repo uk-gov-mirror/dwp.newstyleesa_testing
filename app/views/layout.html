@@ -31,8 +31,38 @@
   Apply for New Style Employment and Support Allowance
 {% endblock %}
 
+{# COOKIE BANNER START #}
+{% block bodyStart %}
+  {{ super() }}
+  <div class="casa-cookie-banner govuk-!-padding-top-4 govuk-!-padding-bottom-2" role="region" aria-label="cookie banner">
+    <div class="casa-cookie-banner--main govuk-width-container govuk-body">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-m">Can we use cookies in our services?</h2>
+          <p class="govuk-body">We’d like to use analytics cookies to collect information about how you use our services. We use this information to improve our services.</p>
+          <p class="govuk-body">You can <a href="cookie_policy.html" class="govuk-link">read more about our cookies</a> before you decide.</p>
+          <button type="button" class="govuk-button govuk-!-margin-bottom-4 govuk-!-margin-right-4" onClick="saveCookieChoice(true);">
+          Yes, I’m OK with analytics cookies
+          </button>
+          <button type="button" class="govuk-button govuk-!-margin-bottom-4" onClick="saveCookieChoice(false);">
+            No, do not use analytics cookies
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="casa-cookie-banner--accept govuk-width-container govuk-body" tabindex="-1">
+      <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3">You’ve accepted analytics cookies. You can <a href="cookie_policy.html" class="govuk-link">change your cookie settings</a> at any time.</p>
+      <a href="javascript:hideCookieBanner();" class="casa-cookie-banner--hide govuk-link govuk-!-margin-top-1  govuk-!-margin-bottom-3">Hide</a>
+    </div>
+    <div class="casa-cookie-banner--reject govuk-width-container govuk-body" tabindex="-1">
+      <p class="govuk-!-margin-top-1 govuk-!-margin-bottom-3">You’ve rejected analytics cookies. You can <a href="cookie_policy.html" class="govuk-link">change your cookie settings</a> at any time.</p>
+      <a href="javascript:hideCookieBanner();" class="casa-cookie-banner--hide govuk-link govuk-!-margin-top-1  govuk-!-margin-bottom-3">Hide</a>
+    </div>
+  </div>
+{% endblock %}
+{# COOKIE BANNER END #}
+
 {% block header %}
-  {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "/",
@@ -50,6 +80,10 @@
         {
           href: "/apply/v12/accessibility-statement",
           text: "Accessibility"
+        },
+        {
+          href: "cookie_policy",
+          text: "Cookies"
         },  
         {
           href: "https://www.gov.uk/government/organisations/department-for-work-pensions/about/personal-information-charter",
