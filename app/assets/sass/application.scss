@@ -19,6 +19,79 @@ $govuk-global-styles: true;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+// COOKIE BANNER START
+
+.casa-cookie-banner {
+	background: #f3f2f1;
+}
+
+.casa-cookie-banner--main,
+.casa-cookie-banner--accept,
+.casa-cookie-banner--reject {
+	margin-bottom: 0;
+}
+
+.casa-hidden {
+	display: none;
+}
+
+.casa-cookie-banner form {
+	display: inline;
+}
+
+.casa-cookie-banner--reject:focus,
+.casa-cookie-banner--accept:focus {
+	outline: none;
+}
+
+.casa-cookie-banner--reject p,
+.casa-cookie-banner--accept p {
+	display: inline-block;
+}
+
+.casa-cookie-banner--hide {
+	display: inline-block;
+	float: none;
+}
+
+@media (min-width: 840px) {
+	.casa-cookie-banner--hide {
+		float: right;
+		margin-right: 30px;
+		width: auto;
+	}
+}
+
+.casa-cookie-banner {
+	.casa-cookie-banner--accept {
+		display: none;
+	}
+	.casa-cookie-banner--reject {
+		display: none;
+	}
+}
+
+.casa-cookie-banner.casa-cookie-banner-show-accept,
+.casa-cookie-banner.casa-cookie-banner-show-reject {
+	.casa-cookie-banner--main {
+		display: none;
+	}
+}
+
+.casa-cookie-banner.casa-cookie-banner-show-accept {
+	.casa-cookie-banner--accept {
+		display: block;
+	}
+}
+
+.casa-cookie-banner.casa-cookie-banner-show-reject {
+	.casa-cookie-banner--reject {
+		display: block;
+	}
+}
+
+// COOKIE BANNER END
+
 // Make consistent with agent UI prototype
 
 .remove-padding .govuk-main-wrapper {
