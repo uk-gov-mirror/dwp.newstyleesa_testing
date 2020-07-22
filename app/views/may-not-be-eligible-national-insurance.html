@@ -25,11 +25,14 @@
     <fieldset class="govuk-fieldset">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
     <h1 class="govuk-fieldset__heading">
-    Based on your answers, you may be able to get New Style ESA National Insurance credits</h1>
+    Based on your answers, you may not be eligible for New Style ESA payments</h1>
   </legend>
 
-  <p>If you've not made enough National Insurance contributions over the last 2 to 3 years, you may not be eligible to claim New Style ESA. But you may be able to get <a href="https://www.gov.uk/national-insurance-credits" class="govuk-link" rel="noreferrer noopener" target="_blank">National Insurance credits (opens in new tab)</a>.</p>
-  <p>Or you can <a href="https://www.gov.uk/universal-credit/eligibility" class="govuk-link" rel="noreferrer noopener" target="_blank">check if you're eligible for Universal Credit (opens in new tab)</a> if you're on a low income or out of work.</p>
+  <p>If you’ve not made enough National Insurance contributions over the last 2 to 3 years, you may not be eligible to get a New Style ESA payment. But you may be able to get <a href="https://www.gov.uk/national-insurance-credits" class="govuk-link" rel="noreferrer noopener" target="_blank">National Insurance credits (opens in a new window)</a>.</p>
+  
+  <p>New Style ESA gives you Class 1 credits, which can help to fill gaps in your National Insurance record, to make sure you qualify for certain benefits including the State Pension. If you want to get National Insurance credits only, you can continue to apply for New Style ESA.</p>
+  
+  <p>If you’ve been on a low income or out of work, you can check if you’re eligible for Universal Credit instead. If you get Universal Credit, you will get Class 3 credits. They count towards your State Pension only.</p>
 
 
   <div class="govuk-form-group">
@@ -43,13 +46,13 @@
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="apply-for-uc-1" name="apply-for-uc" type="radio" value="yes" data-aria-controls="yes-cond">
           <label class="govuk-label govuk-radios__label" for="apply-for-uc-1">
-            Apply for Universal Credit
+            Continue to apply for New Style ESA, for National Insurance credits only
           </label>
         </div>
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="apply-for-uc-2" name="apply-for-uc" type="radio" value="no">
           <label class="govuk-label govuk-radios__label" for="apply-for-uc-2">
-            Continue to apply for New Style ESA
+            Apply for Universal Credit instead
           </label>
         </div>
       </div>
@@ -79,10 +82,10 @@
       switch($('input[name="apply-for-uc"]:checked').val())
       {
         case 'yes':
-          $('#form').attr('action','https://www.gov.uk/how-to-claim-universal-credit/');
+          $('#form').attr('action','statutory-pay-eligibility');
           break;
         case 'no':
-          $('#form').attr('action','statutory-pay-eligibility');
+          $('#form').attr('action','https://www.gov.uk/how-to-claim-universal-credit/');
           break;
         // if nothing is ticked don't submit the form.
         default: return false; break;
