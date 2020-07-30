@@ -1,96 +1,25 @@
+$govuk-assets-path: '/govuk/assets/';
+
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 
-// Import GOV.UK Frontend
-@import "node_modules/govuk-frontend/all";
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "lib/extensions/extensions";
 
 // Patterns that aren't in Frontend
-@import "patterns/check-your-answers";
+@import "patterns/step-by-step-header";
+@import "patterns/step-by-step-nav";
+@import "patterns/step-by-step-related";
 @import "patterns/task-list";
 @import "patterns/related-items";
-@import "components/autocomplete";
-@import "components/tile";
 
-// DWP components
-@import 'dwp/dwp-header';
-
-// DWP components
-@import 'handover';
+// Components that aren't in Frontend
+@import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-
-// COOKIE BANNER START
-
-.casa-cookie-banner {
-	background: #f3f2f1;
-}
-
-.casa-cookie-banner--main,
-.casa-cookie-banner--accept,
-.casa-cookie-banner--reject {
-	margin-bottom: 0;
-}
-
-.casa-hidden {
-	display: none;
-}
-
-.casa-cookie-banner form {
-	display: inline;
-}
-
-.casa-cookie-banner--reject:focus,
-.casa-cookie-banner--accept:focus {
-	outline: none;
-}
-
-.casa-cookie-banner--reject p,
-.casa-cookie-banner--accept p {
-	display: inline-block;
-}
-
-.casa-cookie-banner--hide {
-	display: inline-block;
-	float: none;
-}
-
-@media (min-width: 840px) {
-	.casa-cookie-banner--hide {
-		float: right;
-		margin-right: 30px;
-		width: auto;
-	}
-}
-
-.casa-cookie-banner {
-	.casa-cookie-banner--accept {
-		display: none;
-	}
-	.casa-cookie-banner--reject {
-		display: none;
-	}
-}
-
-.casa-cookie-banner.casa-cookie-banner-show-accept,
-.casa-cookie-banner.casa-cookie-banner-show-reject {
-	.casa-cookie-banner--main {
-		display: none;
-	}
-}
-
-.casa-cookie-banner.casa-cookie-banner-show-accept {
-	.casa-cookie-banner--accept {
-		display: block;
-	}
-}
-
-.casa-cookie-banner.casa-cookie-banner-show-reject {
-	.casa-cookie-banner--reject {
-		display: block;
-	}
-}
-
-// COOKIE BANNER END
 
 // Make consistent with agent UI prototype
 
@@ -308,7 +237,7 @@ a:visited {color: govuk-colour("blue");}
   .app-step-nav-header {
   position: relative;
   padding: 10px;
-  background: govuk-colour("grey-4");
+  background: govuk-colour("light-grey", $legacy: "grey-4");
   border-top: solid 1px $govuk-border-colour;
   border-bottom: solid 1px $govuk-border-colour;
   @include govuk-media-query($from: tablet) {
@@ -600,7 +529,7 @@ a:visited {color: govuk-colour("blue");}
 
 .app-step-nav__header {
   padding: 15px 0;
-  border-top: solid 2px govuk-colour("grey-3");
+  border-top: solid 2px govuk-colour("light-grey", $legacy: "grey-3");
 }
 
 .app-step-nav--active .app-step-nav__header {
@@ -794,7 +723,7 @@ a:visited {color: govuk-colour("blue");}
 .app-step-nav__help {
   position: relative;
   padding: 15px 0;
-  border-top: solid 2px govuk-colour("grey-3");
+  border-top: solid 2px govuk-colour("light-grey", $legacy: "grey-3");
 }
 
 .app-step-nav__help:after {
@@ -835,7 +764,7 @@ a:visited {color: govuk-colour("blue");}
 .app-step-nav__substep {
   position: relative;
   padding-top: 15px;
-  border-top: solid 2px govuk-colour("grey-3");
+  border-top: solid 2px govuk-colour("light-grey", $legacy: "grey-3");
 }
 
 .app-step-nav__substep:after {
@@ -923,3 +852,76 @@ a:visited {color: govuk-colour("blue");}
     width: auto;
   }
 }
+
+// COOKIE BANNER START
+
+.casa-cookie-banner {
+	background: #f3f2f1;
+}
+
+.casa-cookie-banner--main,
+.casa-cookie-banner--accept,
+.casa-cookie-banner--reject {
+	margin-bottom: 0;
+}
+
+.casa-hidden {
+	display: none;
+}
+
+.casa-cookie-banner form {
+	display: inline;
+}
+
+.casa-cookie-banner--reject:focus,
+.casa-cookie-banner--accept:focus {
+	outline: none;
+}
+
+.casa-cookie-banner--reject p,
+.casa-cookie-banner--accept p {
+	display: inline-block;
+}
+
+.casa-cookie-banner--hide {
+	display: inline-block;
+	float: none;
+}
+
+@media (min-width: 840px) {
+	.casa-cookie-banner--hide {
+		float: right;
+		margin-right: 30px;
+		width: auto;
+	}
+}
+
+.casa-cookie-banner {
+	.casa-cookie-banner--accept {
+		display: none;
+	}
+	.casa-cookie-banner--reject {
+		display: none;
+	}
+}
+
+.casa-cookie-banner.casa-cookie-banner-show-accept,
+.casa-cookie-banner.casa-cookie-banner-show-reject {
+	.casa-cookie-banner--main {
+		display: none;
+	}
+}
+
+.casa-cookie-banner.casa-cookie-banner-show-accept {
+	.casa-cookie-banner--accept {
+		display: block;
+	}
+}
+
+.casa-cookie-banner.casa-cookie-banner-show-reject {
+	.casa-cookie-banner--reject {
+		display: block;
+	}
+}
+
+// COOKIE BANNER END

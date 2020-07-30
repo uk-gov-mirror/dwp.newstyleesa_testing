@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -21,7 +21,7 @@
 
     <form id="form" method="post" action="feedback-sent">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
       Give feedback
     </h1>
 
@@ -79,8 +79,20 @@
             <div class="govuk-inset-text">
               We will not respond to your feedback or use it when we process your claim.
             </div>
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-          </div>
+            {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+            {{ govukCharacterCount({
+              name: "with-hint",
+              id: "with-hint",
+              maxlength: 1200,
+              label: {
+                text: ""
+              },
+              hint: {
+                text: ""
+              }
+            }) }}          
+            </div>
 
     <input type="submit" class="govuk-button" value="Send feedback" id="submit"><!-- nino -->
 

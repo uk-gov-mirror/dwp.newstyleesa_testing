@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -28,7 +28,7 @@
 
     <form id="form" method="post" action="severe-condition">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
       Which doctor's surgery or medical centre do you use?
     </h1>
 
@@ -44,10 +44,10 @@
     </div>
 
     <div class="govuk-form-group">
-      <label class="govuk-label" for="surgery-phone">
+      <label class="govuk-label" for="gp-phone">
       Surgery phone number
       </label>
-      <input class="govuk-input govuk-!-width-one-half" id="surgery-phone" name="surgery" type="text">
+      <input class="govuk-input govuk-!-width-one-half" id="gp-phone" name="gp-phone" type="text">
     </div>
 
     <div class="govuk-form-group">
@@ -76,21 +76,21 @@
             Building and street
             <span class="govuk-visually-hidden">line 1 of 2</span>
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-1" name="address-line-1" type="text">
+          <input class="govuk-input govuk-!-width-two-thirds" id="gp-address-line-1" name="gp-address-line-1" type="text">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-line-2">
             <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-line-2" name="address-line-2" type="text">
+          <input class="govuk-input govuk-!-width-two-thirds" id="gp-address-line-2" name="gp-address-line-2" type="text">
         </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-town">
             Town or city
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="address-town" name="address-town" type="text">
+          <input class="govuk-input govuk-!-width-one-half" id="gp-address-town" name="gp-address-town" type="text">
         </div>
 
         {# <div class="govuk-form-group">
@@ -104,7 +104,7 @@
           <label class="govuk-label" for="address-postcode">
             Postcode
           </label>
-          <input class="govuk-input govuk-!-width-one-third" id="address-postcode" name="address-postcode" type="text">
+          <input class="govuk-input govuk-!-width-one-third" id="gp-address-postcode" name="gp-address-postcode" type="text">
         </div>
 
         

@@ -1,19 +1,7 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
 
 {% block beforeContent %}
-
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      prototype testing only
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="feedback">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
 {% include "includes/back-link.html" %}
-
 {% endblock %}
 
 {% block content %}
@@ -22,9 +10,9 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="consent-question">
+    <form id="form" method="post" action="voluntary-work">
 
-        <h1 class="govuk-heading-xl">Sharing information about your health condition</h1>
+        <h1 class="govuk-heading-l">Sharing information about your health condition</h1>
 
         <p>The Department for Work and Pensions (DWP), or approved healthcare professionals that work for them, might need more information about your health condition and how it affects your ability to work.</p>
         <p>They might ask for this information from your doctor, or any other relevant professional you tell them about.</p>
@@ -54,13 +42,13 @@
           <div class="govuk-radios">
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="sign-in-1" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-1-item-hint">
+              <input class="govuk-radios__input" id="consent" name="consent" type="radio" value="Yes" aria-describedby="sign-in-1-item-hint">
               <label class="govuk-label govuk-radios__label" for="sign-in-1">
               Yes, information about my health can be shared with DWP or the healthcare professionals that work for them                   </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint" style="color: #111">
+              <input class="govuk-radios__input" id="consent" name="consent" type="radio" value="No" aria-describedby="sign-in-2-item-hint" style="color: #111">
               <label class="govuk-label govuk-radios__label" for="sign-in-2">
               No, information about my health cannot be shared with DWP or the healthcare professionals that work for them                  </label>
             </div>
@@ -70,8 +58,7 @@
 
         </fieldset>
       </div><!-- govuk-form-group -->
-        <a href="voluntary-work" class="govuk-button">I have read and understood</a>
-
+        <input type="submit" class="govuk-button" value="I have read and understood" id="submit">
       </form>
 
     </div><!-- govuk-grid-column-two-thirds -->

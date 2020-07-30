@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -19,10 +19,10 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="">
+    <form id="form" method="post" action="checkanswers">
 
       <div class="govuk-form-group">
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-l">
       Sharing the outcome of an assessment with your doctor
       </h1>
     <p>The Department for Work and Pensions (DWP) would like to share the decision made based on the result of your claim with your doctor, or any doctor treating you. This will help your doctor, as it will tell them when they no longer need to provide you with Statements of Fitness for Work (also known as fit notes or medical certificates) for the purposes of this claim.</p>
@@ -35,13 +35,13 @@
     </legend>
     <div class="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="consent-1" name="consent" type="radio" value="yes">
+        <input class="govuk-radios__input" id="consent-1" name="consent-outcome" type="radio" value='Yes'>
         <label class="govuk-label govuk-radios__label" for="consent-1">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="consent-2" name="consent" type="radio" value="no">
+        <input class="govuk-radios__input" id="consent-2" name="consent-outcome" type="radio" value='No'>
         <label class="govuk-label govuk-radios__label" for="consent-2">
           No
         </label>
@@ -51,7 +51,8 @@
 </div>
 
 
-  <a href="checkanswers" class="govuk-button">Continue</a>
+  <input type="submit" class="govuk-button" value="Continue" id="submit">
+
 
     </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

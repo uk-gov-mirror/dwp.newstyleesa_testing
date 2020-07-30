@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -19,17 +19,22 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% if (data['coronavirus'] == "yes") %}
     <form id="form" method="post" action="coronavirus-reason">
+    {% else %}
+    <form id="form" method="post" action="condition">
+    {% endif %}
+
 
     <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
               Is there another number you can be contacted on?
             </h1>
           </legend>
 
-  <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
     <div class="govuk-radios__item">
       <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional-1">
       <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
