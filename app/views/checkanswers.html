@@ -831,36 +831,6 @@
               </a>
             </dd>
           </div>
-          {% if (data['fit-work'] == "yes") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Return to work date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['fit-day']}} {{data['fit-month'] | toMonth }} {{data['fit-year']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="fit-for-work">
-                Change
-              </a>
-            </dd>
-          </div>
-          {% endif %}
-          {% if (data['fit-work'] == "no") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Return to work date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              No, I do not know
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="fit-for-work">
-                Change
-              </a>
-            </dd>
-          </div>
-          {% endif %}
         </dl>
 
         <h2 class="govuk-heading-m">Claim date</h2>
@@ -879,6 +849,36 @@
               </a>
             </dd>
           </div>
+          {% if (data['fit-work'] == "yes") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Claim end date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['fit-day']}} {{data['fit-month'] | toMonth }} {{data['fit-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="claim-end-date">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+          {% if (data['fit-work'] == "no") %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Claim end date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No, I do not know
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="claim-end-date">
+                Change
+              </a>
+            </dd>
+          </div>
+          {% endif %}
         </dl>
         <h2 class="govuk-heading-m">Working and living abroad</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
