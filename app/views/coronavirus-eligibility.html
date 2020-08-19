@@ -1,4 +1,8 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
+
+{% block pageTitle %}
+Claiming because of coronavirus - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -22,11 +26,11 @@
           Content needed
     </span> -->
 
-    <form id="form" method="post" action="insurance-detail">
+    <form id="form" method="post">
 
    <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
             Is coronavirus (COVID-19) the main reason for your claim?</h1>
         </legend>
@@ -38,16 +42,16 @@
         <li>you're self-isolating because you came into contact with someone who has symptoms of coronavirus. Or you were told to self-isolate by a test and trace service</li>
       </ul>
 
-        <div class="govuk-radios" data-module="radios">
+        <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="disability-1" name="reasonCovid" type="radio" value="yes" data-aria-controls="yes-cond">
-            <label class="govuk-label govuk-radios__label" for="disability-1">
+            <input class="govuk-radios__input" id="coronavirus-1" name="coronavirus" type="radio" value="yes~/state-pension" data-aria-controls="yes-cond">
+            <label class="govuk-label govuk-radios__label" for="coronavirus-1">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="disability-2" name="reasonCovid" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="disability-2">
+            <input class="govuk-radios__input" id="coronavirus-2" name="coronavirus" type="radio" value="no~/disability-or-health-condition">
+            <label class="govuk-label govuk-radios__label" for="coronavirus-2">
               No
             </label>
           </div>
@@ -63,33 +67,3 @@
 </div><!-- govuk-grid-row -->
 {% endblock %}
 
-{% block pageScripts %}
-  <script type="text/javascript">
-    $(document).on('ready',function()
-    {
-      // target the #form element
-      // attached an event listener that runs
-      // a function when the form is submitted
-      $('#form').on('submit', function(e)
-      {
-        // depending on the value="" of the <input>
-        // that's been checked, change the action=""
-        // of the <form> and then allow it to submit.
-      	switch($('input[name="reasonCovid"]:checked').val())
-        {
-      		case 'yes':
-      	    $('#form').attr('action','state-pension');
-      		  break;
-          case 'no':
-      	    $('#form').attr('action','disability-or-health-condition');
-      		  break;
-          // if nothing is ticked don't submit the form.
-          default: return false; break;
-        }
-        // returning 'true' allows the form to submit
-        // after we're finished with the above.
-        return true;
-      });
-    });
-  </script>
-{% endblock %}

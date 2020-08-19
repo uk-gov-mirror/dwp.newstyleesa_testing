@@ -1,4 +1,8 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
+
+{% block pageTitle %}
+ What voluntary work you do - {{ data['volunteer-details'] | split(',') | last | default("Oxfam")}} - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -24,13 +28,25 @@
 
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-            What do you do at {{ data['volunteer-details'] | split(',') | last }}?
+            What do you do at {{ data['volunteer-details'] | split(',') | last | default("Oxfam")}}?
             </h1>
             </legend>
 
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+            {{ govukCharacterCount({
+              name: "with-hint",
+              id: "with-hint",
+              maxlength: 500,
+              label: {
+                text: ""
+              },
+              hint: {
+                text: ""
+              }
+            }) }}
       
             <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- voluntary-hours -->
         </div> <!-- form-group -->

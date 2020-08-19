@@ -1,4 +1,8 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
+
+{% block pageTitle %}
+ Claim start date - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -19,12 +23,12 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="work-overseas">
+    <form id="form" method="post" action="claim-end-date">
 
 
       <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
                 What date do you want to claim from?
               </h1>
@@ -32,11 +36,11 @@
             <p>You can claim from:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>the day after your Statutory Sick Pay ends - this date is on form SSP1, if you have one</li>
-            <li>a date up to 6 months ago if you have fit notes (you might call these sick notes) to cover the period</li>
-            <li>the date you were first affected by coronavirus, if that's the reason for your claim</li>
+            <li>a date up to 3 months ago if you have fit notes (you might call these sick notes) to cover the period</li>
             </ul>
             <p>This date will be confirmed with you to make sure you're getting the money you're entitled to.</p>
-                <div class="govuk-form-group">
+            <p>In exceptional circumstances, we can consider backdating beyond 3 months if you can provide evidence that you intended to claim sooner but were unable to do so. If so, put <span class="date-3-months-ago"></span> and tell us later by phoning the number on your decision letter.</p>
+            <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
                     <div class="govuk-date-input" id="dob">
                       <div class="govuk-date-input__item">
@@ -44,7 +48,7 @@
                           <label class="govuk-label govuk-date-input__label" for="dob-day">
                             Day
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" maxlength="2">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="claim-day" type="text" pattern="[0-9]*" maxlength="2">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -52,7 +56,7 @@
                           <label class="govuk-label govuk-date-input__label" for="dob-month">
                             Month
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" maxlength="2">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="claim-month" type="text" pattern="[0-9]*" maxlength="2">
                         </div>
                       </div>
                       <div class="govuk-date-input__item">
@@ -60,7 +64,7 @@
                           <label class="govuk-label govuk-date-input__label" for="dob-year">
                             Year
                           </label>
-                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*"maxlength="4">
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="claim-year" type="text" pattern="[0-9]*"maxlength="4">
                         </div>
                       </div>
                     </div>
@@ -76,7 +80,7 @@
 
         <!-- <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="date-hint" role="group">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
                 When  do you want to claim from?
               </h1>

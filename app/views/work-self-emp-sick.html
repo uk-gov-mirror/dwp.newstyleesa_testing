@@ -1,4 +1,8 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
+
+{% block pageTitle %}
+ Employment status - {{ data['employer-details'] | split(',') | last | default("Asda")}} - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -23,9 +27,9 @@
 
       <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="self-emp-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            What is your employment status at {{ data['employer-details'] | split(',') | last }}?
+            What is your employment status at {{ data['employer-details'] | split(',') | last | default("Asda")}}?
           </h1>
         </legend>
         <span id="waste-hint" class="govuk-hint">
@@ -33,26 +37,26 @@
         </span>
         <div class="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="self-emp-sick-1" name="employee" type="checkbox" value="carcasses">
-            <label class="govuk-label govuk-checkboxes__label" for="self-emp-sick-1">
+            <input class="govuk-checkboxes__input" id="self-emp-1" name="employee" type="checkbox" value="Employee">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-1">
               Employee
             </label>
           </div>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="self-emp-sick-2" name="self-employed" type="checkbox" value="mines">
-            <label class="govuk-label govuk-checkboxes__label" for="self-emp-sick-2">
+            <input class="govuk-checkboxes__input" id="self-emp-2" name="self-employed" type="checkbox" value="Self-employed">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-2">
               Self-employed
             </label>
           </div>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="self-emp-sick-3" name="sub-contract" type="checkbox" value="farm">
-            <label class="govuk-label govuk-checkboxes__label" for="self-emp-sick-3">
+            <input class="govuk-checkboxes__input" id="self-emp-3" name="sub-contract" type="checkbox" value="Sub-contractor">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-3">
               Sub-contractor
             </label>
           </div>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="self-emp-sick-4" name="company-director" type="checkbox" value="farm">
-            <label class="govuk-label govuk-checkboxes__label" for="self-emp-sick-4">
+            <input class="govuk-checkboxes__input" id="self-emp-4" name="company-director" type="checkbox" value="Company director">
+            <label class="govuk-label govuk-checkboxes__label" for="self-emp-4">
               Company director
             </label>
           </div>

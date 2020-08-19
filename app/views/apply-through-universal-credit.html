@@ -1,4 +1,8 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
+
+{% block pageTitle %}
+ Apply if you've had a Universal Credit statement - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -16,13 +20,13 @@
 
 {% block content %}
 
-<form id="form" method="post" action="coronavirus-eligibility">
+<form id="form" method="post">
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <fieldset class="govuk-fieldset">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
     <h1 class="govuk-fieldset__heading">
         You can apply for New Style ESA if you’ve had a Universal Credit statement</h1>
   </legend>
@@ -37,15 +41,15 @@
           What do you want to do?</h2>
       </legend>
 
-      <div class="govuk-radios" data-module="radios">
+      <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="apply-for-uc-1" name="apply-for-uc" type="radio" value="yes" data-aria-controls="yes-cond">
+          <input class="govuk-radios__input" id="apply-for-uc-1" name="apply-for-uc" type="radio" value="yes~/coronavirus-eligibility" data-aria-controls="yes-cond">
           <label class="govuk-label govuk-radios__label" for="apply-for-uc-1">
             Continue to apply for New Style ESA because I've had a statement from Universal Credit
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="apply-for-uc-2" name="apply-for-uc" type="radio" value="no">
+          <input class="govuk-radios__input" id="apply-for-uc-2" name="apply-for-uc" type="radio" value="no~https://www.gov.uk/sign-in-universal-credit/">
           <label class="govuk-label govuk-radios__label" for="apply-for-uc-2">
             Sign in to my Universal Credit account to check for a statement
           </label>
@@ -61,33 +65,3 @@
 </div><!-- govuk-grid-row -->
 {% endblock %}
 
-{% block pageScripts %}
-  <script type="text/javascript">
-    $(document).on('ready',function()
-    {
-      // target the #form element
-      // attached an event listener that runs
-      // a function when the form is submitted
-      $('#form').on('submit', function(e)
-      {
-        // depending on the value="" of the <input>
-        // that's been checked, change the action=""
-        // of the <form> and then allow it to submit.
-      	switch($('input[name="apply-for-uc"]:checked').val())
-        {
-      		case 'yes':
-      	    $('#form').attr('action','coronavirus-eligibility');
-      		  break;
-          case 'no':
-      	    $('#form').attr('action','https://www.gov.uk/sign-in-universal-credit/');
-      		  break;
-          // if nothing is ticked don't submit the form.
-          default: return false; break;
-        }
-        // returning 'true' allows the form to submit
-        // after we're finished with the above.
-        return true;
-      });
-    });
-  </script>
-{% endblock %}

@@ -1,4 +1,8 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
+
+{% block pageTitle %}
+ Expenses detail - {{ data['employer-details'] | split(',') | last | default("Asda")}} - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -23,19 +27,27 @@
     <form id="form" method="post" action="work-another">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading">
         What are the expenses for and how much do you get?
         </h1>
         </legend>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="more-detail">
-          Give as much information as you can.
-          </label>
-          <div>
-            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-          </div>
+
+          {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+          {{ govukCharacterCount({
+            name: "with-hint",
+            id: "with-hint",
+            maxlength: 500,
+            label: {
+              text: ""
+            },
+            hint: {
+              text: "Give as much information as you can."
+            }
+          }) }}
 
           <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- work-another -->
         </div>

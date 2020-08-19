@@ -1,4 +1,8 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
+
+{% block pageTitle %}
+ Conditions - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -26,7 +30,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form id="form" method="post" action="gpsurgery">
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
         What health conditions, illnesses, disabilities or injuries do you have?
       </h1>
       <span id="event-name-hint" class="govuk-hint">
@@ -49,26 +53,16 @@
           <div class="govuk-form-group hidden autocomplete bold-label">
             <label for="conditions-{{ i }}-name" class="govuk-label">Your first condition</label>
             <div id="conditions-{{ i }}"></div>
+            {{ govukInput({
+              label: {
+                text: ""
+              },
+              id: "fallback",
+              name: "fallback"
+            }) }}
           </div>
 
-          {% from "date-input/macro.njk" import govukDateInput %}
-
-{#           {{ govukDateInput({
-            id: "dob",
-            namePrefix: "dob",
-            fieldset: {
-              legend: {
-                text: "When it first started",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            hint: {
-              html: "For example, 31 3 1980"
-            },
-            id: "conditions-" + i + "-started",
-            name: "conditions-" + i + "-started"
-          }) }} #}
+          
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="conditions-0-started-hint" role="group">
@@ -129,8 +123,6 @@ Array.prototype.slice.call(document.querySelectorAll('.hidden')).forEach(functio
 Array.prototype.slice.call(document.querySelectorAll('.fallback, .js-hidden, .additional')).forEach(function(e) {
   e.classList.add('hidden');
 })
-
-{% include 'includes/conditions-canonical-list.js' %}
 
 window.onload = function() {
   for (var i = 0; i < 12; i++) {

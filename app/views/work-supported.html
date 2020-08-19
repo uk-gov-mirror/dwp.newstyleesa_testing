@@ -1,4 +1,8 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
+
+{% block pageTitle %}
+ Professional support worker - {{ data['employer-details'] | split(',') | last | default("Asda")}} - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -21,8 +25,8 @@
 
     <form id="form" method="post" action="expenses">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
-      Do you get help from a professional support worker at {{ data['employer-details'] | split(',') | last }}?
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      Do you get help from a professional support worker at {{ data['employer-details'] | split(',') | last | default("Asda")}}?
     </h1>
 
     <span  class="govuk-hint">
@@ -31,19 +35,19 @@
 
     <div class="govuk-form-group">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="terminal-1" name="terminal" type="radio" value="yes" data-aria-controls="yes-changed">
+          <input class="govuk-radios__input" id="terminal-1" name="work-supported" type="radio" value='Yes' data-aria-controls="yes-changed">
           <label class="govuk-label govuk-radios__label" for="terminal-1">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="terminal-2" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+          <input class="govuk-radios__input" id="terminal-2" name="work-supported" type="radio" value='No' aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="terminal-2">
             No
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="terminal-2" name="terminal" type="radio" value="no" aria-controls="no-reveal">
+          <input class="govuk-radios__input" id="terminal-2" name="work-supported" type="radio" value='I’m not sure' aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="terminal-2">
             I’m not sure
           </label>

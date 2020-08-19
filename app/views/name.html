@@ -1,4 +1,8 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
+
+{% block pageTitle %}
+ Name - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -21,7 +25,7 @@
 
     <form id="form" method="post" action="dateofbirth">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
       What is your name?
     </h1>
 
@@ -29,13 +33,13 @@
     <label class="govuk-label" for="first-name">
     First name
     </label>
-    <input class="govuk-input govuk-input--width-20" id="first-name" name="width-20" type="text">
+    <input class="govuk-input govuk-input--width-20" id="first-name" name="first-name" type="text">
     </div>
     <div class="govuk-form-group">
     <label class="govuk-label" for="last-name">
     Last name
     </label>
-    <input class="govuk-input govuk-input--width-20" id="last-name" name="width-20" type="text">
+    <input class="govuk-input govuk-input--width-20" id="last-name" name="last-name" type="text">
     </div>
 
     <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- nino -->

@@ -1,4 +1,8 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
+
+{% block pageTitle %}
+ Statutory Sick Pay - Apply for New Style Employment and Support Allowance - GOV.UK
+{% endblock %}
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -19,11 +23,11 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="stat-pay-recent">
+    <form id="form" method="post">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
             Are you getting Statutory Sick Pay?
           </h1>
@@ -35,13 +39,13 @@
         
         <div class="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="statutory-pay-1" name="statutory-pay" type="radio" value="yes">
+            <input class="govuk-radios__input" id="statutory-pay-1" name="statutory-pay" type="radio" value='yes~/statutory-pay-end'>
             <label class="govuk-label govuk-radios__label" for="statutory-pay-1">
              Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="statutory-pay-2" name="statutory-pay" type="radio" value="no">
+            <input class="govuk-radios__input" id="statutory-pay-2" name="statutory-pay" type="radio" value='no~/statutory-pay-recent'>
             <label class="govuk-label govuk-radios__label" for="statutory-pay-2">
             No
             </label>
@@ -58,37 +62,4 @@
 </div><!-- govuk-grid-row -->
 {% endblock %}
 
-{% block pageScripts %}
-<!--
-  Using jQuery to branch the page flow based on which radio buttons are checked.
--->
-<script type="text/javascript">
-  $(document).on('ready',function()
-  {
-    // target the #form element
-    // attached an event listener that runs
-    // a function when the form is submitted
-    $('#form').on('submit', function(e)
-    {
-      // depending on the value="" of the <input>
-      // that's been checked, change the action=""
-      // of the <form> and then allow it to submit.
-      switch($('input[name="statutory-pay"]:checked').val())
-      {
-        case 'yes':
-          $('#form').attr('action','statutory-pay-end');
-          break;
-        case 'no':
-          $('#form').attr('action','statutory-pay-recent');
-          break;
 
-        // if nothing is ticked don't submit the form.
-        default: return false; break;
-      }
-      // returning 'true' allows the form to submit
-      // after we're finished with the above.
-      return true;
-    });
-  });
-</script>
-{% endblock %}

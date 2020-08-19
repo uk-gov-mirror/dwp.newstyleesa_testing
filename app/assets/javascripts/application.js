@@ -102,6 +102,14 @@ var monthNames = [
 	"August", "September", "October",
 	"November", "December"
   ];
+
+  // Another crude hack from Dan to display month nunbers (don't know how to do this properly)	
+var monthNumbers = [
+	"1", "2", "3",
+	"4", "5", "6", "7",
+	"8", "9", "10",
+	"11", "12"
+	];
   
   // Show current date
   date = new Date();
@@ -124,3 +132,15 @@ var monthNames = [
   if(document.querySelector(".new-date")) {
 	document.querySelector(".new-date").innerHTML = nd + " " + monthNames[nm] + " " + ny;
   }
+
+      // Show date 3 months ago. Sorry, this is wack – can't work out how to do it properly, so just crudely minusing 91 days (Dan)
+	date3MonthsAgo = new Date();
+	var numberOfDaysToAdd = -91;
+	date3MonthsAgo.setDate(date3MonthsAgo.getDate() + numberOfDaysToAdd);
+	py = date3MonthsAgo.getFullYear();
+	pm = date3MonthsAgo.getMonth();
+	pd = date3MonthsAgo.getDate();
+	
+	if(document.querySelector(".date-3-months-ago")) {
+	  document.querySelector(".date-3-months-ago").innerHTML = pd + " " + monthNumbers[pm] + " " + py;
+	}
