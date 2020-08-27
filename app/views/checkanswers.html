@@ -11,7 +11,7 @@
       beta
     </strong>
     <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new window)</a> will help
+      This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help
       us to improve it.
     </span>
   </p>
@@ -831,6 +831,19 @@
               </a>
             </dd>
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Universal Credit
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['universal-credit'] | default("No")}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="statutory-pay-other">
+                Change
+              </a>
+            </dd>
+          </div>
         </dl>
 
         <h2 class="govuk-heading-m">Claim date</h2>
@@ -849,13 +862,13 @@
               </a>
             </dd>
           </div>
-          {% if (data['fit-work'] == "yes") %}
+          {% if (data['claim-end'] == "yes") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Claim end date
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['fit-day']}} {{data['fit-month'] | toMonth }} {{data['fit-year']}}
+              {{data['claim-end-day']}} {{data['claim-end-month'] | toMonth }} {{data['claim-end-year']}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="claim-end-date">
@@ -864,7 +877,7 @@
             </dd>
           </div>
           {% endif %}
-          {% if (data['fit-work'] == "no") %}
+          {% if (data['claim-end'] == "no") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Claim end date
