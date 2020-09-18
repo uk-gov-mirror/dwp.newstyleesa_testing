@@ -130,7 +130,7 @@ var monthNumbers = [
   nd = newDate.getDate();
   
   if(document.querySelector(".new-date")) {
-	document.querySelector(".new-date").innerHTML = nd + " " + monthNames[nm] + " " + ny;
+	document.querySelector(".new-date").innerHTML = nd + "&nbsp" + monthNames[nm] + "&nbsp" + ny;
   }
 
       // Show date 3 months ago. Sorry, this is wack – can't work out how to do it properly, so just crudely minusing 91 days (Dan)
