@@ -1,7 +1,7 @@
 {% extends "layoutWithCookies.html" %}
 
 {% block pageTitle %}
- Statutory Sick Pay - Apply for New Style Employment and Support Allowance - GOV.UK
+ Statutory payments - Apply for New Style Employment and Support Allowance - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,43 +23,41 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" autocomplete="off" method="post">
+    <form id="form" autocomplete="off" method="post" action="severe-disability">
 
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
+      <fieldset class="govuk-fieldset" aria-describedby="statutory-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
             Are you getting Statutory Sick Pay?
           </h1>
         </legend>
 
-        <span id="dob-hint" class="govuk-hint">
-		      Your employer or accountant can tell you this if you’re not sure. It should also be shown on any pay slips you get.
-		    </span>
-        
+        <p>You can apply for New Style ESA if you do not get Statutory Sick Pay or it ends in the next 3 months.</p>
+
         <div class="govuk-radios">
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value='yes~/statutory-pay-date'>
+                <label class="govuk-label govuk-radios__label" for="sap">
+                  Yes
+                </label>
+              </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="statutory-pay-1" name="statutory-pay" type="radio" value='yes~/statutory-pay-end'>
-            <label class="govuk-label govuk-radios__label" for="statutory-pay-1">
-             Yes
+            <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value='no~/severe-disability-premium'>
+            <label class="govuk-label govuk-radios__label" for="sap">
+              No
             </label>
           </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="statutory-pay-2" name="statutory-pay" type="radio" value='no~/statutory-pay-recent'>
-            <label class="govuk-label govuk-radios__label" for="statutory-pay-2">
-            No
-            </label>
-          </div>
+          
         </div>
       </fieldset>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- pension -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- fit-for work -->
 
     </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
 {% endblock %}
-
 

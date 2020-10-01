@@ -44,12 +44,23 @@
             Yes, I’m employed or self-employed
           </label>
         </div>
+        <!-- If user answers yes to getting SSP in eligibility, then ask when it ends -->
+        {% if (data['statutory-pay'] == "yes") %}
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no~/statutory-pay-end" aria-controls="no-reveal">
+          <label class="govuk-label govuk-radios__label" for="work-3">
+            No, I’m unemployed
+          </label>
+        </div>
+        <!-- If user answers no to getting SSP in eligibity, then ask if they've had it in last 12 weeks -->
+        {% else %}
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="work-3" name="work" type="radio" value="no~/statutory-pay-recent" aria-controls="no-reveal">
           <label class="govuk-label govuk-radios__label" for="work-3">
             No, I’m unemployed
           </label>
         </div>
+        {% endif %}
       </div>
     </div>
 
