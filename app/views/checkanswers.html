@@ -849,6 +849,37 @@
         <h2 class="govuk-heading-m">Claim date</h2>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+           {% if (data['statutory-pay'] == "yes") or (data['statutory-pay-recent'] == "yes") %}
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Claim from 26 September 2020
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['claim-date-statutory-pay'] | default("Yes")}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="claim-start-date-if-statutory-sick-pay">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+          {% else %}
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Claim start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['claim-day']}} {{data['claim-month'] | toMonth }} {{data['claim-year']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="claimdate">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if (data['claim-date-statutory-pay'] == "no") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Claim start date
@@ -862,6 +893,8 @@
               </a>
             </dd>
           </div>
+          {% endif %}
+
           {% if (data['claim-end'] == "yes") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
