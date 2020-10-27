@@ -776,7 +776,7 @@
           {% if (data['statutory-pay'] == "yes") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Statutory Sick Pay ends
+              Statutory Sick Pay ends or ended
             </dt>
             <dd class="govuk-summary-list__value">
               {{data['ssp-day']}} {{data['ssp-month'] | toMonth }} {{data['ssp-year']}}
@@ -806,13 +806,13 @@
           {% if (data['statutory-pay-recent'] == "yes") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Statutory Sick Pay ended
+              Statutory Sick Pay ends or ended
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['ssp-recent-day']}} {{data['ssp-recent-month'] | toMonth }} {{data['ssp-recent-year']}}
+              {{data['ssp-day']}} {{data['ssp-month'] | toMonth }} {{data['ssp-year']}}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a href="statutory-pay-recent-end">
+              <a href="statutory-pay-end">
                 Change
               </a>
             </dd>
