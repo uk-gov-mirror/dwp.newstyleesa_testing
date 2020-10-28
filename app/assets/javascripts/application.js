@@ -148,40 +148,6 @@ var monthNumbers = [
 
 	// suggest claim date
 
-	// var dateString = "2010-09-12";
-	// var myDate = new Date(dateString);
-	// var numberOfDaysToAdd = 14;
-
-	// newDate.setDate(myDate.getDate() + numberOfDaysToAdd);
-	// py = myDate.getFullYear();
-	// pm = myDate.getMonth();
-	// pd = myDate.getDate() + 1;
-
-	// if(document.querySelector(".suggested-claim-date")) {
-	// 	document.querySelector(".suggested-claim-date").innerHTML = pd + " " + monthNames[pm] + " " + py;
-	//   }
-
-
-
-	// // suggest claim date2
-
-
-	// claimDate = new Date(
-	// 	parseInt(req.session.data['ssp-year'], 10),
-	// 	parseInt(req.session.data['ssp-month'], 10)-1,
-	// 	parseInt(req.session.data['ssp-day'], 10)
-	// );
-
-	// var numberOfDaysToAdd = 1;
-	// claimDate.setDate(claimDate.getDate() + numberOfDaysToAdd);
-	// ny = claimDate.getFullYear();
-	// nm = claimDate.getMonth();
-	// nd = claimDate.getDate();
-  
-	// if(document.querySelector(".suggested-claim-date")) {
-	// 	document.querySelector(".suggested-claim-date").innerHTML = nd + "&nbsp" + monthNames[nm] + "&nbsp" + ny;
-	// }
-
 	var suggestedClaimDate = document.querySelector(".suggested-claim-date");
 	if(suggestedClaimDate) {
 	var claimDate = new Date(
