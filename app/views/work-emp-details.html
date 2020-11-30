@@ -26,9 +26,15 @@
 
     <form id="form" autocomplete="off" method="post" action="worksick">
 
+        {% if (data['employment-status'] == "Self-employed") %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        Self-employment details
+        </h1>
+      {% else %}
         <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
         Employment details
         </h1>
+      {% endif %}
         <span id="special-rules-hint" class="govuk-hint">
         If you have more than one job, you will be asked about your other jobs later in this form.
         </span>
@@ -43,9 +49,15 @@
         </div>
 
         <div class="govuk-form-group">
+          {% if (data['employment-status'] == "Self-employed") %}
+          <label class="govuk-label" for="employer-details-name">
+          Business name
+          </label>
+          {% else %}
           <label class="govuk-label" for="employer-details-name">
           Employer name
           </label>
+          {% endif %}
           <input class="govuk-input govuk-!-width-one-half" id="employer-details-name" name="employer-details-1" type="text">
         </div>
 
@@ -58,9 +70,15 @@
 
         <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          {% if (data['employment-status'] == "Self-employed") %}  
+          <h2 class="govuk-fieldset__heading">
+            Business address
+          </h2>
+        {% else %}
           <h2 class="govuk-fieldset__heading">
             Employer address
           </h2>
+        {% endif %}
         </legend>
 
         <div class="govuk-form-group">
@@ -99,7 +117,7 @@
 
     </fieldset>
 
-        <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- work-self-emp -->
+        <input type="submit" class="govuk-button" value="Continue" id="formbutton">
 
     </form>
 
