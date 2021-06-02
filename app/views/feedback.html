@@ -8,7 +8,7 @@
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        prototype testing only
+        beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
@@ -23,7 +23,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" autocomplete="off" method="post" action="feedback-sent">
+    <form id="form" method="post" action="feedback-sent">
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
       Give feedback
@@ -83,20 +83,20 @@
             <div class="govuk-inset-text">
               We will not respond to your feedback or use it when we process your claim.
             </div>
-            {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+          </div>
 
-            {{ govukCharacterCount({
-              name: "with-hint",
-              id: "with-hint",
-              maxlength: 1200,
-              label: {
-                text: ""
-              },
-              hint: {
-                text: ""
-              }
-            }) }}          
-            </div>
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1200">
+          <div class="govuk-form-group">
+            
+            <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+          </div>
+
+          <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 1200 characters
+          </div>
+
+        </div>
+          
 
     <input type="submit" class="govuk-button" value="Send feedback" id="submit"><!-- nino -->
 

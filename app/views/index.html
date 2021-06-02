@@ -1,21 +1,16 @@
 {% extends "layoutWithCookies.html" %}
 
-{% block pageTitle %}
-Feedback sent
-{% endblock %}
-
 {% block beforeContent %}
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
+        prototype testing only
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
       </span>
     </p>
   </div>
-{% include "includes/back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -23,19 +18,13 @@ Feedback sent
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="dateofbirth">
+    <h1 class="govuk-heading-l">This is a testing prototype for New Style ESA</h1>
+  
+    <p>This application will not be sent to DWP.</p>
 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-      Feedback sent
-    </h1>
+    <p><a href="eligibility-start.html" class="govuk-button">Continue</a></p>
 
-    <p>Thank you for your feedback. We'll use this to improve the service.</p>
+  </div>
 
-    <p>You can close this tab and go back to your application.</p>
-        
-
-    </form>
-
-  </div><!-- govuk-grid-column-two-thirds -->
-</div><!-- govuk-grid-row -->
+</div>
 {% endblock %}

@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layoutWithCookies.html" %}
 
 {% block pageTitle %}
  Declaration - Apply for New Style Employment and Support Allowance - GOV.UK
@@ -8,7 +8,7 @@
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        prototype testing only
+        beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
@@ -24,7 +24,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <fieldset class="govuk-fieldset">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
     <h1 class="govuk-fieldset__heading">
       Declaration
     </h1>
@@ -34,7 +34,7 @@
 
     <p>By sending this application you confirm that:
     <ul class="govuk-list govuk-list--bullet">
-      <li>the information you've given is correct and complete as far as you know</li>
+      <li>the information you&rsquo;ve given is correct and complete as far as you know</li>
       <li>you&rsquo;ll report any changes in your circumstances</li>
       <li>you&rsquo;ll pay back any money you&rsquo;re overpaid if you&rsquo;re asked to</li>
     </ul>
@@ -49,15 +49,8 @@
 
   </div>
 
-  <div class="govuk-inset-text">
-  This is a prototype, this application will not be sent anywhere.
-  </div>
+    <a href="done" class="govuk-button">I understand, send my application</a>
 
-  <a href="done" class="govuk-button">I understand, send my application</a>
-    
-  
-  
-   
     </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
 {% endblock %}

@@ -1,25 +1,4 @@
-[if lt IE 9]
-  <script src="/javascripts/head-ie8-a371085ca251931cc9b5360c7da328f6.js"></script>
-[endif]
-
-{% extends "layout.html" %}
-
-{% block pageTitle %}
- What happens next - Apply for New Style Employment and Support Allowance - GOV.UK
-{% endblock %}
-
-{% block beforeContent %}
-<div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        prototype testing only
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
-{% endblock %}
+{% extends "layoutWithCookies.html" %}
 
 {% block content %}
 
@@ -28,26 +7,32 @@
 
   <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6" style="padding: 0">
     <h1 class="govuk-panel__large" style="font-size: 32px; margin-bottom: 5px">
-      Application sent 
+      Application sent
     </h1>
-    
     <div class="govuk-panel__body" style="font-size: 28px;">Your reference number is your National Insurance number</div>
-    
-    <div style="padding-top:15px;">(This is a prototype, the application has not been sent to DWP.)</div>
-
     <p></p>
   </div>
 
   </div> <!-- govuk.grid-column-full -->
 
   <div class="govuk-grid-column-two-thirds">
-  <h2 class="govuk-heading-l">What happens next</h2>
 
-    <p class="govuk-body-l">There may be a delay in processing your application because of the coronavirus outbreak. We aim to get back to you by <span class="new-date"></span>.</p>
-    <p>Please do not contact the Department for Work and Pensions (DWP) for an update before then.</p>
+    <h2 class="govuk-heading-l">What happens next</h2>
 
-    {# BAU Evidence #}
-    {% if (data['coronavirus'] == "no" ) %}
+    <p class="govuk-body">Someone from your local jobcentre will contact you, by <span class="new-date"></span>. They will book you a ‘Claimant Commitment’ appointment with a work coach, which is normally over the phone.</p>
+
+    <p class="govuk-body">Your work coach will talk to you about what you need to do to get New Style ESA, including asking you to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>explain how your illness or disability affects your ability to work</li>
+        <li>provide medical evidence</li>
+        <li>agree to tell us if your circumstances change</li>
+      </ul>
+
+      <p class="govuk-body">You must agree to your Claimant Commitment before you can get New Style ESA.</p>
+
+  {# BAU Evidence #}
+    {% if (data['coronavirus'] == "No" ) %}
     <h3 class="govuk-heading-m">Send us medical evidence to support your application</h3>
 
     <p>You can self-certify for the first 7 days of your claim but you need to send us medical evidence from day 8 onwards.</p>
@@ -89,7 +74,7 @@
   <p>Freepost DWP ESA 26</p>
   </div>
   {% endif %}
-  {# End of BAU Evidence#}
+  {# End of BAU Evidence #}
 
   {# Shielding Evidence #}
   {% if (data['reason'] == "reason-1") %}
@@ -216,7 +201,7 @@
   {# End of Self isolating and "other" Evidence #}
 
   {# Universal Credit block #}
-  {# {% if (data['universal-credit'] == "no" and data['national-insurance'] == "yes" or data['national-insurance'] == "notsure" ) %} #}
+  {# {% if (data['universal-credit'] == "No" and data['national-insurance'] == "yes" or data['national-insurance'] == "notsure" ) %} #}
   {% if (data['universal-credit'] == "No") %}
 
 
@@ -246,13 +231,12 @@
     
     <h3 class="govuk-heading-m">Give us your feedback</h3>
 
-<p class="govuk-body"><a href="feedback.html" class="govuk-link" rel="noreferrer noopener" target="_blank">What did you think of this service? (opens in new tab)</a>. It takes 30 seconds.</p>
-<p class="govuk-body">Volunteer to<a href="https://getinvolved.dwp.gov.uk/digital/f56c176f" class="govuk-link" rel="noreferrer noopener" target="_blank"> take part in research (opens in new tab)</a> to help improve this service.
-
+<p class="govuk-body"><a href="feedback.html" class="govuk-link" rel="noreferrer noopener" target="_blank">What did you think of this service? (opens in a new window)</a>. It takes 30 seconds.</p>
+<p class="govuk-body">Volunteer to<a href="https://getinvolved.dwp.gov.uk/digital/f56c176f" class="govuk-link" rel="noreferrer noopener" target="_blank"> take part in research (opens in a new window)</a> to help improve this service.
 
 
     <p><a href="https://www.gov.uk/employment-support-allowance/your-esa-claim" class="govuk-button">Finish</a></p>
+
 </div><!-- govuk-grid-row -->
 {% endblock %}
-
 

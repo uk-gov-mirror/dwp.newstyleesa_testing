@@ -8,7 +8,7 @@
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        prototype testing only
+        beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
@@ -24,17 +24,19 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" autocomplete="off" method="post" action="worksick">
+    <form id="form" method="post" action="worksick">
 
-        {% if (data['employment-status'] == "Self-employed") %}
         <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-        Self-employment details
-        </h1>
-      {% else %}
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
-        Employment details
-        </h1>
-      {% endif %}
+          {% if (data['employment-status'] == "Self-employed") %}
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+          Self-employment details
+          </h1>
+        {% else %}
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+          Employment details
+          </h1>
+        {% endif %}
+        
         <span id="special-rules-hint" class="govuk-hint">
         If you have more than one job, you will be asked about your other jobs later in this form.
         </span>
@@ -70,7 +72,7 @@
 
         <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-          {% if (data['employment-status'] == "Self-employed") %}  
+        {% if (data['employment-status'] == "Self-employed") %}  
           <h2 class="govuk-fieldset__heading">
             Business address
           </h2>
@@ -117,7 +119,7 @@
 
     </fieldset>
 
-        <input type="submit" class="govuk-button" value="Continue" id="formbutton">
+        <input type="submit" class="govuk-button" value="Continue" id="formbutton"><!-- work-off-sick -->
 
     </form>
 

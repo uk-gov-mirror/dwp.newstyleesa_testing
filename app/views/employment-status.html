@@ -8,7 +8,7 @@
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        prototype testing only
+        beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
@@ -23,7 +23,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" autocomplete="off" method="post" action="work-emp-details">
+    <form id="form" method="post" action="work-emp-details">
 
       <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="self-emp-hint">
@@ -32,6 +32,9 @@
             What is your employment status?
           </h1>
         </legend>
+        <span id="special-rules-hint" class="govuk-hint">
+          If you have more than one job, you will be asked about your other jobs later in this form.
+          </span>
         <span id="waste-hint" class="govuk-hint">
           Select all that apply.
         </span>

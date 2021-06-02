@@ -7,13 +7,14 @@
 {% block beforeContent %}
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        prototype testing only
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
-      </span>
-    </p>
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help
+      us to improve it.
+    </span>
+  </p>
 </div>
 {% include "includes/back-link.html" %}
 {% endblock %}
@@ -23,7 +24,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" autocomplete="off" method="post" action="payfrequency">
+    <form id="form" method="post" action="payfrequency">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -52,7 +53,7 @@
 
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="work-hours" type="radio" value='no~/pay-varies-frequency' data-aria-controls="conditional-how-contacted-conditional-2">
+              <input class="govuk-radios__input" id="how-contacted-conditional-2" name="work-hours" type="radio" value='No~/pay-varies-frequency' data-aria-controls="conditional-how-contacted-conditional-2">
               <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
                 No
               </label>

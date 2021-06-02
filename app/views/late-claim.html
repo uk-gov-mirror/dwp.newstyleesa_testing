@@ -1,7 +1,7 @@
 {% extends "layoutWithCookies.html" %}
 
 {% block pageTitle %}
- Statutory payments - Apply for New Style Employment and Support Allowance - GOV.UK
+ Late claim - Apply for New Style Employment and Support Allowance - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,25 +25,34 @@
 
     <form id="form" method="post" action="">
 
+    <h1 class="govuk-heading-l">Your claim start date is more than 3 months ago</h1>
+
+    <p>You can only get New Style ESA for up to 3 months in the past, unless:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>you or someone else has already told us you want to make a claim</li>
+      <li>your employer took more than 3 months to tell you you’re not entitled to Statutory Sick Pay</li>
+    </ul>
+
+      <p>We may need to contact you.</p>
+
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="statutory-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            Are you getting Statutory Sick Pay?
-          </h1>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Are you sure you want to claim from {{data['claim-day']}} {{data['claim-month'] | toMonth }} {{data['claim-year']}}?
+          </h2>
         </legend>
 
-        <p>You can apply for New Style ESA if you do not get Statutory Sick Pay or it ends in the next 3 months.</p>
 
         <div class="govuk-radios">
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value='yes~/statutory-pay-date'>
+                <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value='yes~/claim-end-date'>
                 <label class="govuk-label govuk-radios__label" for="sap">
                   Yes
                 </label>
               </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value='No~/may-be-eligible'>
+            <input class="govuk-radios__input" id="sap" name="statutory-pay" type="radio" value='no~/claimdate'>
             <label class="govuk-label govuk-radios__label" for="sap">
               No
             </label>

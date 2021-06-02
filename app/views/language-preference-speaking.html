@@ -1,7 +1,7 @@
 {% extends "layoutWithCookies.html" %}
 
 {% block pageTitle %}
- Disability or health condition - Apply for New Style Employment and Support Allowance - GOV.UK
+Language preference for speaking – Apply for New Style Employment and Support Allowance – GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,41 +26,42 @@
           Content needed
     </span> -->
 
-    <form id="form" method="post" action="">
+    <form id="form" method="post" action="telephone">
 
    <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            Do you have a disability or health condition that affects how much you can work?</h1>
+          What language do you want us to speak to you in?</h1>
         </legend>
 
-        <!-- <span id="phi-hint" class="govuk-hint">
-        This is known as permanent health insurance.
-      </span> -->
+        <p>If you live in Wales you can choose to communicate with us in Welsh.</p>
 
+        <div class="govuk-hint">This includes phone calls and face-to-face meetings.</div>
+        
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="disability-1" name="disability" type="radio" value='yes~/state-pension' data-aria-controls="yes-cond">
-            <label class="govuk-label govuk-radios__label" for="disability-1">
-              Yes
+            <input class="govuk-radios__input" id="language-preference-speaking-1" name="language-preference-speaking" type="radio" value='English' data-aria-controls="yes-cond">
+            <label class="govuk-label govuk-radios__label" for="language-preference-speaking-1">
+              English
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="disability-2" name="disability" type="radio" value='No~/may-not-be-eligible'>
-            <label class="govuk-label govuk-radios__label" for="disability-2">
-              No
+            <input class="govuk-radios__input" id="language-preference-speaking-2" name="language-preference-speaking" type="radio" value='Welsh'>
+            <label class="govuk-label govuk-radios__label" for="language-preference-speaking-2">
+              Welsh
             </label>
           </div>
         </div>
       </fieldset>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- insurance-detail -->
+    <input type="submit" class="govuk-button" value="Continue" id="submit">
 
     </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
 {% endblock %}
+
 

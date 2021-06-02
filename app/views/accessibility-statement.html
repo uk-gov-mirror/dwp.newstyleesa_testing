@@ -8,10 +8,10 @@
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        prototype testing only
+        beta
       </strong>
       <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
+        This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new window)</a> will help us to improve it.
       </span>
     </p>
   </div>
@@ -34,7 +34,7 @@
 
   <br />
   <p class="govuk-body">
-    This service is part of the wider GOV.UK website. There's a separate 
+    This service is part of the wider GOV.UK website. There&rsquo;s a separate 
     <a class="govuk-link" href="https://www.gov.uk/help/accessibility">accessibility statement 
     for the main GOV.UK website.</a>
   </p>
@@ -69,7 +69,7 @@
     </li>
   </ul>
   <p class="govuk-body">
-    We've also made the text in the service as simple as possible to understand.
+    We&rsquo;ve also made the text in the service as simple as possible to understand.
   </p>
   <p class="govuk-body">
     <a class="govuk-link" href="https://mcmw.abilitynet.org.uk/">AbilityNet</a> 
@@ -85,14 +85,24 @@
   <p class="govuk-body">
     Some people may find parts of this service difficult to use:
   </p>
-  <ul class="govuk-list govuk-list--bullet">
+  <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
     <li>
       at one point we ask you to list your conditions using a JavaScript 
       solution that allows you to keep adding additional fields. This can be 
       tricky. However, with JavaScript turned off the service will default 
       to a large amount of blank fields which some people might find easier to 
-      fill out.
+      fill out
     </li>
+    <li>if you say “new tab” to some voice control software, it opens the feedback link instead of opening a new tab
+    </li>
+    <li>error messages are sometimes not read out in JAWS versions 18 and 19</li>
+    <li>	headings are sometimes not read out in JAWS versions 18 and 19 and ZoomText. This is a known issue with Freedom Scientific software. Read <a class="govuk-link" href="https://github.com/FreedomScientific/VFO-standards-support/issues/100">more about the issue with headings on GitHub</a>
+    </li>
+    <li>text is sometimes repeated by ZoomText&rsquo;s DocReader and SpeakIt tools
+    </li>
+    <li>reading zones sometimes move around the page when scrolling with ZoomText. This might cause a problem with the consent question pages, as well as the ‘check your answers’ and ‘what happens next’ pages, where there is lots of text
+    </li>
+  
   </ul>
   <h2 class="govuk-heading-m">
     What to do if you have difficulty using this service
@@ -102,7 +112,7 @@
   </p>
   <p class="govuk-body">
     As part of providing this service, we may need to send you messages or 
-    documents. We'll ask you how you want us to send messages or documents 
+    documents. We&rsquo;ll ask you how you want us to send messages or documents 
     to you, but contact us if you need them in a different format. For 
     example large print, audio recording or braille.
   </p>
@@ -110,8 +120,8 @@
     Reporting accessibility problems with this service
   </h2>
   <p class="govuk-body">
-    We're always looking to improve the accessibility of this service. 
-    If you find any problems that are not listed on this page or think we're 
+    We&rsquo;re always looking to improve the accessibility of this service. 
+    If you find any problems that are not listed on this page or think we&rsquo;re 
     not meeting accessibility requirements, contact us by email: <a href="mailto:applyfornewstyleesa.accessibility@dwp.gsi.gov.uk">applyfornewstyleesa.accessibility@dwp.gsi.gov.uk</a>
   </p>
   <h2 class="govuk-heading-m">
@@ -120,14 +130,14 @@
   <p class="govuk-body">
     The Equality and Human Rights Commission (EHRC) is responsible for 
     enforcing the Public Sector Bodies (Websites and Mobile Applications) 
-    (No. 2) Accessibility Regulations 2018 (the 'accessibility regulations'). 
-    If you're not happy with how we respond to your complaint, 
+    (No. 2) Accessibility Regulations 2018 (the &lsquo;accessibility regulations&rsquo;). 
+    If you&rsquo;re not happy with how we respond to your complaint, 
     <a class="govuk-link" href="https://www.equalityadvisoryservice.com/">
       contact the Equality Advisory and Support Service (EASS).
     </a>
   </p>
   <h2 class="govuk-heading-m">
-    Technical information about this service's accessibility
+    Technical information about this service&rsquo;s accessibility
   </h2>
   <p class="govuk-body">
     The Department for Work and Pensions is committed to making this service 
@@ -142,27 +152,23 @@
     How we tested this service
   </h2>
   <p class="govuk-body">
-    The service was last tested on 12 April 2020 and was checked for 
-    compliance with WCAG 2.1 AA. The tests were carried out by the 
-    Department for Work and Pensions.
+    The service was last tested on 28 May 2020 and was checked for compliance with WCAG 2.1 AA. The tests were carried out by the Department for Work and Pensions.
   </p>
   <p class="govuk-body">
     The service was tested using both automated and manual testing.
   </p>
   <h2 class="govuk-heading-m">
-    What we're doing to improve accessibility
+    What we&rsquo;re doing to improve accessibility
   </h2>
   <p class="govuk-body">
-    We will be conducting more manual testing of the service using assistive 
-    technologies such as JAWS and Dragon with the aim to publish a complete 
-    audit by the end of May 2020.
+    We conducted manual testing of the service using assistive technologies such as JAWS and Dragon. This has identified issues, mentioned in the ‘using this service’ section above, that we’re working to fix.
   </p>
   <p class="govuk-body">
     We will continue to iterate the design of the service, replacing the 
     JavaScript solution for adding conditions to make it more usable.
   </p>
   <p class="govuk-body">
-    This page was prepared on 14 April 2020.
+    This page was prepared on 14 April 2020 and last updated on 3 August 2020.
   </p>
 
 </div><!-- form group-->

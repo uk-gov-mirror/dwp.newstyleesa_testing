@@ -101,15 +101,15 @@ var monthNames = [
 	"April", "May", "June", "July",
 	"August", "September", "October",
 	"November", "December"
-  ];
-
-  // Another crude hack from Dan to display month nunbers (don't know how to do this properly)	
-var monthNumbers = [
-	"1", "2", "3",
-	"4", "5", "6", "7",
-	"8", "9", "10",
-	"11", "12"
 	];
+	
+// Another crude hack from Dan to display month nunbers (don't know how to do this properly)	
+var monthNumbers = [
+		"1", "2", "3",
+		"4", "5", "6", "7",
+		"8", "9", "10",
+		"11", "12"
+		];
   
   // Show current date
   date = new Date();
@@ -133,7 +133,7 @@ var monthNumbers = [
 	document.querySelector(".new-date").innerHTML = nd + "&nbsp" + monthNames[nm] + "&nbsp" + ny;
   }
 
-      // Show date 3 months ago. Sorry, this is wack – can't work out how to do it properly, so just crudely minusing 91 days (Dan)
+    // Show date 3 months ago. Sorry, this is wack – can't work out how to do it properly, so just crudely minusing 91 days (Dan)
 	date3MonthsAgo = new Date();
 	var numberOfDaysToAdd = -91;
 	date3MonthsAgo.setDate(date3MonthsAgo.getDate() + numberOfDaysToAdd);
@@ -144,7 +144,6 @@ var monthNumbers = [
 	if(document.querySelector(".date-3-months-ago")) {
 	  document.querySelector(".date-3-months-ago").innerHTML = pd + " " + monthNumbers[pm] + " " + py;
 	}
-
 
 	// suggest claim date
 
@@ -162,4 +161,3 @@ var monthNumbers = [
 	nd = claimDate.getDate();
 	suggestedClaimDate.innerHTML = nd + "&nbsp" + monthNames[nm] + "&nbsp" + ny;
 }
-

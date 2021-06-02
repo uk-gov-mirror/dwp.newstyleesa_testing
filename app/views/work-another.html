@@ -8,7 +8,7 @@
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        prototype testing only
+        beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
@@ -23,7 +23,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" autocomplete="off" method="post">
+    <form id="form" method="post" action="statutory-pay">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -48,11 +48,12 @@
           Do you have another job?
           </h1>
         </legend>
-        
-        <!-- Yes, goes to add another job -->
+
+        <div class="govuk-radios govuk-radios">
+          <!-- Yes, goes to add another job -->
         <div class="govuk-radios govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-1" name="work-another" type="radio" value='yes~/employment-status' data-aria-controls="yes-cond">
+            <input class="govuk-radios__input" id="changed-name-1" name="work-another" type="radio" value='Yes~/employment-status' data-aria-controls="yes-cond">
             <label class="govuk-label govuk-radios__label" for="changed-name-1">
               Yes
             </label>
@@ -61,7 +62,7 @@
         <!-- If user answers yes to getting SSP in eligibility, then ask when it ends -->
         {% if (data['statutory-pay'] == "yes") %}
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-2" name="work-another" type="radio" value='no~/statutory-pay-end'>
+            <input class="govuk-radios__input" id="changed-name-2" name="work-another" type="radio" value='No~/statutory-pay-end'>
             <label class="govuk-label govuk-radios__label" for="changed-name-2">
               No
             </label>
@@ -70,14 +71,13 @@
         <!-- If user answers no to getting SSP in eligibity, then ask if they've had it in last 12 weeks -->
         {% else %}
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-2" name="pension" type="radio" value='no~/statutory-pay-recent'>
+            <input class="govuk-radios__input" id="changed-name-2" name="pension" type="radio" value='No~/statutory-pay-recent'>
             <label class="govuk-label govuk-radios__label" for="changed-name-2">
               No
             </label>
           </div>
 
         {% endif %}
-          
         </div>
       </fieldset>
     </div>

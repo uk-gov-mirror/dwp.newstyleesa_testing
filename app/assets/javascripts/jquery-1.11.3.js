@@ -3581,7 +3581,7 @@ support.ownLast = i !== "0";
 
 // Note: most support tests are defined in their respective modules.
 // false until the test is run
-support.inlineBlockNeedsLayout = false;
+support.inlineBlockNeedslayoutWithCookies = false;
 
 // Execute ASAP in case we need to set body.style.zoom
 jQuery(function() {
@@ -3604,12 +3604,12 @@ jQuery(function() {
 		// Support: IE<8
 		// Check if natively block-level elements act like inline-block
 		// elements when setting their display to 'inline' and giving
-		// them layout
+		// them layoutWithCookies
 		div.style.cssText = "display:inline;margin:0;border:0;padding:1px;width:1px;zoom:1";
 
-		support.inlineBlockNeedsLayout = val = div.offsetWidth === 3;
+		support.inlineBlockNeedslayoutWithCookies = val = div.offsetWidth === 3;
 		if ( val ) {
-			// Prevent IE 6 from affecting layout for positioned elements #11048
+			// Prevent IE 6 from affecting layoutWithCookies for positioned elements #11048
 			// Prevent IE from shrinking the body in IE 7 mode #12869
 			// Support: IE<8
 			body.style.zoom = 1;
@@ -6115,7 +6115,7 @@ function defaultDisplay( nodeName ) {
 		body.appendChild( container ).appendChild( div );
 
 		// Support: IE6
-		// Check if elements with layout shrink-wrap their children
+		// Check if elements with layoutWithCookies shrink-wrap their children
 		if ( typeof div.style.zoom !== strundefined ) {
 			// Reset CSS: box-sizing; display; margin; border
 			div.style.cssText =
@@ -6815,7 +6815,7 @@ if ( !support.opacity ) {
 				opacity = jQuery.isNumeric( value ) ? "alpha(opacity=" + value * 100 + ")" : "",
 				filter = currentStyle && currentStyle.filter || style.filter || "";
 
-			// IE has trouble with opacity if it does not have layout
+			// IE has trouble with opacity if it does not have layoutWithCookies
 			// Force it by setting the zoom level
 			style.zoom = 1;
 
@@ -7193,8 +7193,8 @@ function defaultPrefilter( elem, props, opts ) {
 		if ( checkDisplay === "inline" && jQuery.css( elem, "float" ) === "none" ) {
 
 			// inline-level elements accept inline-block;
-			// block-level elements need to be inline with layout
-			if ( !support.inlineBlockNeedsLayout || defaultDisplay( elem.nodeName ) === "inline" ) {
+			// block-level elements need to be inline with layoutWithCookies
+			if ( !support.inlineBlockNeedslayoutWithCookies || defaultDisplay( elem.nodeName ) === "inline" ) {
 				style.display = "inline-block";
 			} else {
 				style.zoom = 1;

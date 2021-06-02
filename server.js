@@ -141,7 +141,7 @@ app.use(bodyParser.urlencoded({
 // Set up v6 app for backwards compatibility
 if (useV6) {
   var v6Views = [
-    path.join(__dirname, '/node_modules/govuk_template_jinja/views/layouts'),
+    path.join(__dirname, '/node_modules/govuk_template_jinja/views/layoutWithCookiess'),
     path.join(__dirname, '/app/v6/views/'),
     path.join(__dirname, '/lib/v6') // for old unbranded template
   ]

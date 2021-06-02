@@ -8,7 +8,7 @@
 <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        prototype testing only
+        beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="feedback">feedback (opens in a new tab)</a> will help us to improve it.
@@ -23,7 +23,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" autocomplete="off" method="post">
+    <form id="form" method="post">
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -33,7 +33,7 @@
         id: "contact-by-phone",
         name: "contact-by-phone",
         type: "tel",
-        classes: "govuk-input--width-20",
+        classes: "govuk-!-width-one-third",
         label: {
           text: "Mobile number"
         }
@@ -59,14 +59,14 @@
         },
         items: [
           {
-            value: "yes~/coronavirus-reason",
+            value: "yes~/email",
             text: "Yes",
             conditional: {
               html: phoneHtml
             }
           },
           {
-            value: "no~/landline",
+            value: "No~/landline",
             text: "No"
           }
         ]
@@ -77,7 +77,7 @@
 
       {{ govukRadios({
         idPrefix: "how-contacted-conditional",
-        name: "how-contacted",
+        name: "mobile-phone",
         fieldset: {
           legend: {
             text: "Do you have a mobile number?",
@@ -86,18 +86,18 @@
           }
         },
         hint: {
-          text: "We’ll send you text messages to update you on the progress of your claim."
+          text: "We’ll use this number to contact you about your claim."
         },
         items: [
           {
-            value: "yes~/condition",
+            value: "yes~/email",
             text: "Yes",
             conditional: {
               html: phoneHtml
             }
           },
           {
-            value: "no~/landline",
+            value: "No~/landline",
             text: "No"
           }
         ]

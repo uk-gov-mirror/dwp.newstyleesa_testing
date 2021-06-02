@@ -211,6 +211,30 @@ router.get('*', function (req, res, next) {
   next();
 })
 
+// if postcode is in Wales, show the contact preference questions - Live
+router.post('/welsh-or-not', function (req, res) {
+
+  const welsh = req.session.data['address-postcode']
+
+  if (welsh == 'wales' ) {
+    res.redirect('/language-preference-writing')
+  } else {
+    res.redirect('/telephone')
+  }
+})
+
+// if claim start date is more than 3 months ago, take them to Are you sure page - if using for research change '1'. For example, it's December so you need to addd all months before September.
+
+router.post('/claimdate', function (req, res) {
+
+  const claimMonth = req.session.data['claim-month']
+
+  if (claimMonth == '1') {
+    res.redirect('/late-claim')
+  } else {
+    res.redirect('/claim-end-date')
+  }
+})
 
 
 module.exports = router
