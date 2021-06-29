@@ -246,12 +246,13 @@
 
         </dl>
 
-        <h2 class="govuk-heading-m">
-          Your health conditions
-        </h2>
-         
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         {% if (data['reason'] ) %}
+        <h2 class="govuk-heading-m">
+          Coronavirus details
+        </h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Reason for claiming because of coronavirus
@@ -322,7 +323,7 @@
           {% if (data['reason'] == "reason-2") or (data['reason'] == "reason-3") or (data['reason'] == "reason-4") %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Other health conditions
+              Health conditions
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['other-condition'] }}
@@ -334,44 +335,56 @@
             </dd>
           </div>
           {% endif %}
-          {% if (data['other-condition'] == "yes") or (data['reason'] == "reason-1") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Conditions
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Abdominal pain<br>
-              Started 1 June 2013<br>
-              <br>
-              Broken leg<br>
-              Started 20 November 2018
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="condition">
-                Change<span class="govuk-visually-hidden"> conditions</span>
-              </a>
-            </dd>
-          </div>
-          {% endif %}
-          {% else %}
+        </dl>
+        {% endif %}
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Conditions
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Abdominal pain<br>
-              Started 1 June 2013<br>
+
+        <h2 class="govuk-heading-m">
+          Health details
+        </h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <!-- Show health condition if:
+          - not coronavirus claim
+          - coronavirus shielding claim
+          - coronavirus self isolation or other and have another condition -->
+
+          {% if (data['other-condition'] == "No") %}
+
+          {% else %}
+          
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Health condition
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['condition-name'] }}
               <br>
-              Broken leg<br>
-              Started 20 November 2018
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="condition">
-                Change<span class="govuk-visually-hidden"> conditions</span>
-              </a>
-            </dd>
-          </div>
+                Started {{data['condition-day']}} {{data['condition-month'] | toMonth }} {{data['condition-year']}}
+              <dd class="govuk-summary-list__actions">
+                <ul class="govuk-list">
+                  <li><a href="remove-condition">
+                  Remove<span class="govuk-visually-hidden"> anxiety</span>
+                </a></li>
+                <li><a href="condition">
+                  Change<span class="govuk-visually-hidden"> anxiety</span>
+                </a></li>
+              </ul>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Any other health conditions
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="condition-another">
+                  Change
+                </a>
+              </dd>
+            </div>
           {% endif %}
 
 
@@ -850,7 +863,7 @@
               Any other jobs
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['work-another']}}
+              No
             </dd>
             <dd class="govuk-summary-list__actions">
               <a href="work-another">
