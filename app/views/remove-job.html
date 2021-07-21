@@ -19,39 +19,28 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form id="form" method="post" action="statutory-pay">
+    <form id="form" method="post" action="insurance">
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">You have added details for: </h2>
-            <ul class="govuk-list govuk-heading-m">
-
-              {% for item in data['condition-details'] | split(',') %}
-              <li>{{ item }}</li>
-              {% endfor %}
-              
-          </ul>
-
-        </legend>
-
-     <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-          Do you have another health condition, illness, disability or injury?
+            Are you sure you want to remove your job at {{ data['employer-details-1'] }}?
           </h1>
         </legend>
 
+        
+
         <div class="govuk-radios govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="condition-another-1" name="condition-another" type="radio" value="yes" data-aria-controls="yes-cond">
-            <label class="govuk-label govuk-radios__label" for="condition-another-1">
+            <input class="govuk-radios__input" id="changed-name-1" name="pension" type="radio" value="yes" data-aria-controls="yes-cond">
+            <label class="govuk-label govuk-radios__label" for="changed-name-1">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="condition-another-2" name="condition-another" type="radio" value="No">
-            <label class="govuk-label govuk-radios__label" for="condition-another-2">
+            <input class="govuk-radios__input" id="changed-name-2" name="pension" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changed-name-2">
               No
             </label>
           </div>
@@ -59,10 +48,9 @@
       </fieldset>
     </div>
 
-    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- statutory-pau -->
-
+    <input type="submit" class="govuk-button" value="Continue" id="submit"><!-- occ-pension-details -->
+    <a href="checkanswers">Cancel</a>
     {% include "includes/get-help.html" %}
-
     </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
@@ -83,13 +71,13 @@
       // depending on the value="" of the <input>
       // that's been checked, change the action=""
       // of the <form> and then allow it to submit.
-    	switch($('input[name="condition-another"]:checked').val())
+    	switch($('input[name="pension"]:checked').val())
       {
     		case 'yes':
-    	    $('#form').attr('action','condition');
+    	    $('#form').attr('action','checkanswers');
     		  break;
-        case 'No':
-    	    $('#form').attr('action','gpsurgery');
+        case 'no':
+    	    $('#form').attr('action','checkanswers');
     		  break;
         // if nothing is ticked don't submit the form.
         default: return false; break;

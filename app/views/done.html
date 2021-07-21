@@ -201,10 +201,7 @@
   {# End of Self isolating and "other" Evidence #}
 
   {# Universal Credit block #}
-  {# {% if (data['universal-credit'] == "No" and data['national-insurance'] == "yes" or data['national-insurance'] == "notsure" ) %} #}
   {% if (data['universal-credit'] == "No") %}
-
-
   <h3 class="govuk-heading-m">Do you need help with housing costs or support for a partner or child?</h3>
 
       <p class="govuk-body">If you‘re on a low income or out of work, you can apply for Universal Credit as part of a dual claim with New Style ESA.</p>
