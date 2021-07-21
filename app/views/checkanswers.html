@@ -1094,6 +1094,40 @@
               </dd>
             </div>
             {% endif %}
+
+            {% if (data['pension'] == "Yes") %}
+
+            {% if (data['pension-inherit'] == "notsure") %}
+              <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Getting pension or annuity payments that you’ve inherited from someone who died
+              </dt>
+              <dd class="govuk-summary-list__value">
+                I'm not sure
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="pension-inherit">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% else %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Getting pension or annuity payments that you’ve inherited from someone who died
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['pension-inherit'] | default("No")}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a href="pension-inherit">
+                  Change
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% endif %}
         </dl>
 
 
