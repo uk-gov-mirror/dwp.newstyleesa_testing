@@ -258,9 +258,6 @@
               Reason for claiming because of coronavirus
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if (data['reason'] == "reason-1") %}
-              I’ve been advised to ‘shield’ (take extra precautions to reduce contact with others) because I’m at very high risk of severe illness from coronavirus
-              {% endif %}
               {% if (data['reason'] == "reason-2") %}
               I'm self-isolating because I have symptoms of coronavirus
               {% endif %}
@@ -292,21 +289,7 @@
             </dd>
           </div>
           {% endif %}
-          {% if (data['reason'] == "reason-1") %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Received letter or text from NHS if shielding
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['told-to-shield']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a href="coronavirus-date">
-                Change<span class="govuk-visually-hidden"> conditions</span>
-              </a>
-            </dd>
-          </div>
-          {% endif %}
+          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Date affected by coronavirus
