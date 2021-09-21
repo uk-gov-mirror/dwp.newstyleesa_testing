@@ -1,7 +1,7 @@
 {% extends "layoutWithCookies.html" %}
 
 {% block pageTitle %}
- Consent for doctor to tell us about your health - Apply for New Style Employment and Support Allowance - GOV.UK
+Sharing your information - Apply for New Style Employment and Support Allowance - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,45 +16,36 @@
 
     <form id="form" method="post" action="voluntary-work">
 
-        <h1 class="govuk-heading-l">Sharing information about your health condition</h1>
+        <h1 class="govuk-heading-l">Sharing your information</h1>
 
-        <p>The Department for Work and Pensions (DWP), or approved healthcare professionals that work for them, might need more information about your health condition and how it affects your ability to work.</p>
-        <p>They might ask for this information from your doctor, or any other relevant professional you tell them about.</p>
-        <p>You do not have to give consent. If you choose not to do so, DWP will make a decision based on the information they have already, as well as any you can give them yourself.
-    <h2 class="govuk-heading-m">How DWP uses this information</h2>
-          
-        <p>DWP uses this information to:</p>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>process your claim</li>
-              <li>make a decision on your claim, or any mandatory reconsideration or appeal you make</li>
-            </ul>
-            <p>The law allows them to get, keep and use this information.</p>
-            <p>DWP asks for your consent on behalf of your doctor or other relevant professionals you tell them about. This reassures your doctor and the others that they can legally share this information.
-            <p>DWP can lawfully ask your doctor, hospital, or other relevant professionals for information about your health condition and how it affects you. This is because they are asking for information to help them carry out their official social security functions.</p>
-
-    <h2 class="govuk-heading-m">If you change your mind</h2>
-        <p>You can change your mind later. Call 0800 169 0310 and say you want to give or withdraw your consent.</p>
-        <p>If you withdraw your consent, DWP cannot get information from your doctor or others named on your form.</p>
+        <p>We may need to contact your doctor about the health conditions you’ve told us about.</p>
+        <p>If you say 'No', we may not have all the information we need when we make a decision about your claim.</p>
+      
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            Do you give consent for your doctor or other relevant professionals to give DWP more information about your health condition?
+            Is it OK for your doctor to tell us about your health conditions?
           </legend>
+
+          <div id="consent" class="govuk-hint">
+            You can change your mind later. If you do, we will not ask your doctor to share any more information with us.          </div>
 
           <div class="govuk-radios">
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="consent" name="consent" type="radio" value="Yes" aria-describedby="sign-in-1-item-hint">
               <label class="govuk-label govuk-radios__label" for="sign-in-1">
-              Yes, information about my health can be shared with DWP or the healthcare professionals that work for them                   </label>
+              Yes, my doctor can discuss my health
+            </label>
             </div>
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="consent" name="consent" type="radio" value="No" aria-describedby="sign-in-2-item-hint" style="color: #111">
               <label class="govuk-label govuk-radios__label" for="sign-in-2">
-              No, information about my health cannot be shared with DWP or the healthcare professionals that work for them                  </label>
+              No, my doctor cannot discuss my health
+            </label>
             </div>
 
           </div>
@@ -63,8 +54,9 @@
         </fieldset>
       </div><!-- govuk-form-group -->
         <input type="submit" class="govuk-button" value="I have read and understood" id="submit">
-        {% include "includes/get-help.html" %}
-      </form>
+            {% include "includes/get-help.html" %}
+
+</form>
 
     </div><!-- govuk-grid-column-two-thirds -->
   </div><!-- govuk-grid-row -->
