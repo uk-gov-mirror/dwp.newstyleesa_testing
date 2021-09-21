@@ -32,6 +32,9 @@
             Have you had any Statutory Sick Pay in the 13 weeks before the date you want to claim from?
           </h1>
         </legend>
+        {% if (data['coronavirus'] == "No") and (data['terminal-illness'] == "No") %}
+        <p>Send us your SSP1 if you have one. This shows when your Statutory Sick Pay (SSP) ends or why you cannot get SSP.</p>
+        {% endif %}
         <div class="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="statutory-pay-1" name="statutory-pay-recent" type="radio" value='yes~/statutory-pay-end'>

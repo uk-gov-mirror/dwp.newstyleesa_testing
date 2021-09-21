@@ -33,7 +33,10 @@
 		        What’s your Statutory Sick Pay end date?
 		      </h1>
 		    </legend>
-		    <p>You can find this in section B on form SSP1 if your employer has given it to you. If not, check with your employer or accountant.</p>
+			<p>You can find this in section B on form SSP1 if your employer has given it to you. If not, check with your employer or accountant.</p>
+			{% if (data['coronavirus'] == "No") and (data['terminal-illness'] == "No") and (data['statutory-pay'] == "yes") %}			
+			<p>Send us your SSP1 as evidence.</p>
+			{% endif %}
 		    </span>
 			<span id="dob-hint" class="govuk-hint">
 			It can be a date in the past or up to 3 months in the future. For example, 29 8 2019
